@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Maximize } from 'lucide-react';
+import X from '@/components/X';
 
 // Project type definition
 type Technology = 'React' | 'Node.js' | 'TypeScript' | 'MongoDB' | 'Next.js' | 'TailwindCSS' | 'GraphQL' | 'Flutter' | 'Firebase';
