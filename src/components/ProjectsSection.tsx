@@ -1,14 +1,29 @@
-
-import React, { useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Maximize } from 'lucide-react';
-import X from '@/components/X';
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github, Maximize } from "lucide-react";
+import X from "@/components/X";
 
 // Project type definition
-type Technology = 'React' | 'Node.js' | 'TypeScript' | 'MongoDB' | 'Next.js' | 'TailwindCSS' | 'GraphQL' | 'Flutter' | 'Firebase' | 'WordPress' | 'PHP';
-type Category = 'Web' | 'Mobile' | 'E-commerce' | 'Property Management';
+type Technology =
+  | "React"
+  | "Node.js"
+  | "TypeScript"
+  | "MongoDB"
+  | "Next.js"
+  | "TailwindCSS"
+  | "GraphQL"
+  | "Flutter"
+  | "Firebase"
+  | "WordPress"
+  | "PHP";
+type Category =
+  | "Web"
+  | "Mobile"
+  | "E-commerce"
+  | "Property Management"
+  | "Altro";
 
 interface Project {
   id: number;
@@ -25,90 +40,114 @@ const projects: Project[] = [
   {
     id: 1,
     title: "Maraffa",
-    description: "Sito web sviluppato per un cliente, con interfaccia moderna e responsive.",
-    image: "https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
-    technologies: ['WordPress', 'PHP', 'TailwindCSS'],
-    category: 'Web',
-    demoUrl: "#"
+    description:
+      "Sito web sviluppato per un cliente, con interfaccia moderna e responsive.",
+    image:
+      "https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
+    technologies: ["WordPress", "PHP", "TailwindCSS"],
+    category: "Web",
+    demoUrl: "#",
   },
   {
     id: 2,
-    title: "Appartamento",
-    description: "Piattaforma di presentazione per appartamento in affitto con galleria foto e form di contatto.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
-    technologies: ['React', 'TypeScript', 'TailwindCSS'],
-    category: 'Property Management',
+    title: "Sito Appartamento",
+    description:
+      "Piattaforma di presentazione per appartamento in affitto con galleria foto e form di contatto.",
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
+    technologies: ["React", "TypeScript", "TailwindCSS"],
+    category: "Web",
     githubUrl: "https://github.com/eliazv",
-    demoUrl: "#"
+    demoUrl: "https://immerso-nella-pineta.lovable.app/",
   },
   {
     id: 3,
-    title: "Globo",
-    description: "Sito web con mappa interattiva e sistema di navigazione avanzato per esplorare contenuti geografici.",
-    image: "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
-    technologies: ['React', 'Next.js', 'MongoDB'],
-    category: 'Web',
+    title: "Globo Ricambi",
+    description:
+      "Sito web con mappa interattiva e sistema di navigazione avanzato per esplorare contenuti geografici.",
+    image:
+      "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
+    technologies: ["React", "Next.js", "MongoDB"],
+    category: "Web",
     githubUrl: "https://github.com/eliazv",
-    demoUrl: "#"
+    demoUrl: "#",
   },
   {
     id: 4,
     title: "Diario",
-    description: "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
-    image: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
-    technologies: ['TypeScript', 'Node.js', 'MongoDB'],
-    category: 'Web',
+    description:
+      "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
+    image:
+      "https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
+    technologies: ["TypeScript", "Node.js", "MongoDB"],
+    category: "Web",
     githubUrl: "https://github.com/eliazv",
-    demoUrl: "#"
+    demoUrl: "https://minima-diary.lovable.app/",
   },
   {
     id: 5,
     title: "Vendita Online",
-    description: "Sistema integrato per la gestione di vendite su Vinted ed eBay con tracking e analytics.",
-    image: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: ['React', 'Node.js', 'Firebase'],
-    category: 'E-commerce',
-    githubUrl: "https://github.com/eliazv"
+    description:
+      "Sistema integrato per la gestione di vendite su Vinted ed eBay con tracking e analytics.",
+    image:
+      "https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    technologies: ["React", "Node.js", "Firebase"],
+    category: "Altro",
+    githubUrl: "https://github.com/eliazv",
   },
   {
     id: 6,
-    title: "Gestione Airbnb/Booking",
-    description: "Dashboard per la gestione di proprietà su piattaforme di affitto con sincronizzazione calendari e analisi prenotazioni.",
-    image: "https://images.unsplash.com/photo-1510511233900-1982d92bd835?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: ['Next.js', 'TailwindCSS', 'MongoDB'],
-    category: 'Property Management',
-    githubUrl: "https://github.com/eliazv"
-  }
+    title: "Property Management",
+    description:
+      "Gestione di proprietà su piattaforme di affitto con sincronizzazione calendari e analisi prenotazioni.",
+    image:
+      "https://images.unsplash.com/photo-1510511233900-1982d92bd835?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    technologies: ["Next.js", "TailwindCSS", "MongoDB"],
+    category: "Altro",
+    githubUrl: "https://github.com/eliazv",
+  },
 ];
 
 const ProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
+  const [selectedCategory, setSelectedCategory] = useState<Category | "All">(
+    "All"
+  );
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
-  
-  const categories: (Category | 'All')[] = ['All', 'Web', 'Mobile', 'E-commerce', 'Property Management'];
-  
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+
+  const categories: (Category | "All")[] = [
+    "All",
+    "Web",
+    "Altro",
+    // "E-commerce",
+    // "Property Management",
+  ];
+
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="projects" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">I miei progetti</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+            I miei progetti
+          </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Una selezione dei miei lavori recenti che mostrano le mie competenze in vari campi dello sviluppo web e gestione progetti.
+            Una selezione dei miei lavori recenti che mostrano le mie competenze
+            in vari campi dello sviluppo web e gestione progetti.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-2 mt-8">
-            {categories.map(category => (
+            {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedCategory === category
-                    ? 'bg-primary text-white'
-                    : 'bg-background hover:bg-primary/10'
+                    ? "bg-primary text-white"
+                    : "bg-background hover:bg-primary/10"
                 }`}
               >
                 {category}
@@ -116,46 +155,63 @@ const ProjectsSection = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map(project => (
-            <Card key={project.id} className="overflow-hidden card-hover border-0">
+          {filteredProjects.map((project) => (
+            <Card
+              key={project.id}
+              className="overflow-hidden card-hover border-0"
+            >
               <div className="relative h-52 overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
-                <button 
+                <button
                   onClick={() => setExpandedProject(project.id)}
                   className="absolute top-2 right-2 p-2 bg-background/80 backdrop-blur-sm rounded-full"
                 >
                   <Maximize className="h-4 w-4" />
                 </button>
               </div>
-              
+
               <CardContent className="p-6">
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {project.technologies.map(tech => (
-                    <Badge key={tech} variant="secondary">{tech}</Badge>
+                  {project.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary">
+                      {tech}
+                    </Badge>
                   ))}
                 </div>
-                
+
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-foreground/70 text-sm mb-4">{project.description}</p>
-                
+                <p className="text-foreground/70 text-sm mb-4">
+                  {project.description}
+                </p>
+
                 <div className="flex gap-3">
                   {project.githubUrl && (
                     <Button variant="outline" size="sm" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center"
+                      >
                         <Github className="mr-1 h-4 w-4" /> Codice
                       </a>
                     </Button>
                   )}
-                  
+
                   {project.demoUrl && (
                     <Button size="sm" asChild>
-                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center"
+                      >
                         <ExternalLink className="mr-1 h-4 w-4" /> Demo
                       </a>
                     </Button>
@@ -165,48 +221,56 @@ const ProjectsSection = () => {
             </Card>
           ))}
         </div>
-        
+
         {expandedProject && (
           <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
             <div className="bg-card max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg shadow-xl">
               <div className="relative">
-                <button 
+                <button
                   onClick={() => setExpandedProject(null)}
                   className="absolute top-4 right-4 p-2 bg-background/50 backdrop-blur-sm rounded-full z-10"
                 >
                   <X className="h-5 w-5" />
                 </button>
-                
-                {projects.find(p => p.id === expandedProject)?.image && (
-                  <img 
-                    src={projects.find(p => p.id === expandedProject)?.image}
-                    alt={projects.find(p => p.id === expandedProject)?.title}
+
+                {projects.find((p) => p.id === expandedProject)?.image && (
+                  <img
+                    src={projects.find((p) => p.id === expandedProject)?.image}
+                    alt={projects.find((p) => p.id === expandedProject)?.title}
                     className="w-full h-72 object-cover"
                   />
                 )}
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">
-                  {projects.find(p => p.id === expandedProject)?.title}
+                  {projects.find((p) => p.id === expandedProject)?.title}
                 </h3>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {projects.find(p => p.id === expandedProject)?.technologies.map(tech => (
-                    <Badge key={tech} variant="secondary">{tech}</Badge>
-                  ))}
+                  {projects
+                    .find((p) => p.id === expandedProject)
+                    ?.technologies.map((tech) => (
+                      <Badge key={tech} variant="secondary">
+                        {tech}
+                      </Badge>
+                    ))}
                 </div>
-                
+
                 <p className="text-foreground/70 mb-6">
-                  {projects.find(p => p.id === expandedProject)?.description}
+                  {projects.find((p) => p.id === expandedProject)?.description}
                 </p>
-                
+
                 <div className="flex gap-4">
-                  {projects.find(p => p.id === expandedProject)?.githubUrl && (
+                  {projects.find((p) => p.id === expandedProject)
+                    ?.githubUrl && (
                     <Button variant="outline" asChild>
-                      <a 
-                        href={projects.find(p => p.id === expandedProject)?.githubUrl} 
-                        target="_blank" 
+                      <a
+                        href={
+                          projects.find((p) => p.id === expandedProject)
+                            ?.githubUrl
+                        }
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
                       >
@@ -214,16 +278,20 @@ const ProjectsSection = () => {
                       </a>
                     </Button>
                   )}
-                  
-                  {projects.find(p => p.id === expandedProject)?.demoUrl && (
+
+                  {projects.find((p) => p.id === expandedProject)?.demoUrl && (
                     <Button asChild>
-                      <a 
-                        href={projects.find(p => p.id === expandedProject)?.demoUrl} 
-                        target="_blank" 
+                      <a
+                        href={
+                          projects.find((p) => p.id === expandedProject)
+                            ?.demoUrl
+                        }
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" /> Visualizza demo
+                        <ExternalLink className="mr-2 h-4 w-4" /> Visualizza
+                        demo
                       </a>
                     </Button>
                   )}

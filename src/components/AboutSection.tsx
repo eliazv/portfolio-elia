@@ -1,8 +1,16 @@
-
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Code, Database, Layout, Smartphone } from 'lucide-react';
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import {
+  AtSign,
+  Code,
+  Database,
+  Github,
+  Layout,
+  MapPin,
+  PhoneCall,
+  Smartphone,
+} from "lucide-react";
 
 interface Skill {
   name: string;
@@ -17,71 +25,80 @@ interface Category {
 
 const skills: Category[] = [
   {
-    name: 'Frontend',
+    name: "Frontend",
     icon: <Layout className="h-6 w-6" />,
     skills: [
-      { name: 'HTML/CSS', level: 95 },
-      { name: 'JavaScript', level: 92 },
-      { name: 'React', level: 90 },
-      { name: 'Vue.js', level: 75 },
-      { name: 'TypeScript', level: 85 }
-    ]
+      { name: "HTML/CSS", level: 95 },
+      { name: "JavaScript", level: 92 },
+      { name: "React", level: 90 },
+      { name: "Vue.js", level: 75 },
+      { name: "TypeScript", level: 85 },
+    ],
   },
   {
-    name: 'Backend',
+    name: "Backend",
     icon: <Database className="h-6 w-6" />,
     skills: [
-      { name: 'Node.js', level: 88 },
-      { name: 'Express', level: 85 },
-      { name: 'Python', level: 78 },
-      { name: 'PHP', level: 70 },
-      { name: 'SQL', level: 82 }
-    ]
+      { name: "Node.js", level: 88 },
+      { name: "Express", level: 85 },
+      { name: "Python", level: 78 },
+      { name: "PHP", level: 70 },
+      { name: "SQL", level: 82 },
+    ],
   },
   {
-    name: 'Mobile',
+    name: "Mobile",
     icon: <Smartphone className="h-6 w-6" />,
     skills: [
-      { name: 'React Native', level: 85 },
-      { name: 'Flutter', level: 70 },
-      { name: 'Swift', level: 60 },
-      { name: 'Kotlin', level: 55 }
-    ]
+      { name: "React Native", level: 85 },
+      { name: "Flutter", level: 70 },
+      { name: "Swift", level: 60 },
+      { name: "Kotlin", level: 55 },
+    ],
   },
   {
-    name: 'Other',
+    name: "Other",
     icon: <Code className="h-6 w-6" />,
     skills: [
-      { name: 'Git/GitHub', level: 90 },
-      { name: 'Docker', level: 75 },
-      { name: 'CI/CD', level: 72 },
-      { name: 'Agile/Scrum', level: 85 },
-      { name: 'UI/UX Design', level: 80 }
-    ]
-  }
+      { name: "Git/GitHub", level: 90 },
+      { name: "Docker", level: 75 },
+      { name: "CI/CD", level: 72 },
+      { name: "Agile/Scrum", level: 85 },
+      { name: "UI/UX Design", level: 80 },
+    ],
+  },
 ];
 
 const AboutSection = () => {
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Chi sono</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+              Chi sono
+            </h2>
             <p className="text-foreground/70 mb-6">
-              Sono Elia Zavatta, laureato in scienze ed ingegneria informatica a Bologna. Lavoro da anni come sviluppatore full-stack, creando soluzioni web e mobile di alta qualità.
+              Sono Elia Zavatta, laureato in scienze ed ingegneria informatica a
+              Bologna. Lavoro da anni come sviluppatore full-stack, creando
+              soluzioni web e mobile di alta qualità.
             </p>
             <p className="text-foreground/70 mb-6">
-              Il mio approccio allo sviluppo si concentra sulla creazione di esperienze utente intuitive e performanti, combinando design accattivante e codice pulito ed efficiente.
+              Il mio approccio allo sviluppo si concentra sulla creazione di
+              esperienze utente intuitive e performanti, combinando design
+              accattivante e codice pulito ed efficiente.
             </p>
             <p className="text-foreground/70 mb-8">
-              Quando non sto programmando, mi dedico all'apprendimento di nuove tecnologie e alla gestione di progetti di vendita online e property management.
+              Quando non sto programmando, mi dedico all'apprendimento di nuove
+              tecnologie e alla gestione di progetti di vendita online e
+              property management.
             </p>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+            {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
               <div className="bg-secondary rounded-lg p-4">
                 <span className="text-3xl font-bold text-primary">50+</span>
-                <p className="text-sm text-foreground/70">progetti completati</p>
+                <p className="text-sm text-foreground/70">
+                  progetti completati
+                </p>
               </div>
               <div className="bg-secondary rounded-lg p-4">
                 <span className="text-3xl font-bold text-primary">5+</span>
@@ -89,40 +106,74 @@ const AboutSection = () => {
               </div>
               <div className="bg-secondary rounded-lg p-4">
                 <span className="text-3xl font-bold text-primary">20+</span>
-                <p className="text-sm text-foreground/70">clienti soddisfatti</p>
+                <p className="text-sm text-foreground/70">
+                  clienti soddisfatti
+                </p>
               </div>
               <div className="bg-secondary rounded-lg p-4">
                 <span className="text-3xl font-bold text-primary">10+</span>
-                <p className="text-sm text-foreground/70">contributi open source</p>
+                <p className="text-sm text-foreground/70">
+                  contributi open source
+                </p>
               </div>
-            </div>
+            </div> */}
           </div>
-          
-          <div className="order-1 lg:order-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {skills.map((category, index) => (
-                <Card key={index} className="card-hover border-0">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="rounded-lg bg-primary/10 p-2 text-primary">
-                        {category.icon}
-                      </div>
-                      <h3 className="text-xl font-semibold">{category.name}</h3>
-                    </div>
-                    <div className="space-y-4">
-                      {category.skills.map((skill, idx) => (
-                        <div key={idx}>
-                          <div className="flex justify-between mb-1">
-                            <span className="text-sm font-medium">{skill.name}</span>
-                            <span className="text-sm text-foreground/70">{skill.level}%</span>
-                          </div>
-                          <Progress value={skill.level} className="h-2" />
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+              Informazioni di contatto
+            </h2>
+            <p className="text-foreground/70 mb-8">
+              Preferisci contattarmi direttamente? Ecco i miei recapiti. Sarò
+              felice di risponderti al più presto.
+            </p>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-3 text-primary">
+                  <AtSign className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium">Email</h4>
+                  <a
+                    href="mailto:zavattaelia@gmail.com"
+                    className="text-foreground/70 hover:text-primary"
+                  >
+                    zavattaelia@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-3 text-primary">
+                  <PhoneCall className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium">Telefono</h4>
+                  <a
+                    href="tel:+393938932793"
+                    className="text-foreground/70 hover:text-primary"
+                  >
+                    +39 393 893 2793
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-3 text-primary">
+                  <Github className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium">GitHub</h4>
+                  <a
+                    href="https://github.com/eliazv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/70 hover:text-primary"
+                  >
+                    github.com/eliazv
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
