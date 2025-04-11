@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { AtSign, MapPin, PhoneCall, Send } from 'lucide-react';
+import { AtSign, MapPin, PhoneCall, Send, Github } from 'lucide-react';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -151,8 +151,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">Email</h4>
-                    <a href="mailto:info@example.com" className="text-foreground/70 hover:text-primary">
-                      info@example.com
+                    <a href="mailto:zavattaelia@gmail.com" className="text-foreground/70 hover:text-primary">
+                      zavattaelia@gmail.com
                     </a>
                   </div>
                 </div>
@@ -163,8 +163,20 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">Telefono</h4>
-                    <a href="tel:+391234567890" className="text-foreground/70 hover:text-primary">
-                      +39 123 456 7890
+                    <a href="tel:+393938932793" className="text-foreground/70 hover:text-primary">
+                      +39 393 893 2793
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-primary/10 p-3 text-primary">
+                    <Github className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium">GitHub</h4>
+                    <a href="https://github.com/eliazv" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary">
+                      github.com/eliazv
                     </a>
                   </div>
                 </div>
@@ -176,7 +188,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="text-lg font-medium">Sede</h4>
                     <p className="text-foreground/70">
-                      Milano, Italia
+                      Bologna, Italia
                     </p>
                   </div>
                 </div>

@@ -11,7 +11,7 @@ import CustomCursor from '@/components/CustomCursor';
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = "Portfolio - Sviluppatore Full Stack";
+    document.title = "Elia Zavatta - Full Stack Developer";
     
     // Add smooth scrolling for anchor links
     const handleAnchorClick = (e: MouseEvent) => {

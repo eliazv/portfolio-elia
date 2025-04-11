@@ -39,15 +39,15 @@ const HeroSection = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="inline-block bg-secondary rounded-full px-4 py-2 text-sm font-medium mb-6 animate-fade-in">
-            <span className="text-foreground/70">Sviluppatore full-stack</span>
+            <span className="text-foreground/70">Full Stack Developer</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading mb-6 animate-fade-in" style={{animationDelay: '0.1s'}}>
-            Trasformo <span className="text-gradient">idee</span> in <span className="text-gradient">esperienze digitali</span>
+            Elia <span className="text-gradient">Zavatta</span>
           </h1>
           
           <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Sono uno sviluppatore specializzato nella creazione di applicazioni web e mobili di alta qualità, con un focus sull'esperienza utente e le soluzioni innovative.
+            Laureato in scienze ed ingegneria informatica a Bologna, lavoro da anni come full stack developer specializzato nella creazione di applicazioni web di alta qualità.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: '0.3s'}}>
@@ -61,7 +61,7 @@ const HeroSection = () => {
           </div>
           
           <div className="flex items-center gap-6 mt-12 animate-fade-in" style={{animationDelay: '0.4s'}}>
-            <a href="#" className="text-foreground/70 hover:text-primary transition-colors">
+            <a href="https://github.com/eliazv" className="text-foreground/70 hover:text-primary transition-colors">
               <Github className="h-6 w-6" />
             </a>
             <a href="#" className="text-foreground/70 hover:text-primary transition-colors">

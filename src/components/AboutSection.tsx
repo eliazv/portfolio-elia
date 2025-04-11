@@ -69,13 +69,13 @@ const AboutSection = () => {
           <div className="order-2 lg:order-1">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Chi sono</h2>
             <p className="text-foreground/70 mb-6">
-              Sono uno sviluppatore full-stack appassionato di tecnologia e innovazione. Con oltre 5 anni di esperienza nel settore, ho lavorato con diverse tecnologie e framework per creare soluzioni web e mobile di alta qualità.
+              Sono Elia Zavatta, laureato in scienze ed ingegneria informatica a Bologna. Lavoro da anni come sviluppatore full-stack, creando soluzioni web e mobile di alta qualità.
             </p>
             <p className="text-foreground/70 mb-6">
               Il mio approccio allo sviluppo si concentra sulla creazione di esperienze utente intuitive e performanti, combinando design accattivante e codice pulito ed efficiente.
             </p>
             <p className="text-foreground/70 mb-8">
-              Quando non sto programmando, mi dedico all'apprendimento di nuove tecnologie, alla partecipazione a hackathon e alla condivisione delle mie conoscenze attraverso articoli e contributi open source.
+              Quando non sto programmando, mi dedico all'apprendimento di nuove tecnologie e alla gestione di progetti di vendita online e property management.
             </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,8 +7,8 @@ import { ExternalLink, Github, Maximize } from 'lucide-react';
 import X from '@/components/X';
 
 // Project type definition
-type Technology = 'React' | 'Node.js' | 'TypeScript' | 'MongoDB' | 'Next.js' | 'TailwindCSS' | 'GraphQL' | 'Flutter' | 'Firebase';
-type Category = 'Web' | 'Mobile' | 'UI/UX' | 'Full-Stack';
+type Technology = 'React' | 'Node.js' | 'TypeScript' | 'MongoDB' | 'Next.js' | 'TailwindCSS' | 'GraphQL' | 'Flutter' | 'Firebase' | 'WordPress' | 'PHP';
+type Category = 'Web' | 'Mobile' | 'E-commerce' | 'Property Management';
 
 interface Project {
   id: number;
@@ -23,63 +24,60 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "Piattaforma di e-commerce completa con gestione prodotti, carrello, checkout e integrazioni di pagamento.",
+    title: "Maraffa",
+    description: "Sito web sviluppato per un cliente, con interfaccia moderna e responsive.",
     image: "https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    category: 'Full-Stack',
-    githubUrl: "#",
+    technologies: ['WordPress', 'PHP', 'TailwindCSS'],
+    category: 'Web',
     demoUrl: "#"
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Applicazione di gestione attività con funzionalità di drag-and-drop, notifiche e condivisione team.",
-    image: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: ['TypeScript', 'React', 'Firebase'],
-    category: 'Web',
-    githubUrl: "#",
+    title: "Appartamento",
+    description: "Piattaforma di presentazione per appartamento in affitto con galleria foto e form di contatto.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
+    technologies: ['React', 'TypeScript', 'TailwindCSS'],
+    category: 'Property Management',
+    githubUrl: "https://github.com/eliazv",
     demoUrl: "#"
   },
   {
     id: 3,
-    title: "Social Media Dashboard",
-    description: "Dashboard per la gestione di account social media con analisi, programmazione post e reporting.",
+    title: "Globo",
+    description: "Sito web con mappa interattiva e sistema di navigazione avanzato per esplorare contenuti geografici.",
     image: "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
-    technologies: ['Next.js', 'TailwindCSS', 'GraphQL'],
-    category: 'UI/UX',
-    githubUrl: "#",
+    technologies: ['React', 'Next.js', 'MongoDB'],
+    category: 'Web',
+    githubUrl: "https://github.com/eliazv",
     demoUrl: "#"
   },
   {
     id: 4,
-    title: "Fitness Tracker Mobile App",
-    description: "App mobile per tracciare allenamenti, nutrizione e progressi fitness con sincronizzazione cloud.",
-    image: "https://images.unsplash.com/photo-1510511233900-1982d92bd835?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: ['Flutter', 'Firebase'],
-    category: 'Mobile',
-    githubUrl: "#",
+    title: "Diario",
+    description: "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
+    image: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
+    technologies: ['TypeScript', 'Node.js', 'MongoDB'],
+    category: 'Web',
+    githubUrl: "https://github.com/eliazv",
     demoUrl: "#"
   },
   {
     id: 5,
-    title: "Real Estate Platform",
-    description: "Piattaforma immobiliare con ricerca, filtri, mappa interattiva e sistema di prenotazione visite.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    category: 'Full-Stack',
-    githubUrl: "#",
-    demoUrl: "#"
+    title: "Vendita Online",
+    description: "Sistema integrato per la gestione di vendite su Vinted ed eBay con tracking e analytics.",
+    image: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    technologies: ['React', 'Node.js', 'Firebase'],
+    category: 'E-commerce',
+    githubUrl: "https://github.com/eliazv"
   },
   {
     id: 6,
-    title: "Weather App",
-    description: "Applicazione meteo con previsioni dettagliate, notifiche e visualizzazione dati interattiva.",
-    image: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
-    technologies: ['TypeScript', 'React', 'TailwindCSS'],
-    category: 'Web',
-    githubUrl: "#",
-    demoUrl: "#"
+    title: "Gestione Airbnb/Booking",
+    description: "Dashboard per la gestione di proprietà su piattaforme di affitto con sincronizzazione calendari e analisi prenotazioni.",
+    image: "https://images.unsplash.com/photo-1510511233900-1982d92bd835?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    technologies: ['Next.js', 'TailwindCSS', 'MongoDB'],
+    category: 'Property Management',
+    githubUrl: "https://github.com/eliazv"
   }
 ];
 
@@ -87,7 +85,7 @@ const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
   
-  const categories: (Category | 'All')[] = ['All', 'Web', 'Mobile', 'UI/UX', 'Full-Stack'];
+  const categories: (Category | 'All')[] = ['All', 'Web', 'Mobile', 'E-commerce', 'Property Management'];
   
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
@@ -99,7 +97,7 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">I miei progetti</h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Una selezione dei miei lavori recenti che mostrano le mie competenze in vari campi dello sviluppo web e mobile.
+            Una selezione dei miei lavori recenti che mostrano le mie competenze in vari campi dello sviluppo web e gestione progetti.
           </p>
           
           <div className="flex flex-wrap justify-center gap-2 mt-8">
