@@ -81,7 +81,7 @@ const AboutSection = () => {
             <p className="text-foreground/70 mb-6">
               Sono Elia Zavatta, laureato in scienze ed ingegneria informatica a
               Bologna. Lavoro da anni come sviluppatore full-stack, creando
-              soluzioni web e mobile di alta qualità.
+              soluzioni web e mobile.
             </p>
             <p className="text-foreground/70 mb-6">
               Il mio approccio allo sviluppo si concentra sulla creazione di

@@ -17,6 +17,7 @@ type Technology =
   | "Flutter"
   | "Firebase"
   | "WordPress"
+  | "Vite"
   | "PHP";
 type Category =
   | "Web"
@@ -34,6 +35,7 @@ interface Project {
   category: Category;
   githubUrl?: string;
   demoUrl?: string;
+  contactBtn?: boolean;
 }
 
 const projects: Project[] = [
@@ -41,36 +43,34 @@ const projects: Project[] = [
     id: 1,
     title: "Maraffa",
     description:
-      "Sito web sviluppato per un cliente, con interfaccia moderna e responsive.",
+      "Applicazione web che permette di giocare al gioco della maraffa romagnola, con interfaccia moderna e responsive.",
     image:
-      "https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
-    technologies: ["WordPress", "PHP", "TailwindCSS"],
+      "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
     demoUrl: "#",
   },
   {
     id: 2,
-    title: "Sito Appartamento",
+    title: "Sito Appartamento in Affitto",
     description:
-      "Piattaforma di presentazione per appartamento in affitto con galleria foto e form di contatto.",
+      "Ho sviluppato un sito web per il mio appartamento in affitto, completo di galleria fotografica, descrizione dettagliata e form di contatto per le richieste dirette.",
     image:
       "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
-    technologies: ["React", "TypeScript", "TailwindCSS"],
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
-    githubUrl: "https://github.com/eliazv",
     demoUrl: "https://immerso-nella-pineta.lovable.app/",
   },
   {
     id: 3,
     title: "Globo Ricambi",
     description:
-      "Sito web con mappa interattiva e sistema di navigazione avanzato per esplorare contenuti geografici.",
+      "Sito web vetrina sviluppato per una piccola attività di ricambi auto, con layout moderno e responsivo per presentare i servizi e i contatti.",
     image:
-      "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
-    technologies: ["React", "Next.js", "MongoDB"],
+      "https://globoricambi.weebly.com/uploads/1/1/6/5/116531585/img-20200505-154043_orig.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
-    githubUrl: "https://github.com/eliazv",
-    demoUrl: "#",
+    demoUrl: "https://globo-ricambi-webshop.lovable.app/",
   },
   {
     id: 4,
@@ -78,33 +78,33 @@ const projects: Project[] = [
     description:
       "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
     image:
-      "https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
-    technologies: ["TypeScript", "Node.js", "MongoDB"],
+      "https://www.quotus.it/wp-content/uploads/2016/08/quotus-blog-7-buoni-motivi-per-iniziare-subito-a-scrivere-un-diario-personale.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
-    githubUrl: "https://github.com/eliazv",
+    githubUrl: "https://github.com/eliazv/minima-diary",
     demoUrl: "https://minima-diary.lovable.app/",
   },
   {
     id: 5,
     title: "Vendita Online",
     description:
-      "Sistema integrato per la gestione di vendite su Vinted ed eBay con tracking e analytics.",
+      "Esperienza diretta nella vendita online tramite portali come eBay e Vinted, con gestione di spedizioni, comunicazione clienti e ottimizzazione delle inserzioni.",
     image:
-      "https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["React", "Node.js", "Firebase"],
+      "https://www.pixartprinting.it/blog/wp-content/uploads/2021/10/Siti_Vendita_On_Line.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    technologies: [],
     category: "Altro",
-    githubUrl: "https://github.com/eliazv",
+    contactBtn: true,
   },
   {
     id: 6,
     title: "Property Management",
     description:
-      "Gestione di proprietà su piattaforme di affitto con sincronizzazione calendari e analisi prenotazioni.",
+      "Gestisco direttamente appartamenti su piattaforme come Airbnb e Booking, occupandomi di sincronizzazione calendari, comunicazione con gli ospiti e ottimizzazione delle performance.",
     image:
-      "https://images.unsplash.com/photo-1510511233900-1982d92bd835?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: ["Next.js", "TailwindCSS", "MongoDB"],
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE3-BLfV4xJDgA05snZ2RAC4-nEk6zOCrmMw&s?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    technologies: [],
     category: "Altro",
-    githubUrl: "https://github.com/eliazv",
+    contactBtn: true,
   },
 ];
 
@@ -212,7 +212,18 @@ const ProjectsSection = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
                       >
-                        <ExternalLink className="mr-1 h-4 w-4" /> Demo
+                        <ExternalLink className="mr-1 h-4 w-4" /> Sito
+                      </a>
+                    </Button>
+                  )}
+
+                  {project.contactBtn && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a
+                        href="mailto:zavattaelia@gmail.com"
+                        className="inline-flex items-center"
+                      >
+                        Contattami
                       </a>
                     </Button>
                   )}

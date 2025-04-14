@@ -45,7 +45,15 @@ const Header = () => {
               {item.name}
             </a>
           ))}
-          <Button>Parliamo</Button>
+          <Button asChild>
+            <a
+              href="https://wa.me/393938932793"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Parliamo
+            </a>
+          </Button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -71,8 +79,14 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Button className="mt-2" onClick={() => setIsMobileMenuOpen(false)}>
-              Parliamo
+            <Button className="mt-2" asChild>
+              <a
+                href="https://wa.me/393938932793"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Parliamo
+              </a>
             </Button>
           </nav>
         </div>

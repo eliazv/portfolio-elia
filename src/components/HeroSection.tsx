@@ -68,7 +68,7 @@ const HeroSection = () => {
           >
             Laureato in scienze ed ingegneria informatica a Bologna, lavoro da
             anni come full stack developer specializzato nella creazione di
-            applicazioni web di alta qualità.
+            applicazioni web.
           </p>
 
           <div
