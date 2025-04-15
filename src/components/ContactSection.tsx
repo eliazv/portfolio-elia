@@ -228,7 +228,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">Sede</h4>
-                    <p className="text-foreground/70">Bologna, Italia</p>
+                    <p className="text-foreground/70">Cesena, Italia</p>
                   </div>
                 </div>
               </div>

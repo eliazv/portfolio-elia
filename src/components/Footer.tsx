@@ -28,14 +28,14 @@ const Footer = () => {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/eliazavatta/"
               className="text-foreground/70 hover:text-primary transition-colors"
             >
               <Linkedin className="h-5 w-5" />
             </a>
 
             <a
-              href="mailto:info@example.com"
+              href="mailto:zavattaelia@gmail.com"
               className="text-foreground/70 hover:text-primary transition-colors"
             >
               <Mail className="h-5 w-5" />
