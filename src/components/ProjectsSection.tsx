@@ -3,7 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Maximize } from "lucide-react";
-import X from "@/components/X";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 // Project type definition
 type Technology =
@@ -109,17 +115,13 @@ const projects: Project[] = [
 ];
 
 const ProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<Category | "All">(
-    "All"
-  );
-  const [expandedProject, setExpandedProject] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<Category | "All">("All");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories: (Category | "All")[] = [
     "All",
     "Web",
     "Altro",
-    // "E-commerce",
-    // "Property Management",
   ];
 
   const filteredProjects =
@@ -169,8 +171,8 @@ const ProjectsSection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
                 <button
-                  onClick={() => setExpandedProject(project.id)}
-                  className="absolute top-2 right-2 p-2 bg-background/80 backdrop-blur-sm rounded-full"
+                  onClick={() => setSelectedProject(project)}
+                  className="absolute top-2 right-2 p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background/90 transition-colors"
                 >
                   <Maximize className="h-4 w-4" />
                 </button>
@@ -233,84 +235,65 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {expandedProject && (
-          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
-            <div className="bg-card max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg shadow-xl">
-              <div className="relative">
-                <button
-                  onClick={() => setExpandedProject(null)}
-                  className="absolute top-4 right-4 p-2 bg-background/50 backdrop-blur-sm rounded-full z-10"
-                >
-                  <X className="h-5 w-5" />
-                </button>
+        <Dialog open={selectedProject !== null} onOpenChange={(open) => !open && setSelectedProject(null)}>
+          {selectedProject && (
+            <DialogContent className="max-w-4xl w-full">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold">
+                  {selectedProject.title}
+                </DialogTitle>
+              </DialogHeader>
+              
+              <div className="relative w-full h-72">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
 
-                {projects.find((p) => p.id === expandedProject)?.image && (
-                  <img
-                    src={projects.find((p) => p.id === expandedProject)?.image}
-                    alt={projects.find((p) => p.id === expandedProject)?.title}
-                    className="w-full h-72 object-cover"
-                  />
+              <div className="flex flex-wrap gap-2 my-4">
+                {selectedProject.technologies.map((tech) => (
+                  <Badge key={tech} variant="secondary">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+
+              <DialogDescription className="text-foreground text-base">
+                {selectedProject.description}
+              </DialogDescription>
+
+              <div className="flex gap-4 mt-6">
+                {selectedProject.githubUrl && (
+                  <Button variant="outline" asChild>
+                    <a
+                      href={selectedProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center"
+                    >
+                      <Github className="mr-2 h-4 w-4" /> Visualizza codice
+                    </a>
+                  </Button>
+                )}
+
+                {selectedProject.demoUrl && (
+                  <Button asChild>
+                    <a
+                      href={selectedProject.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" /> Visualizza demo
+                    </a>
+                  </Button>
                 )}
               </div>
-
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">
-                  {projects.find((p) => p.id === expandedProject)?.title}
-                </h3>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {projects
-                    .find((p) => p.id === expandedProject)
-                    ?.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                </div>
-
-                <p className="text-foreground/70 mb-6">
-                  {projects.find((p) => p.id === expandedProject)?.description}
-                </p>
-
-                <div className="flex gap-4">
-                  {projects.find((p) => p.id === expandedProject)
-                    ?.githubUrl && (
-                    <Button variant="outline" asChild>
-                      <a
-                        href={
-                          projects.find((p) => p.id === expandedProject)
-                            ?.githubUrl
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center"
-                      >
-                        <Github className="mr-2 h-4 w-4" /> Visualizza codice
-                      </a>
-                    </Button>
-                  )}
-
-                  {projects.find((p) => p.id === expandedProject)?.demoUrl && (
-                    <Button asChild>
-                      <a
-                        href={
-                          projects.find((p) => p.id === expandedProject)
-                            ?.demoUrl
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" /> Visualizza
-                        demo
-                      </a>
-                    </Button>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+            </DialogContent>
+          )}
+        </Dialog>
       </div>
     </section>
   );
