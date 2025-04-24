@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 
 // Project type definition
@@ -128,13 +130,18 @@ const ProjectsSection = () => {
     selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+      
+  const openProjectDetails = (project: Project) => {
+    setSelectedProject(project);
+  };
 
   return (
     <section id="projects" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
-            I miei progetti
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block">
+            <span className="relative z-10">I miei progetti</span>
+            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
           </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
             Una selezione dei miei lavori recenti che mostrano le mie competenze
@@ -146,9 +153,9 @@ const ProjectsSection = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full transition-colors ${
+                className={`px-4 py-2 rounded-full transition-all duration-300 transform ${
                   selectedCategory === category
-                    ? "bg-primary text-white"
+                    ? "bg-primary text-white scale-105 shadow-md"
                     : "bg-background hover:bg-primary/10"
                 }`}
               >
@@ -158,11 +165,11 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
           {filteredProjects.map((project) => (
             <Card
               key={project.id}
-              className="overflow-hidden card-hover border-0"
+              className="overflow-hidden card-hover border-0 bg-background/50 backdrop-blur-sm"
             >
               <div className="relative h-52 overflow-hidden">
                 <img
@@ -171,8 +178,9 @@ const ProjectsSection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
                 <button
-                  onClick={() => setSelectedProject(project)}
-                  className="absolute top-2 right-2 p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background/90 transition-colors"
+                  onClick={() => openProjectDetails(project)}
+                  className="absolute top-2 right-2 p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background/90 transition-colors hover:scale-110 transform"
+                  aria-label="View project details"
                 >
                   <Maximize className="h-4 w-4" />
                 </button>
@@ -181,7 +189,7 @@ const ProjectsSection = () => {
               <CardContent className="p-6">
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary">
+                    <Badge key={tech} variant="secondary" className="animate-pulse-light">
                       {tech}
                     </Badge>
                   ))}
@@ -189,32 +197,34 @@ const ProjectsSection = () => {
 
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-foreground/70 text-sm mb-4">
-                  {project.description}
+                  {project.description.length > 100 
+                    ? `${project.description.substring(0, 100)}...` 
+                    : project.description}
                 </p>
 
                 <div className="flex gap-3">
                   {project.githubUrl && (
-                    <Button variant="outline" size="sm" asChild>
+                    <Button variant="outline" size="sm" asChild className="group">
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
                       >
-                        <Github className="mr-1 h-4 w-4" /> Codice
+                        <Github className="mr-1 h-4 w-4 group-hover:rotate-12 transition-transform" /> Codice
                       </a>
                     </Button>
                   )}
 
                   {project.demoUrl && (
-                    <Button size="sm" asChild>
+                    <Button size="sm" asChild className="group">
                       <a
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
                       >
-                        <ExternalLink className="mr-1 h-4 w-4" /> Sito
+                        <ExternalLink className="mr-1 h-4 w-4 group-hover:translate-x-1 transition-transform" /> Sito
                       </a>
                     </Button>
                   )}
@@ -244,17 +254,17 @@ const ProjectsSection = () => {
                 </DialogTitle>
               </DialogHeader>
               
-              <div className="relative w-full h-72">
+              <div className="relative w-full h-72 overflow-hidden rounded-lg">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-full object-cover rounded-md transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               <div className="flex flex-wrap gap-2 my-4">
                 {selectedProject.technologies.map((tech) => (
-                  <Badge key={tech} variant="secondary">
+                  <Badge key={tech} variant="secondary" className="animate-pulse-light">
                     {tech}
                   </Badge>
                 ))}
@@ -266,27 +276,38 @@ const ProjectsSection = () => {
 
               <div className="flex gap-4 mt-6">
                 {selectedProject.githubUrl && (
-                  <Button variant="outline" asChild>
+                  <Button variant="outline" asChild className="group">
                     <a
                       href={selectedProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center"
                     >
-                      <Github className="mr-2 h-4 w-4" /> Visualizza codice
+                      <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" /> Visualizza codice
                     </a>
                   </Button>
                 )}
 
                 {selectedProject.demoUrl && (
-                  <Button asChild>
+                  <Button asChild className="group">
                     <a
                       href={selectedProject.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center"
                     >
-                      <ExternalLink className="mr-2 h-4 w-4" /> Visualizza demo
+                      <ExternalLink className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" /> Visualizza demo
+                    </a>
+                  </Button>
+                )}
+
+                {selectedProject.contactBtn && (
+                  <Button variant="outline" asChild>
+                    <a
+                      href="mailto:zavattaelia@gmail.com"
+                      className="inline-flex items-center"
+                    >
+                      Contattami per maggiori informazioni
                     </a>
                   </Button>
                 )}
