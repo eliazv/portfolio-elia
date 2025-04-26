@@ -48,14 +48,14 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Maraffa",
+    title: "Maraffa, gioco di carte",
     description:
-      "Applicazione web che permette di giocare al gioco della maraffa romagnola, con interfaccia moderna e responsive.",
+      "Applicazione web che permette di giocare al gioco della maraffa romagnola, con interfaccia moderna e responsive. Progetto ancora in sviluppo.",
     image:
       "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
-    // demoUrl: "#",
+    demoUrl: "https://maraffa-romagnola-72.lovable.app/",
   },
   {
     id: 2,
