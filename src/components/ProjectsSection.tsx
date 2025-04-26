@@ -59,9 +59,9 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Sito Appartamento in Affitto",
+    title: "Casa Vacanze in Affitto",
     description:
-      "Ho sviluppato un sito web per il mio appartamento in affitto, completo di galleria fotografica, descrizione dettagliata e form di contatto per le richieste dirette.",
+      "Ho sviluppato un sito web per una casa vacanze in affitto, completo di galleria fotografica, descrizione dettagliata e form di contatto per le richieste dirette. Inoltre c'è una sezione privata per controllare e le prenotazioni",
     image:
       "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
@@ -81,7 +81,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Diario",
+    title: "Diario personale",
     description:
       "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
     image:
@@ -116,24 +116,27 @@ const projects: Project[] = [
 ];
 
 const ProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<Category | "All">(
-    "All"
-  );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories: (Category | "All")[] = ["All", "Web", "Altro"];
+  const projectsByCategory: Record<Category, Project[]> = projects.reduce(
+    (acc, project) => {
+      if (!acc[project.category]) {
+        acc[project.category] = [];
+      }
+      acc[project.category].push(project);
+      return acc;
+    },
+    {} as Record<Category, Project[]>
+  );
 
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+  const categoryOrder: Category[] = ["Web", "Altro"];
 
   const openProjectDetails = (project: Project) => {
     setSelectedProject(project);
   };
 
   return (
-    <section id="projects" className="py-20 bg-secondary/50">
+    <section id="projects" className="py-10 bg-secondary/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block">
@@ -144,118 +147,109 @@ const ProjectsSection = () => {
             Una selezione dei miei lavori recenti che mostrano le mie competenze
             in vari campi dello sviluppo web e gestione progetti.
           </p>
-
-          <div className="flex flex-wrap justify-center gap-2 mt-8">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full transition-all duration-300 transform ${
-                  selectedCategory === category
-                    ? "bg-primary text-white scale-105 shadow-md"
-                    : "bg-background hover:bg-primary/10"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
-          {filteredProjects.map((project) => (
-            <Card
-              key={project.id}
-              className="overflow-hidden card-hover border-0 bg-background/50 backdrop-blur-sm"
-            >
-              <div className="relative h-52 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-                <button
-                  onClick={() => openProjectDetails(project)}
-                  className="absolute top-2 right-2 p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background/90 transition-colors hover:scale-110 transform"
-                  aria-label="View project details"
-                >
-                  <Maximize className="h-4 w-4" />
-                </button>
-              </div>
+        {categoryOrder.map(
+          (category) =>
+            projectsByCategory[category] &&
+            projectsByCategory[category].length > 0 && (
+              <div key={category} className="mb-20">
+                <h3 className="text-2xl font-bold mb-8 border-b pb-2">
+                  {category}
+                </h3>
 
-              <CardContent className="p-6">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.technologies.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="animate-pulse-light"
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in">
+                  {projectsByCategory[category].map((project) => (
+                    <Card
+                      key={project.id}
+                      className="overflow-hidden card-hover border-0 bg-background/50 backdrop-blur-sm cursor-pointer"
+                      onClick={() => openProjectDetails(project)}
                     >
-                      {tech}
-                    </Badge>
+                      <div className="relative h-40 overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                        <div
+                          className="absolute top-2 right-2 p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background/90 transition-colors hover:scale-110 transform"
+                          aria-label="View project details"
+                        >
+                          <Maximize className="h-4 w-4" />
+                        </div>
+                      </div>
+
+                      <CardContent className="p-4">
+                        <h3 className="text-lg font-semibold mb-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-foreground/70 text-xs mb-3 line-clamp-2">
+                          {project.description}
+                        </p>
+
+                        <div className="flex gap-2">
+                          {project.githubUrl && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              asChild
+                              className="group h-8"
+                            >
+                              <a
+                                href={project.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-xs"
+                              >
+                                <Github className="mr-1 h-3 w-3 group-hover:rotate-12 transition-transform" />{" "}
+                                Codice
+                              </a>
+                            </Button>
+                          )}
+
+                          {project.demoUrl && (
+                            <Button size="sm" asChild className="group h-8">
+                              <a
+                                href={project.demoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-xs"
+                              >
+                                <ExternalLink className="mr-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />{" "}
+                                Sito
+                              </a>
+                            </Button>
+                          )}
+
+                          {project.contactBtn && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              asChild
+                              className="h-8"
+                            >
+                              <a
+                                href="mailto:zavattaelia@gmail.com"
+                                className="inline-flex items-center text-xs"
+                              >
+                                Contattami
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
                   ))}
                 </div>
-
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-foreground/70 text-sm mb-4">
-                  {project.description.length > 100
-                    ? `${project.description.substring(0, 100)}...`
-                    : project.description}
-                </p>
-
-                <div className="flex gap-3">
-                  {project.githubUrl && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="group"
-                    >
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center"
-                      >
-                        <Github className="mr-1 h-4 w-4 group-hover:rotate-12 transition-transform" />{" "}
-                        Codice
-                      </a>
-                    </Button>
-                  )}
-
-                  {project.demoUrl && (
-                    <Button size="sm" asChild className="group">
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center"
-                      >
-                        <ExternalLink className="mr-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />{" "}
-                        Sito
-                      </a>
-                    </Button>
-                  )}
-
-                  {project.contactBtn && (
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href="mailto:zavattaelia@gmail.com"
-                        className="inline-flex items-center"
-                      >
-                        Contattami
-                      </a>
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+              </div>
+            )
+        )}
 
         <Dialog
           open={selectedProject !== null}
-          onOpenChange={(open) => !open && setSelectedProject(null)}
+          onOpenChange={(open) => {
+            if (!open) setSelectedProject(null);
+          }}
         >
           {selectedProject && (
             <DialogContent className="max-w-4xl w-full">
