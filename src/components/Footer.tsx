@@ -72,13 +72,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <button
+      {/* <button
         onClick={scrollToTop}
         className="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/80 transition-colors"
         aria-label="Torna su"
       >
         <ArrowUp className="h-5 w-5" />
-      </button>
+      </button> */}
     </footer>
   );
 };

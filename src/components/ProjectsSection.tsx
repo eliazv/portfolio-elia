@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,7 +55,7 @@ const projects: Project[] = [
       "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
-    demoUrl: "#",
+    // demoUrl: "#",
   },
   {
     id: 2,
@@ -117,20 +116,18 @@ const projects: Project[] = [
 ];
 
 const ProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<Category | "All">("All");
+  const [selectedCategory, setSelectedCategory] = useState<Category | "All">(
+    "All"
+  );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories: (Category | "All")[] = [
-    "All",
-    "Web",
-    "Altro",
-  ];
+  const categories: (Category | "All")[] = ["All", "Web", "Altro"];
 
   const filteredProjects =
     selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
-      
+
   const openProjectDetails = (project: Project) => {
     setSelectedProject(project);
   };
@@ -189,7 +186,11 @@ const ProjectsSection = () => {
               <CardContent className="p-6">
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="animate-pulse-light">
+                    <Badge
+                      key={tech}
+                      variant="secondary"
+                      className="animate-pulse-light"
+                    >
                       {tech}
                     </Badge>
                   ))}
@@ -197,21 +198,27 @@ const ProjectsSection = () => {
 
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-foreground/70 text-sm mb-4">
-                  {project.description.length > 100 
-                    ? `${project.description.substring(0, 100)}...` 
+                  {project.description.length > 100
+                    ? `${project.description.substring(0, 100)}...`
                     : project.description}
                 </p>
 
                 <div className="flex gap-3">
                   {project.githubUrl && (
-                    <Button variant="outline" size="sm" asChild className="group">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      asChild
+                      className="group"
+                    >
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
                       >
-                        <Github className="mr-1 h-4 w-4 group-hover:rotate-12 transition-transform" /> Codice
+                        <Github className="mr-1 h-4 w-4 group-hover:rotate-12 transition-transform" />{" "}
+                        Codice
                       </a>
                     </Button>
                   )}
@@ -224,7 +231,8 @@ const ProjectsSection = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
                       >
-                        <ExternalLink className="mr-1 h-4 w-4 group-hover:translate-x-1 transition-transform" /> Sito
+                        <ExternalLink className="mr-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />{" "}
+                        Sito
                       </a>
                     </Button>
                   )}
@@ -245,7 +253,10 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <Dialog open={selectedProject !== null} onOpenChange={(open) => !open && setSelectedProject(null)}>
+        <Dialog
+          open={selectedProject !== null}
+          onOpenChange={(open) => !open && setSelectedProject(null)}
+        >
           {selectedProject && (
             <DialogContent className="max-w-4xl w-full">
               <DialogHeader>
@@ -253,7 +264,7 @@ const ProjectsSection = () => {
                   {selectedProject.title}
                 </DialogTitle>
               </DialogHeader>
-              
+
               <div className="relative w-full h-72 overflow-hidden rounded-lg">
                 <img
                   src={selectedProject.image}
@@ -264,7 +275,11 @@ const ProjectsSection = () => {
 
               <div className="flex flex-wrap gap-2 my-4">
                 {selectedProject.technologies.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="animate-pulse-light">
+                  <Badge
+                    key={tech}
+                    variant="secondary"
+                    className="animate-pulse-light"
+                  >
                     {tech}
                   </Badge>
                 ))}
@@ -283,7 +298,8 @@ const ProjectsSection = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center"
                     >
-                      <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" /> Visualizza codice
+                      <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />{" "}
+                      Visualizza codice
                     </a>
                   </Button>
                 )}
@@ -296,7 +312,8 @@ const ProjectsSection = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center"
                     >
-                      <ExternalLink className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" /> Visualizza demo
+                      <ExternalLink className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />{" "}
+                      Visualizza demo
                     </a>
                   </Button>
                 )}
