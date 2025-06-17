@@ -77,21 +77,23 @@ const AboutSection = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Chi sono
-            </h2>
+            </h2>{" "}
             <p className="text-foreground/70 mb-6">
-              Sono Elia Zavatta, laureato in scienze ed ingegneria informatica a
-              Cesena. Lavoro da anni come sviluppatore full-stack, creando
-              soluzioni web e mobile.
+              Sono Elia Zavatta, laureato in Scienze ed Ingegneria Informatica a
+              Cesena. Sono un web developer, una persona curiosa che ama capire
+              come funzionano le cose. Seguo e studio il mondo della tecnologia
+              da sempre.
             </p>
             <p className="text-foreground/70 mb-6">
-              Il mio approccio allo sviluppo si concentra sulla creazione di
-              esperienze utente intuitive e performanti, combinando design
-              accattivante e codice pulito ed efficiente.
+              Quello che mi motiva di più è metterci le mani dentro: nuovi
+              progetti, tecnologie che non conosco, problemi complessi da
+              risolvere. Mi piace analizzare come migliorare i processi e
+              trovare il modo giusto per semplificare le cose attraverso la
+              tecnologia.
             </p>
             <p className="text-foreground/70 mb-8">
-              Quando non sto programmando, mi dedico all'apprendimento di nuove
-              tecnologie e alla gestione di progetti di vendita online e
-              property management.
+              Quando non programmo, gioco a calcio e gestisco altri miei
+              progetti come e-commerce e property management.
             </p>
             {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
               <div className="bg-secondary rounded-lg p-4">
@@ -121,12 +123,12 @@ const AboutSection = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Informazioni di contatto
-            </h2>
+            </h2>{" "}
             <p className="text-foreground/70 mb-8">
-              Preferisci contattarmi direttamente? Ecco i miei recapiti. Sarò
-              felice di risponderti al più presto.
+              Hai un progetto interessante in mente? O magari vuoi confrontarti
+              su qualche aspetto tecnico? Sono sempre disponibile per una
+              chiacchierata e curioso di sentire nuove idee.
             </p>
-
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="rounded-full bg-primary/10 p-3 text-primary">

@@ -33,7 +33,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden"
+      className="relative pt-32 pb-10 md:pt-40 overflow-hidden"
       ref={heroRef}
     >
       <div className="hero-gradient absolute inset-0 -z-10"></div>
@@ -54,23 +54,19 @@ const HeroSection = () => {
           <div className="inline-block bg-secondary rounded-full px-4 py-2 text-sm font-medium mb-6 animate-fade-in">
             <span className="text-foreground/70">Full Stack Developer</span>
           </div>
-
           <h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading mb-6 animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
             Elia <span className="text-gradient">Zavatta</span>
-          </h1>
-
+          </h1>{" "}
           <p
             className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            Laureato in scienze ed ingegneria informatica a Cesena, lavoro da
-            anni come full stack developer specializzato nella creazione di
-            applicazioni web.
+            Studio i processi aziendali e creo soluzioni informatiche che fanno
+            davvero la differenza.
           </p>
-
           <div
             className="flex flex-col sm:flex-row gap-4 animate-fade-in"
             style={{ animationDelay: "0.3s" }}
@@ -87,7 +83,6 @@ const HeroSection = () => {
               </a>
             </Button>
           </div>
-
           <div
             className="flex items-center gap-6 mt-12 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
@@ -121,12 +116,6 @@ const HeroSection = () => {
               </svg>
             </a>
           </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-foreground/30 flex justify-center">
-          <div className="w-1.5 h-3 bg-foreground/30 rounded-full mt-1.5"></div>
         </div>
       </div>
     </section>
