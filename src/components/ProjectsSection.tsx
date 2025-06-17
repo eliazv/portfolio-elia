@@ -156,7 +156,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-10 bg-secondary/50">
+    <section id="projects" className="py-10 bg-secondary/30 section-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block">
@@ -164,7 +164,7 @@ const ProjectsSection = () => {
             <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
           </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Una selezione dei miei lavori recenti
+            Una selezione dei miei lavori
           </p>
         </div>
 
@@ -181,7 +181,7 @@ const ProjectsSection = () => {
                   {projectsByCategory[category].map((project) => (
                     <Card
                       key={project.id}
-                      className="overflow-hidden card-hover border-0 bg-background/50 backdrop-blur-sm cursor-pointer"
+                      className="overflow-hidden card-hover enhanced-card backdrop-blur-sm cursor-pointer"
                       onClick={() => openProjectDetails(project)}
                     >
                       {" "}

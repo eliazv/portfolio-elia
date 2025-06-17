@@ -75,16 +75,124 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Sfondo con pattern geometrico sottile e gradiente */
+    background: 
+      /* Pattern a punti sottili */ radial-gradient(
+        circle at 1px 1px,
+        rgba(59, 130, 246, 0.08) 1px,
+        transparent 0
+      ),
+      /* Gradiente principale */
+        linear-gradient(
+          135deg,
+          hsl(var(--background)) 0%,
+          hsl(222, 47%, 95%) 25%,
+          hsl(210, 40%, 96%) 50%,
+          hsl(220, 38%, 97%) 75%,
+          hsl(var(--background)) 100%
+        );
+    background-size: 50px 50px, 100% 100%;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* Pattern alternativo più sottile per il tema scuro */
+  .dark body {
+    background: radial-gradient(
+        circle at 1px 1px,
+        rgba(59, 130, 246, 0.05) 1px,
+        transparent 0
+      ),
+      linear-gradient(
+        135deg,
+        hsl(var(--background)) 0%,
+        hsl(222, 47%, 8%) 25%,
+        hsl(220, 45%, 10%) 50%,
+        hsl(218, 42%, 9%) 75%,
+        hsl(var(--background)) 100%
+      );
+    background-size: 60px 60px, 100% 100%;
   }
 }
 
 .hero-gradient {
+  background: 
+    /* Overlay con pattern più visibile nella hero */ radial-gradient(
+      circle at 25% 25%,
+      rgba(31, 86, 250, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(131, 93, 231, 0.12) 0%,
+      transparent 50%
+    ),
+    /* Gradiente principale della hero */
+      radial-gradient(
+        ellipse at center,
+        rgba(31, 86, 250, 0.08) 0%,
+        rgba(131, 93, 231, 0.06) 35%,
+        rgba(59, 130, 246, 0.04) 70%,
+        transparent 100%
+      );
+  /* Animazione sottile */
+  animation: subtle-pulse 8s ease-in-out infinite;
+}
+
+/* Animazione per il gradiente hero */
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+/* Sfondo per sezioni secondarie */
+.section-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      45deg,
+      transparent 40%,
+      rgba(59, 130, 246, 0.02) 50%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(131, 93, 231, 0.03) 0%,
+      transparent 50%
+    );
+  z-index: -1;
+}
+
+/* Pattern più definito per le card */
+.enhanced-card {
   background: radial-gradient(
-    circle at 50% 50%,
-    rgba(31, 86, 250, 0.1) 0%,
-    rgba(131, 93, 231, 0.07) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
+      circle at 100% 0%,
+      rgba(59, 130, 246, 0.05) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(248, 250, 252, 0.9) 100%
+    );
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .text-gradient {

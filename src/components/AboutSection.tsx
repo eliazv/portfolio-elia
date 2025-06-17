@@ -71,7 +71,7 @@ const skills: Category[] = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-10">
+    <section id="about" className="py-10 section-background">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>

@@ -1,24 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>elia-zavatta-portfolio</title>
-    <meta name="description" content="Elia Zavatta Portfolio" />
-    <meta name="author" content="Elia" />
 
-    <meta property="og:title" content="elia-zavatta-portfolio" />
-    <meta property="og:description" content="Elia Zavatta Portfolio" />
+    <!-- Title & Basic Meta -->
+    <title>Elia Zavatta - Full Stack Developer | Portfolio</title>
+    <meta
+      name="description"
+      content="Elia Zavatta, Full Stack Developer specializzato nello sviluppo di siti web e applicazioni mobile. Scopri i miei progetti e la mia esperienza nel settore tech."
+    />
+    <meta
+      name="keywords"
+      content="Elia Zavatta, sviluppatore, developer, full stack, React, TypeScript, siti web, app mobile, portfolio, Cesena, Romagna"
+    />
+    <meta name="author" content="Elia Zavatta" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Elia Zavatta - Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio di Elia Zavatta, sviluppatore specializzato nella creazione di soluzioni web e mobile innovative."
+    />
     <meta property="og:type" content="website" />
     <meta
-      property="og:image"
-      content="https://lovable.dev/opengraph-image-p98pqg.png"
+      property="og:url"
+      content="https://portfolio-elia-zavatta.vercel.app"
     />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:site_name" content="Elia Zavatta Portfolio" />
+    <meta property="og:locale" content="it_IT" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Elia Zavatta - Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio di Elia Zavatta, sviluppatore specializzato nella creazione di soluzioni web e mobile innovative."
+    />
+    <meta name="twitter:image" content="/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://portfolio-elia-zavatta.vercel.app" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Elia Zavatta",
+        "jobTitle": "Full Stack Developer",
+        "description": "Sviluppatore Full Stack specializzato nella creazione di siti web e applicazioni mobile",
+        "url": "https://portfolio-elia-zavatta.vercel.app",
+        "sameAs": [
+          "https://github.com/eliazv",
+          "https://www.linkedin.com/in/eliazavatta/"
+        ],
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "JavaScript",
+          "Web Development",
+          "Mobile Development",
+          "Full Stack Development"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Università di Bologna - Campus di Cesena",
+          "description": "Scienze ed Ingegneria Informatica"
+        }
+      }
+    </script>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1e56fa" />
+
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="//vercel.com" />
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+
+    <!-- Loading fallback for better UX -->
+    <noscript>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          font-family: system-ui, -apple-system, sans-serif;
+          text-align: center;
+          background: #f8fafc;
+          color: #334155;
+        "
+      >
+        <div>
+          <h1>Elia Zavatta - Full Stack Developer</h1>
+          <p>Questo sito richiede JavaScript per funzionare correttamente.</p>
+          <p>
+            Abilita JavaScript nel tuo browser per visualizzare il portfolio.
+          </p>
+        </div>
+      </div>
+    </noscript>
+
+    <!-- Scripts -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
