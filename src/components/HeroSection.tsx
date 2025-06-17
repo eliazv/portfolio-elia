@@ -36,8 +36,7 @@ const HeroSection = () => {
       className="relative pt-32 pb-10 md:pt-40 overflow-hidden"
       ref={heroRef}
     >
-      <div className="hero-gradient absolute inset-0 -z-10"></div>
-
+      <div className="hero-gradient absolute inset-0 -z-10"></div>{" "}
       {/* Floating circles */}
       <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/10 floating-circle animate-float"></div>
       <div
@@ -47,8 +46,34 @@ const HeroSection = () => {
       <div
         className="absolute top-2/3 right-1/3 w-32 h-32 rounded-full bg-primary/10 floating-circle animate-float"
         style={{ animationDelay: "2s" }}
-      ></div>
-
+      ></div>{" "}
+      {/* Floating project logos */}
+      <div
+        className="absolute top-1/2 left-16 w-20 h-20 floating-circle opacity-20 hover:opacity-60 transition-opacity duration-300"
+        style={{
+          animationDelay: "0.5s",
+          animation: "gentle-float 8s ease-in-out infinite",
+        }}
+      >
+        <img
+          src="/marafone.jpg"
+          alt="Marafone logo"
+          className="w-full h-full object-contain rounded-lg shadow-lg bg-white/80 p-2"
+        />
+      </div>
+      <div
+        className="absolute top-2/3 right-24 w-16 h-16 floating-circle opacity-20 hover:opacity-60 transition-opacity duration-300"
+        style={{
+          animationDelay: "1.5s",
+          animation: "gentle-float-reverse 10s ease-in-out infinite",
+        }}
+      >
+        <img
+          src="/globo.png"
+          alt="Globo Ricambi logo"
+          className="w-full h-full object-contain rounded-lg shadow-lg bg-white/80 p-2"
+        />
+      </div>
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="inline-block bg-secondary rounded-full px-4 py-2 text-sm font-medium mb-6 animate-fade-in">
