@@ -77,18 +77,7 @@ const projects: Project[] = [
     // appStoreUrl: "https://apps.apple.com/app",
   },
   {
-    id: 2,
-    title: "Casa Vacanze in Affitto",
-    description:
-      "Ho sviluppato un sito web per una casa vacanze in affitto, completo di galleria fotografica, descrizione dettagliata e form di contatto per le richieste dirette. Inoltre c'è una sezione privata per controllare e le prenotazioni",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    category: "Web",
-    demoUrl: "https://immerso-nella-pineta.lovable.app/",
-  },
-  {
-    id: 3,
+    id: 4,
     title: "Globo Ricambi",
     description:
       "Sito web vetrina sviluppato per una piccola attività di ricambi auto, con layout moderno e responsivo per presentare i servizi e i contatti.",
@@ -100,7 +89,29 @@ const projects: Project[] = [
     demoUrl: "https://globo-ricambi-webshop.lovable.app/",
   },
   {
-    id: 4,
+    id: 2,
+    title: "ToolKit - Strumenti Online",
+    description:
+      "Suite completa di strumenti online gratuiti per la produttività quotidiana. Include funzionalità per gestire PDF, manipolare testo, elaborare immagini e eseguire calcoli. Un'applicazione web moderna e user-friendly che semplifica le attività digitali di tutti i giorni.",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
+    category: "Web",
+    demoUrl: "https://toolkit-suite.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Casa Vacanze in Affitto",
+    description:
+      "Ho sviluppato un sito web per una casa vacanze in affitto, completo di galleria fotografica, descrizione dettagliata e form di contatto per le richieste dirette. Inoltre c'è una sezione privata per controllare e le prenotazioni",
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
+    category: "Web",
+    demoUrl: "https://immerso-nella-pineta.lovable.app/",
+  },
+  {
+    id: 5,
     title: "Diario personale",
     description:
       "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
@@ -112,7 +123,7 @@ const projects: Project[] = [
     demoUrl: "https://minima-diary.lovable.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Vendita Online",
     description:
       "Esperienza diretta nella vendita online tramite portali come eBay e Vinted, con gestione di spedizioni, comunicazione clienti e ottimizzazione delle inserzioni.",
@@ -123,7 +134,7 @@ const projects: Project[] = [
     contactBtn: true,
   },
   {
-    id: 6,
+    id: 7,
     title: "Property Management",
     description:
       "Gestisco direttamente appartamenti su piattaforme come Airbnb e Booking, occupandomi di sincronizzazione calendari, comunicazione con gli ospiti e ottimizzazione delle performance.",
