@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -41,7 +42,6 @@ const Index = () => {
       document.removeEventListener("click", handleAnchorClick);
     };
   }, []);
-
   return (
     <div className="min-h-screen flex flex-col">
       <CustomCursor />
@@ -53,6 +53,7 @@ const Index = () => {
         {/* <ContactSection /> */}
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 };
