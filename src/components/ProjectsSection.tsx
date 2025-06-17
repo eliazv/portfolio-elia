@@ -164,8 +164,7 @@ const ProjectsSection = () => {
             <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
           </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Una selezione dei miei lavori recenti che mostrano le mie competenze
-            in vari campi dello sviluppo web e gestione progetti.
+            Una selezione dei miei lavori recenti
           </p>
         </div>
 
