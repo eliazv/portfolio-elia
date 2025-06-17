@@ -4,6 +4,7 @@ import { ArrowRight, Github, Linkedin } from "lucide-react";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const logosRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -16,8 +17,10 @@ const HeroSection = () => {
       const x = (clientX - left) / width - 0.5;
       const y = (clientY - top) / height - 0.5;
 
-      const circleElements =
-        heroRef.current.querySelectorAll(".floating-circle");
+      // Solo i cerchi di sfondo, NON i loghi
+      const circleElements = heroRef.current.querySelectorAll(
+        ".floating-circle.bg-primary\\/10, .floating-circle.bg-accent\\/10"
+      );
       circleElements.forEach((circle, index) => {
         const factor = (index + 1) * 10;
         (circle as HTMLElement).style.transform = `translate(${x * factor}px, ${
@@ -26,8 +29,71 @@ const HeroSection = () => {
       });
     };
 
+    // Sistema di rimbalzo per i loghi
+    const setupBouncingLogos = () => {
+      if (!heroRef.current) return;
+
+      const logos = logosRef.current.filter(Boolean);
+      if (logos.length === 0) return;
+
+      const heroRect = heroRef.current.getBoundingClientRect();
+
+      // Stato di ogni logo
+      const logoStates = logos.map((logo, index) => ({
+        element: logo,
+        x: Math.random() * (heroRect.width - 80),
+        y: Math.random() * (heroRect.height - 80),
+        vx: (Math.random() - 0.5) * 2, // velocità x (-1 a 1)
+        vy: (Math.random() - 0.5) * 2, // velocità y (-1 a 1)
+        size: logo.offsetWidth,
+      }));
+
+      const animate = () => {
+        if (!heroRef.current) return;
+
+        const currentHeroRect = heroRef.current.getBoundingClientRect();
+
+        logoStates.forEach((state) => {
+          // Aggiorna posizione
+          state.x += state.vx;
+          state.y += state.vy;
+
+          // Controllo rimbalzo sui bordi
+          if (state.x <= 0 || state.x >= currentHeroRect.width - state.size) {
+            state.vx = -state.vx;
+            state.x = Math.max(
+              0,
+              Math.min(state.x, currentHeroRect.width - state.size)
+            );
+          }
+
+          if (state.y <= 0 || state.y >= currentHeroRect.height - state.size) {
+            state.vy = -state.vy;
+            state.y = Math.max(
+              0,
+              Math.min(state.y, currentHeroRect.height - state.size)
+            );
+          }
+
+          // Applica la nuova posizione
+          state.element.style.transform = `translate(${state.x}px, ${state.y}px)`;
+        });
+
+        requestAnimationFrame(animate);
+      };
+
+      animate();
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+
+    // Avvia l'animazione di rimbalzo dopo un breve delay
+    const timer = setTimeout(setupBouncingLogos, 1000);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -47,34 +113,41 @@ const HeroSection = () => {
         className="absolute top-2/3 right-1/3 w-32 h-32 rounded-full bg-primary/10 floating-circle animate-float"
         style={{ animationDelay: "2s" }}
       ></div>{" "}
-      {/* Floating project logos */}
+      {/* Floating project logos - rimbalzo autonomo */}
       <div
-        className="absolute top-1/2 left-16 w-20 h-20 floating-circle opacity-20 hover:opacity-60 transition-opacity duration-300"
-        style={{
-          animationDelay: "0.5s",
-          animation: "gentle-float 8s ease-in-out infinite",
-        }}
+        ref={(el) => el && (logosRef.current[0] = el)}
+        className="absolute w-16 h-16 opacity-15 hover:opacity-50 transition-opacity duration-500 bouncing-logo"
+        style={{ zIndex: 1 }}
       >
         <img
           src="/marafone.jpg"
           alt="Marafone logo"
-          className="w-full h-full object-contain rounded-lg shadow-lg bg-white/80 p-2"
+          className="w-full h-full object-contain rounded-lg shadow-lg bg-white/70 p-1.5"
         />
       </div>
       <div
-        className="absolute top-2/3 right-24 w-16 h-16 floating-circle opacity-20 hover:opacity-60 transition-opacity duration-300"
-        style={{
-          animationDelay: "1.5s",
-          animation: "gentle-float-reverse 10s ease-in-out infinite",
-        }}
+        ref={(el) => el && (logosRef.current[1] = el)}
+        className="absolute w-14 h-14 opacity-15 hover:opacity-50 transition-opacity duration-500 bouncing-logo"
+        style={{ zIndex: 1 }}
       >
         <img
           src="/globo.png"
           alt="Globo Ricambi logo"
-          className="w-full h-full object-contain rounded-lg shadow-lg bg-white/80 p-2"
+          className="w-full h-full object-contain rounded-lg shadow-lg bg-white/70 p-1.5"
         />
       </div>
-      <div className="container mx-auto px-6">
+      <div
+        ref={(el) => el && (logosRef.current[2] = el)}
+        className="absolute w-12 h-12 opacity-10 hover:opacity-40 transition-opacity duration-500 bouncing-logo"
+        style={{ zIndex: 1 }}
+      >
+        <img
+          src="/marafone.jpg"
+          alt="Marafone logo"
+          className="w-full h-full object-contain rounded-lg shadow-lg bg-white/60 p-1"
+        />
+      </div>{" "}
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="inline-block bg-secondary rounded-full px-4 py-2 text-sm font-medium mb-6 animate-fade-in">
             <span className="text-foreground/70">Full Stack Developer</span>
