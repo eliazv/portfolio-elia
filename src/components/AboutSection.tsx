@@ -159,23 +159,6 @@ const AboutSection = () => {
                   </a>
                 </div>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="rounded-full bg-primary/10 p-3 text-primary">
-                  <Github className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium">GitHub</h4>
-                  <a
-                    href="https://github.com/eliazv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground/70 hover:text-primary"
-                  >
-                    github.com/eliazv
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

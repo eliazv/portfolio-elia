@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Linkedin, Mail } from "lucide-react";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -186,10 +186,10 @@ const HeroSection = () => {
             style={{ animationDelay: "0.4s" }}
           >
             <a
-              href="https://github.com/eliazv"
+              href="mailto:zavattaelia@gmail.com"
               className="text-foreground/70 hover:text-primary transition-colors"
             >
-              <Github className="h-6 w-6" />
+              <Mail className="h-5 w-5" />
             </a>
             <a
               href="https://www.linkedin.com/in/eliazavatta/"

@@ -86,7 +86,7 @@ const projects: Project[] = [
     logoImage: "/globo.png",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
-    demoUrl: "https://globo-ricambi-webshop.lovable.app/",
+    demoUrl: "https://globoricambi.vercel.app/",
   },
   {
     id: 2,
