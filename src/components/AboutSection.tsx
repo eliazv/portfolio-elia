@@ -118,9 +118,9 @@ const AboutSection = () => {
                   contributi open source
                 </p>
               </div>
-            </div> */}
+            </div> */}{" "}
           </div>
-          <div>
+          <div id="informazioni-contatto">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Informazioni di contatto
             </h2>{" "}

@@ -163,7 +163,7 @@ const HeroSection = () => {
             style={{ animationDelay: "0.2s" }}
           >
             Studio i processi aziendali e creo soluzioni informatiche che fanno
-            davvero la differenza.
+            la differenza.
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 animate-fade-in"

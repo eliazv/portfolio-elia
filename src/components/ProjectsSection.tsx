@@ -119,7 +119,7 @@ const projects: Project[] = [
       "https://www.quotus.it/wp-content/uploads/2016/08/quotus-blog-7-buoni-motivi-per-iniziare-subito-a-scrivere-un-diario-personale.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
-    githubUrl: "https://github.com/eliazv/minima-diary",
+    // githubUrl: "https://github.com/eliazv/minima-diary",
     demoUrl: "https://minima-diary.lovable.app/",
   },
   {
@@ -148,6 +148,20 @@ const projects: Project[] = [
 
 const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("informazioni-contatto");
+    if (contactSection) {
+      // Aggiungi un piccolo delay per assicurarsi che il DOM sia pronto
+      setTimeout(() => {
+        contactSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    } else {
+      console.warn("Sezione 'Informazioni di contatto' non trovata");
+    }
+  };
 
   const projectsByCategory: Record<Category, Project[]> = projects.reduce(
     (acc, project) => {
@@ -177,22 +191,45 @@ const ProjectsSection = () => {
           <p className="text-foreground/70 max-w-2xl mx-auto">
             Una selezione dei miei lavori
           </p>
-        </div>
-
+        </div>{" "}
         {categoryOrder.map(
           (category) =>
             projectsByCategory[category] &&
             projectsByCategory[category].length > 0 && (
-              <div key={category} className="mb-20">
-                <h3 className="text-2xl font-bold mb-8 border-b pb-2">
+              <div
+                key={category}
+                className={`mb-20 relative p-8 rounded-3xl ${
+                  category === "Web"
+                    ? "bg-gradient-to-br from-green-50/30 via-green-100/20 to-green-200/30 shadow-[0_0_50px_rgba(34,197,94,0.15)] border border-green-200/30"
+                    : category === "Altro"
+                    ? "bg-gradient-to-br from-purple-50/30 via-purple-100/20 to-purple-200/30 shadow-[0_0_50px_rgba(147,51,234,0.15)] border border-purple-200/30"
+                    : "bg-gray-50/30"
+                }`}
+              >
+                <h3
+                  className={`text-2xl font-bold mb-8 pb-2 ${
+                    category === "Web"
+                      ? "border-b-2 border-green-400/50 text-green-800"
+                      : category === "Altro"
+                      ? "border-b-2 border-purple-400/50 text-purple-800"
+                      : "border-b"
+                  }`}
+                >
                   {category}
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in">
+                  {" "}
                   {projectsByCategory[category].map((project) => (
                     <Card
                       key={project.id}
-                      className="overflow-hidden card-hover enhanced-card backdrop-blur-sm cursor-pointer"
+                      className={`overflow-hidden card-hover enhanced-card backdrop-blur-sm cursor-pointer transition-all duration-300 ${
+                        category === "Web"
+                          ? "hover:shadow-[0_8px_30px_rgba(34,197,94,0.3)] hover:border-green-300/50"
+                          : category === "Altro"
+                          ? "hover:shadow-[0_8px_30px_rgba(147,51,234,0.3)] hover:border-purple-300/50"
+                          : "hover:shadow-lg"
+                      }`}
                       onClick={() => openProjectDetails(project)}
                     >
                       {" "}
@@ -226,26 +263,38 @@ const ProjectsSection = () => {
                               variant="outline"
                               size="sm"
                               asChild
-                              className="group h-8"
+                              className={`group h-8 ${
+                                category === "Web"
+                                  ? "hover:border-green-400 hover:text-green-700"
+                                  : category === "Altro"
+                                  ? "hover:border-purple-400 hover:text-purple-700"
+                                  : ""
+                              }`}
                             >
                               <a
                                 href={project.githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center text-xs"
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 <Github className="mr-1 h-3 w-3 group-hover:rotate-12 transition-transform" />{" "}
                                 Codice
                               </a>
                             </Button>
-                          )}
+                          )}{" "}
                           {project.demoUrl && (
-                            <Button size="sm" asChild className="group h-8">
+                            <Button
+                              size="sm"
+                              asChild
+                              className={`group h-8 bg-blue-600 hover:bg-blue-700`}
+                            >
                               <a
                                 href={project.demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center text-xs"
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 <ExternalLink className="mr-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />{" "}
                                 Sito
@@ -263,6 +312,7 @@ const ProjectsSection = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center text-xs"
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 <PlayStoreIcon className="mr-1 h-3 w-3 group-hover:scale-110 transition-transform" />{" "}
                                 Play Store
@@ -280,25 +330,30 @@ const ProjectsSection = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center text-xs"
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 <AppStoreIcon className="mr-1 h-3 w-3 group-hover:scale-110 transition-transform" />{" "}
                                 App Store
                               </a>
                             </Button>
-                          )}
+                          )}{" "}
                           {project.contactBtn && (
                             <Button
                               variant="outline"
                               size="sm"
-                              asChild
-                              className="h-8"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                scrollToContact();
+                              }}
+                              className={`h-8 hover:text-white ${
+                                category === "Web"
+                                  ? "hover:border-green-400 hover:bg-green-600"
+                                  : category === "Altro"
+                                  ? "hover:border-purple-400 hover:bg-purple-600"
+                                  : ""
+                              }`}
                             >
-                              <a
-                                href="mailto:zavattaelia@gmail.com"
-                                className="inline-flex items-center text-xs"
-                              >
-                                Contattami
-                              </a>
+                              Contattami
                             </Button>
                           )}
                         </div>
@@ -309,7 +364,6 @@ const ProjectsSection = () => {
               </div>
             )
         )}
-
         <Dialog
           open={selectedProject !== null}
           onOpenChange={(open) => {
@@ -412,15 +466,19 @@ const ProjectsSection = () => {
                       Scarica su App Store
                     </a>
                   </Button>
-                )}
+                )}{" "}
                 {selectedProject.contactBtn && (
-                  <Button variant="outline" asChild>
-                    <a
-                      href="mailto:zavattaelia@gmail.com"
-                      className="inline-flex items-center"
-                    >
-                      Contattami per maggiori informazioni
-                    </a>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setSelectedProject(null); // Chiudi il dialogo prima
+                      setTimeout(() => {
+                        scrollToContact();
+                      }, 100);
+                    }}
+                    className="hover:text-white hover:bg-primary"
+                  >
+                    Contattami per maggiori informazioni
                   </Button>
                 )}
               </div>
