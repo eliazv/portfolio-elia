@@ -198,26 +198,54 @@ const ProjectsSection = () => {
             projectsByCategory[category].length > 0 && (
               <div
                 key={category}
-                className={`mb-20 relative p-8 rounded-3xl ${
+                className={`mb-20 relative p-8 rounded-3xl backdrop-blur-sm transition-all duration-300 ${
                   category === "Web"
-                    ? "bg-gradient-to-br from-green-50/30 via-green-100/20 to-green-200/30 shadow-[0_0_50px_rgba(34,197,94,0.15)] border border-green-200/30"
+                    ? `
+                      bg-gradient-to-br from-green-50/40 via-emerald-50/30 to-green-100/40
+                      shadow-[0_0_80px_rgba(34,197,94,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]
+                      border border-green-200/50
+                      before:absolute before:inset-0 before:rounded-3xl 
+                      before:bg-gradient-to-r before:from-green-400/10 before:to-emerald-400/10
+                      before:blur-xl before:-z-10
+                      hover:shadow-[0_0_120px_rgba(34,197,94,0.35)]
+                      hover:scale-[1.02]
+                    `
                     : category === "Altro"
-                    ? "bg-gradient-to-br from-purple-50/30 via-purple-100/20 to-purple-200/30 shadow-[0_0_50px_rgba(147,51,234,0.15)] border border-purple-200/30"
+                    ? `
+                      bg-gradient-to-br from-purple-50/40 via-violet-50/30 to-purple-100/40
+                      shadow-[0_0_80px_rgba(147,51,234,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]
+                      border border-purple-200/50
+                      before:absolute before:inset-0 before:rounded-3xl 
+                      before:bg-gradient-to-r before:from-purple-400/10 before:to-violet-400/10
+                      before:blur-xl before:-z-10
+                      hover:shadow-[0_0_120px_rgba(147,51,234,0.35)]
+                      hover:scale-[1.02]
+                    `
                     : "bg-gray-50/30"
                 }`}
               >
+                {" "}
                 <h3
-                  className={`text-2xl font-bold mb-8 pb-2 ${
+                  className={`text-2xl font-bold mb-8 pb-4 relative ${
                     category === "Web"
-                      ? "border-b-2 border-green-400/50 text-green-800"
+                      ? `
+                        text-green-800 
+                        after:absolute after:bottom-0 after:left-0 after:w-16 after:h-1
+                        after:bg-gradient-to-r after:from-green-400 after:to-emerald-400
+                        after:rounded-full after:shadow-lg after:shadow-green-400/50
+                      `
                       : category === "Altro"
-                      ? "border-b-2 border-purple-400/50 text-purple-800"
+                      ? `
+                        text-purple-800
+                        after:absolute after:bottom-0 after:left-0 after:w-16 after:h-1
+                        after:bg-gradient-to-r after:from-purple-400 after:to-violet-400
+                        after:rounded-full after:shadow-lg after:shadow-purple-400/50
+                      `
                       : "border-b"
                   }`}
                 >
                   {category}
                 </h3>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in">
                   {" "}
                   {projectsByCategory[category].map((project) => (
@@ -431,7 +459,7 @@ const ProjectsSection = () => {
                       className="inline-flex items-center"
                     >
                       <ExternalLink className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />{" "}
-                      Visualizza demo
+                      Visualizza Sito
                     </a>
                   </Button>
                 )}{" "}
