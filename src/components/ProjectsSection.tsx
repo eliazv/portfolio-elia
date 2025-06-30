@@ -72,6 +72,7 @@ const projects: Project[] = [
     logoImage: "/marafone.jpg",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Web",
+    demoUrl: "https://marafone-romagnolo.it/",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa",
     // appStoreUrl: "https://apps.apple.com/app",
