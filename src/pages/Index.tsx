@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
@@ -47,6 +48,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <ServicesSection />
         <ProjectsSection />
         <AboutSection />
       </main>
