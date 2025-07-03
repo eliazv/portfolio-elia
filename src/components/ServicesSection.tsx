@@ -100,7 +100,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                {/* <div className="space-y-3">
                   <h4 className="font-semibold text-lg flex items-center gap-2">
                     <Zap className="h-4 w-4" />
                     Caratteristiche principali:
@@ -117,19 +117,10 @@ const ServicesSection = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full">
-            <Trophy className="h-5 w-5 text-primary" />
-            <span className="text-primary font-medium">
-              Soluzioni personalizzate per ogni esigenza
-            </span>
-          </div>
         </div>
       </div>
     </section>

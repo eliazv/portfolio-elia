@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Maximize, Smartphone } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { ExternalLink, Github } from "lucide-react";
+import { Dialog } from "@/components/ui/dialog";
+import ProjectDetailModal from "@/components/ProjectDetailModal";
+import type { Category, Project } from "@/types/project";
 
 // Custom icons for app stores
 const PlayStoreIcon = ({ className }: { className?: string }) => (
@@ -25,127 +19,7 @@ const AppStoreIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-// Project type definition
-type Technology =
-  | "React"
-  | "Node.js"
-  | "TypeScript"
-  | "MongoDB"
-  | "Next.js"
-  | "TailwindCSS"
-  | "GraphQL"
-  | "Flutter"
-  | "Firebase"
-  | "WordPress"
-  | "Vite"
-  | "PHP";
-type Category =
-  | "Web"
-  | "Mobile"
-  | "E-commerce"
-  | "Property Management"
-  | "Altro";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  logoImage?: string; // Nuova proprietà per il logo overlay
-  technologies: Technology[];
-  category: Category;
-  githubUrl?: string;
-  demoUrl?: string;
-  contactBtn?: boolean;
-  playStoreUrl?: string;
-  appStoreUrl?: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Marafone Romagnolo",
-    description:
-      "Marafone Romagnolo è il gioco di carte tradizionale più amato della Romagna, ora disponibile sul tuo smartphone! Vivi tutta l’autenticità del gioco romagnolo con regole fedeli alla tradizione e un’atmosfera che richiama le vere sfide tra amici.",
-    image:
-      "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
-    logoImage: "/marafone.jpg",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    category: "Web",
-    demoUrl: "https://marafone-romagnolo.it/",
-    playStoreUrl:
-      "https://play.google.com/store/apps/details?id=com.eliazavatta.maraffa",
-    // appStoreUrl: "https://apps.apple.com/app",
-  },
-  {
-    id: 4,
-    title: "Globo Ricambi",
-    description:
-      "Sito web vetrina sviluppato per una piccola attività di ricambi auto, con layout moderno e responsivo per presentare i servizi e i contatti.",
-    image:
-      "https://globoricambi.weebly.com/uploads/1/1/6/5/116531585/img-20200505-154043_orig.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
-    logoImage: "/globo.png",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    category: "Web",
-    demoUrl: "https://globoricambi.vercel.app/",
-  },
-  {
-    id: 2,
-    title: "ToolKit - Strumenti Online",
-    description:
-      "Suite completa di strumenti online gratuiti per la produttività quotidiana. Include funzionalità per gestire PDF, manipolare testo, elaborare immagini e eseguire calcoli. Un'applicazione web moderna e user-friendly che semplifica le attività digitali di tutti i giorni.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    category: "Web",
-    demoUrl: "https://toolkit-suite.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Casa Vacanze in Affitto",
-    description:
-      "Ho sviluppato un sito web per una casa vacanze in affitto, completo di galleria fotografica, descrizione dettagliata e form di contatto per le richieste dirette. Inoltre c'è una sezione privata per controllare e le prenotazioni",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    category: "Web",
-    demoUrl: "https://immerso-nella-pineta.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Diario personale",
-    description:
-      "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
-    image:
-      "https://www.quotus.it/wp-content/uploads/2016/08/quotus-blog-7-buoni-motivi-per-iniziare-subito-a-scrivere-un-diario-personale.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    category: "Web",
-    // githubUrl: "https://github.com/eliazv/minima-diary",
-    demoUrl: "https://minima-diary.lovable.app/",
-  },
-  {
-    id: 6,
-    title: "Vendita Online",
-    description:
-      "Esperienza diretta nella vendita online tramite portali come eBay e Vinted, con gestione di spedizioni, comunicazione clienti e ottimizzazione delle inserzioni.",
-    image:
-      "https://www.pixartprinting.it/blog/wp-content/uploads/2021/10/Siti_Vendita_On_Line.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: [],
-    category: "Altro",
-    contactBtn: true,
-  },
-  {
-    id: 7,
-    title: "Property Management",
-    description:
-      "Gestisco direttamente appartamenti su piattaforme come Airbnb e Booking, occupandomi di sincronizzazione calendari, comunicazione con gli ospiti e ottimizzazione delle performance.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE3-BLfV4xJDgA05snZ2RAC4-nEk6zOCrmMw&s?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: [],
-    category: "Altro",
-    contactBtn: true,
-  },
-];
+import { projects } from "@/data/projects";
 
 const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -175,7 +49,7 @@ const ProjectsSection = () => {
     {} as Record<Category, Project[]>
   );
 
-  const categoryOrder: Category[] = ["Web", "Altro"];
+  const categoryOrder: Category[] = ["Dev", "Altro"];
 
   const openProjectDetails = (project: Project) => {
     setSelectedProject(project);
@@ -184,7 +58,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-10 bg-secondary/30 section-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block">
             <span className="relative z-10">I miei progetti</span>
             <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
@@ -199,36 +73,36 @@ const ProjectsSection = () => {
             projectsByCategory[category].length > 0 && (
               <div
                 key={category}
-                className={`mb-20 relative p-8 rounded-3xl backdrop-blur-sm transition-all duration-300 ${
-                  category === "Web"
-                    ? `
-                      bg-gradient-to-br from-green-50/40 via-emerald-50/30 to-green-100/40
-                      shadow-[0_0_80px_rgba(34,197,94,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]
-                      border border-green-200/50
-                      before:absolute before:inset-0 before:rounded-3xl 
-                      before:bg-gradient-to-r before:from-green-400/10 before:to-emerald-400/10
-                      before:blur-xl before:-z-10
-                      hover:shadow-[0_0_120px_rgba(34,197,94,0.35)]
-                      hover:scale-[1.02]
-                    `
-                    : category === "Altro"
-                    ? `
-                      bg-gradient-to-br from-purple-50/40 via-violet-50/30 to-purple-100/40
-                      shadow-[0_0_80px_rgba(147,51,234,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]
-                      border border-purple-200/50
-                      before:absolute before:inset-0 before:rounded-3xl 
-                      before:bg-gradient-to-r before:from-purple-400/10 before:to-violet-400/10
-                      before:blur-xl before:-z-10
-                      hover:shadow-[0_0_120px_rgba(147,51,234,0.35)]
-                      hover:scale-[1.02]
-                    `
-                    : "bg-gray-50/30"
-                }`}
+                // className={`mb-20 relative p-8 rounded-3xl backdrop-blur-sm transition-all duration-300 ${
+                //   category === "Dev"
+                //     ? `
+                //       bg-gradient-to-br from-green-50/40 via-emerald-50/30 to-green-100/40
+                //       shadow-[0_0_80px_rgba(34,197,94,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]
+                //       border border-green-200/50
+                //       before:absolute before:inset-0 before:rounded-3xl
+                //       before:bg-gradient-to-r before:from-green-400/10 before:to-emerald-400/10
+                //       before:blur-xl before:-z-10
+                //       hover:shadow-[0_0_120px_rgba(34,197,94,0.35)]
+                //       hover:scale-[1.02]
+                //     `
+                //     : category === "Altro"
+                //     ? `
+                //       bg-gradient-to-br from-purple-50/40 via-violet-50/30 to-purple-100/40
+                //       shadow-[0_0_80px_rgba(147,51,234,0.25),inset_0_1px_0_rgba(255,255,255,0.3)]
+                //       border border-purple-200/50
+                //       before:absolute before:inset-0 before:rounded-3xl
+                //       before:bg-gradient-to-r before:from-purple-400/10 before:to-violet-400/10
+                //       before:blur-xl before:-z-10
+                //       hover:shadow-[0_0_120px_rgba(147,51,234,0.35)]
+                //       hover:scale-[1.02]
+                //     `
+                //     : "bg-gray-50/30"
+                // }`}
               >
                 {" "}
                 <h3
-                  className={`text-2xl font-bold mb-8 pb-4 relative ${
-                    category === "Web"
+                  className={`text-2xl font-bold mb-8 mt-8 pb-4 relative ${
+                    category === "Dev"
                       ? `
                         text-green-800 
                         after:absolute after:bottom-0 after:left-0 after:w-16 after:h-1
@@ -247,13 +121,13 @@ const ProjectsSection = () => {
                 >
                   {category}
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 animate-fade-in">
                   {" "}
                   {projectsByCategory[category].map((project) => (
                     <Card
                       key={project.id}
-                      className={`overflow-hidden card-hover enhanced-card backdrop-blur-sm cursor-pointer transition-all duration-300 ${
-                        category === "Web"
+                      className={`overflow-hidden card-hover enhanced-card backdrop-blur-sm cursor-pointer transition-all duration-300 w-full min-w-[270px] max-w-[370px] mx-auto ${
+                        category === "Dev"
                           ? "hover:shadow-[0_8px_30px_rgba(34,197,94,0.3)] hover:border-green-300/50"
                           : category === "Altro"
                           ? "hover:shadow-[0_8px_30px_rgba(147,51,234,0.3)] hover:border-purple-300/50"
@@ -270,7 +144,7 @@ const ProjectsSection = () => {
                         />{" "}
                         {/* Logo overlay */}
                         {project.logoImage && (
-                          <div className="absolute inset-0 flex items-center justify-start pl-4 bg-black/30">
+                          <div className="absolute inset-0 flex items-center justify-start pl-4">
                             <img
                               src={project.logoImage}
                               alt={`${project.title} logo`}
@@ -283,9 +157,10 @@ const ProjectsSection = () => {
                         <h3 className="text-lg font-semibold mb-2">
                           {project.title}
                         </h3>
+                        {/* Descrizione breve o overview */}
                         <p className="text-foreground/70 text-xs mb-3 line-clamp-2">
-                          {project.description}
-                        </p>{" "}
+                          {project.details?.overview || project.description}
+                        </p>
                         <div className="flex gap-2">
                           {project.githubUrl && (
                             <Button
@@ -293,7 +168,7 @@ const ProjectsSection = () => {
                               size="sm"
                               asChild
                               className={`group h-8 ${
-                                category === "Web"
+                                category === "Dev"
                                   ? "hover:border-green-400 hover:text-green-700"
                                   : category === "Altro"
                                   ? "hover:border-purple-400 hover:text-purple-700"
@@ -375,7 +250,7 @@ const ProjectsSection = () => {
                                 scrollToContact();
                               }}
                               className={`h-8 hover:text-white ${
-                                category === "Web"
+                                category === "Dev"
                                   ? "hover:border-green-400 hover:bg-green-600"
                                   : category === "Altro"
                                   ? "hover:border-purple-400 hover:bg-purple-600"
@@ -400,118 +275,11 @@ const ProjectsSection = () => {
           }}
         >
           {selectedProject && (
-            <DialogContent className="max-w-4xl w-full">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold">
-                  {selectedProject.title}
-                </DialogTitle>
-              </DialogHeader>{" "}
-              <div className="relative w-full h-72 overflow-hidden rounded-lg">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover rounded-md transform hover:scale-105 transition-transform duration-500"
-                />
-                {/* Logo overlay nel dialogo */}
-                {selectedProject.logoImage && (
-                  <div className="absolute inset-0 flex items-center justify-start pl-8 bg-black/30 rounded-lg">
-                    <img
-                      src={selectedProject.logoImage}
-                      alt={`${selectedProject.title} logo`}
-                      className="w-32 h-32 object-contain rounded-lg shadow-lg bg-white/90 p-4"
-                    />
-                  </div>
-                )}
-              </div>
-              <div className="flex flex-wrap gap-2 my-4">
-                {selectedProject.technologies.map((tech) => (
-                  <Badge
-                    key={tech}
-                    variant="secondary"
-                    className="animate-pulse-light"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-              <DialogDescription className="text-foreground text-base">
-                {selectedProject.description}
-              </DialogDescription>{" "}
-              <div className="flex gap-4 mt-6">
-                {selectedProject.githubUrl && (
-                  <Button variant="outline" asChild className="group">
-                    <a
-                      href={selectedProject.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center"
-                    >
-                      <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />{" "}
-                      Visualizza codice
-                    </a>
-                  </Button>
-                )}
-                {selectedProject.demoUrl && (
-                  <Button asChild className="group">
-                    <a
-                      href={selectedProject.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center"
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />{" "}
-                      Visualizza Sito
-                    </a>
-                  </Button>
-                )}{" "}
-                {selectedProject.playStoreUrl && (
-                  <Button
-                    asChild
-                    className="group bg-green-600 hover:bg-green-700"
-                  >
-                    <a
-                      href={selectedProject.playStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center"
-                    >
-                      <PlayStoreIcon className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />{" "}
-                      Scarica su Play Store
-                    </a>
-                  </Button>
-                )}
-                {selectedProject.appStoreUrl && (
-                  <Button
-                    asChild
-                    className="group bg-blue-600 hover:bg-blue-700"
-                  >
-                    <a
-                      href={selectedProject.appStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center"
-                    >
-                      <AppStoreIcon className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />{" "}
-                      Scarica su App Store
-                    </a>
-                  </Button>
-                )}{" "}
-                {selectedProject.contactBtn && (
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      setSelectedProject(null); // Chiudi il dialogo prima
-                      setTimeout(() => {
-                        scrollToContact();
-                      }, 100);
-                    }}
-                    className="hover:text-white hover:bg-primary"
-                  >
-                    Contattami per maggiori informazioni
-                  </Button>
-                )}
-              </div>
-            </DialogContent>
+            <ProjectDetailModal
+              project={selectedProject}
+              onClose={() => setSelectedProject(null)}
+              scrollToContact={scrollToContact}
+            />
           )}
         </Dialog>
       </div>
