@@ -7,16 +7,17 @@ const ServicesSection = () => {
   const services = [
     {
       id: 1,
-      title: "Sviluppo Software",
+      title: "Sviluppo Web & App",
       description:
-        "Creazione di applicazioni web moderne, siti web responsivi e soluzioni software personalizzate. Utilizzo le tecnologie più aggiornate per garantire performance eccellenti e user experience ottimali.",
+        "Sviluppo di siti web e applicazioni da zero, oltre a modifiche e implementazioni su progetti esistenti. Offro anche manutenzione, aggiornamenti e nuove funzionalità per siti già online, utilizzando le tecnologie più moderne.",
       icon: <Code className="h-8 w-8" />,
       primary: true,
       features: [
-        "Applicazioni Web React/Next.js",
-        "Siti Web Responsivi",
-        "API e Backend Development",
-        "Database Design",
+        "Siti Web e App da Zero",
+        "Modifiche a Siti Esistenti",
+        "Nuove Funzionalità",
+        "Manutenzione e Aggiornamenti",
+        "Ottimizzazione Performance",
         "UI/UX Design Moderno",
       ],
       color: "blue",
