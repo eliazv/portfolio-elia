@@ -71,7 +71,7 @@ export const projects: Project[] = [
     ],
     category: "Dev",
     demoUrl: "https://immerso-nella-pineta.vercel.app/",
-    logoImage: "/immerso/tag+cin small.jpg",
+    logoImage: "/immerso/targhetta.jpg",
     details: {
       overview:
         "Gestione e promozione di una Casa Vacanze con backoffice dedicato.",
