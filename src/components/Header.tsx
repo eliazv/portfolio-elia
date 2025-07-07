@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,10 +21,29 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "Chi sono", href: "#about" },
-    { name: "Servizi", href: "#services" },
+    // { name: "Servizi", href: "#services" },
     { name: "Progetti", href: "#projects" },
     { name: "Contatti", href: "#contact" },
   ];
+
+  // Funzione per gestire click sulle voci del menu
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string
+  ) => {
+    if (location.pathname.startsWith("/progetti/")) {
+      e.preventDefault();
+      navigate(`/${href}`.replace("/#", "/#")); // va in home
+      setTimeout(() => {
+        const id = href.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+    // altrimenti comportamento normale (ancora)
+  };
 
   return (
     <header
@@ -43,6 +65,7 @@ const Header = () => {
               key={item.name}
               href={item.href}
               className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200"
+              onClick={(e) => handleNavClick(e, item.href)}
             >
               {item.name}
             </a>
@@ -76,7 +99,10 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary font-medium py-2 transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setIsMobileMenuOpen(false);
+                  handleNavClick(e, item.href);
+                }}
               >
                 {item.name}
               </a>

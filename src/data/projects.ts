@@ -21,6 +21,8 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "Globo Ricambi",
+    description:
+      "Sito web moderno e professionale per Globo Ricambi, azienda specializzata in ricambi per auto d'epoca dal 1986 a Gambettola (FC).",
     image: "globo/globo-desk.png",
     logoImage: "/globo.png",
     technologies: [
@@ -34,32 +36,12 @@ export const projects: Project[] = [
     ],
     category: "Dev",
     demoUrl: "https://globoricambi.vercel.app/",
-    details: {
-      overview:
-        "Sito web moderno e professionale per Globo Ricambi, azienda specializzata in ricambi per auto d'epoca dal 1986 a Gambettola (FC). Esperienza utente coinvolgente e ottimizzata per raccontare la storia e i servizi dell'azienda.",
-      features: [
-        "Design moderno e responsive",
-        "Navigazione intuitiva",
-        "Slideshow Hero dinamico",
-        "Sezioni specializzate per prodotti e servizi",
-        "Mappa interattiva con Google Maps",
-        "Recensioni clienti in carosello",
-        "Ottimizzazione SEO con Schema.org",
-      ],
-      description: `### 🛠 Sezioni del Sito
-
-1. **Homepage**: Presentazione aziendale con hero dinamico e panoramica dei servizi
-2. **Prodotti**: Catalogo dettagliato delle categorie di ricambi
-3. **Storia**: Racconto della tradizione aziendale dal 1986
-4. **Recensioni**: Testimonianze dei clienti e feedback
-5. **Contatti**: Informazioni complete con mappa interattiva e dettagli di contatto`,
-      gallery: ["globo/globo-desk.png"],
-      links: [],
-    },
   },
   {
     id: 3,
     title: "Casa Vacanze in Affitto",
+    description:
+      "Gestione e promozione di una Casa Vacanze con backoffice dedicato per ottimizzare prenotazioni e ricavi.",
     image: "/immerso/immerso-desktop.png",
     technologies: [
       "React",
@@ -72,21 +54,6 @@ export const projects: Project[] = [
     category: "Dev",
     demoUrl: "https://immerso-nella-pineta.vercel.app/",
     logoImage: "/immerso/targhetta.jpg",
-    details: {
-      overview:
-        "Gestione e promozione di una Casa Vacanze con backoffice dedicato.",
-      features: [
-        "Galleria fotografica e descrizione dettagliata degli ambienti",
-        "Form di contatto per prenotazioni dirette",
-        "Area privata per gestione prenotazioni e statistiche",
-        "Calendario disponibilità integrato",
-        "Ottimizzato per desktop e mobile",
-      ],
-      publicSection: `La sezione pubblica presenta la Casa Vacanze con tutte le informazioni utili agli ospiti, servizi, regole e un form di contatto per richieste di prenotazione diretta.`,
-      privateSection: `Il backoffice, accessibile tramite autenticazione, permette la gestione delle prenotazioni, la visualizzazione delle statistiche di occupazione e la sincronizzazione con i portali OTA.`,
-      gallery: ["/immerso/immerso-desktop.png", "/immerso/tag+cin small.jpg"],
-      links: [],
-    },
   },
   {
     id: 2,
