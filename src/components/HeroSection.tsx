@@ -51,10 +51,10 @@ const HeroSection = () => {
               lineHeight: 1.05,
             }}
           >
-            Elia <span className="text-gradient">Zavatta</span>
+            <span className="text-gradient">Elia Zavatta</span>
           </h1>
           <p
-            className="text-2xl md:text-3xl text-white/80 mb-12 max-w-3xl animate-fade-in font-medium drop-shadow-lg"
+            className="text-2xl md:text-3xl text-primary mb-12 max-w-3xl animate-fade-in font-medium drop-shadow-lg"
             style={{ animationDelay: "0.2s" }}
           >
             Creo{" "}
