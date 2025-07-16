@@ -10,6 +10,7 @@ import GloboRicambi from "./pages/projects/GloboRicambi";
 import CasaVacanze from "./pages/projects/CasaVacanze";
 import ToolKit from "./pages/projects/ToolKit";
 import DiarioPersonale from "./pages/projects/DiarioPersonale";
+import InZona from "./pages/projects/InZona";
 
 const queryClient = new QueryClient();
 
@@ -21,11 +22,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/progetti/1" element={<MarafoneRomagnolo />} />
-          <Route path="/progetti/4" element={<GloboRicambi />} />
-          <Route path="/progetti/3" element={<CasaVacanze />} />
-          <Route path="/progetti/2" element={<ToolKit />} />
-          <Route path="/progetti/5" element={<DiarioPersonale />} />
+          <Route
+            path="/progetti/marafone-romagnolo"
+            element={<MarafoneRomagnolo />}
+          />
+          <Route path="/progetti/globo-ricambi" element={<GloboRicambi />} />
+          <Route path="/progetti/casa-vacanze" element={<CasaVacanze />} />
+          <Route path="/progetti/toolkit" element={<ToolKit />} />
+          <Route
+            path="/progetti/diario-personale"
+            element={<DiarioPersonale />}
+          />
+          <Route path="/progetti/inzona" element={<InZona />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

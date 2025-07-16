@@ -5,6 +5,7 @@ import type { Project } from "@/types/project";
 export const projects: Project[] = [
   {
     id: 1,
+    slug: "marafone-romagnolo",
     title: "Marafone Romagnolo",
     description:
       "Marafone Romagnolo è il gioco di carte tradizionale più amato della Romagna, ora disponibile sul tuo smartphone! Vivi tutta l’autenticità del gioco romagnolo con regole fedeli alla tradizione e un’atmosfera che richiama le vere sfide tra amici.",
@@ -20,6 +21,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    slug: "globo-ricambi",
     title: "Globo Ricambi",
     description:
       "Sito web moderno e professionale per Globo Ricambi, azienda specializzata in ricambi per auto d'epoca dal 1986 a Gambettola (FC).",
@@ -39,6 +41,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    slug: "casa-vacanze",
     title: "Casa Vacanze in Affitto",
     description:
       "Gestione e promozione di una Casa Vacanze con backoffice dedicato per ottimizzare prenotazioni e ricavi.",
@@ -57,6 +60,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: "toolkit",
     title: "ToolKit - Strumenti Online",
     description:
       "Suite completa di strumenti online gratuiti per la produttività quotidiana. Include funzionalità per gestire PDF, manipolare testo, elaborare immagini e eseguire calcoli. Un'applicazione web moderna e user-friendly che semplifica le attività digitali di tutti i giorni.",
@@ -67,6 +71,7 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    slug: "diario-personale",
     title: "Diario personale",
     description:
       "Applicazione web per la gestione di diari personali con funzionalità di ricerca e categorizzazione.",
@@ -77,7 +82,19 @@ export const projects: Project[] = [
     demoUrl: "https://minima-diary.lovable.app/",
   },
   {
+    id: 8,
+    slug: "inzona",
+    title: "inZona",
+    description:
+      "App mobile per scoprire tutti gli eventi della Romagna in un'unica piattaforma. Sagre, concerti, mostre e feste vicino a te.",
+    image: "/placeholder.svg",
+    technologies: ["React Native", "TypeScript", "Node.js", "MongoDB"],
+    category: "Dev",
+    // demoUrl: "https://inzona.app/",
+  },
+  {
     id: 6,
+    slug: "vendita-online",
     title: "Vendita Online",
     description:
       "Esperienza diretta nella vendita online tramite portali come eBay e Vinted, con gestione di spedizioni, comunicazione clienti e ottimizzazione delle inserzioni.",
@@ -89,6 +106,7 @@ export const projects: Project[] = [
   },
   {
     id: 7,
+    slug: "property-management",
     title: "Property Management",
     description:
       "Gestisco direttamente appartamenti su piattaforme come Airbnb e Booking, occupandomi di sincronizzazione calendari, comunicazione con gli ospiti e ottimizzazione delle performance.",

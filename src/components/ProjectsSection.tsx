@@ -36,22 +36,26 @@ const ProjectsSection = () => {
     <section id="projects" className="py-10 bg-secondary/30 section-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block animate-slide-in-top">
             <span className="relative z-10">I miei progetti</span>
-            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
+            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1 animate-shimmer"></span>
           </h2>
         </div>
         {/* Mostra solo i progetti della categoria Dev, senza intestazione */}
         {projectsByCategory["Dev"] && projectsByCategory["Dev"].length > 0 && (
           <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 animate-fade-in">
-              {projectsByCategory["Dev"].map((project) => (
-                <TiltedProjectCard
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {projectsByCategory["Dev"].map((project, index) => (
+                <div
                   key={project.id}
-                  project={project}
-                  category={"Dev"}
-                  scrollToContact={scrollToContact}
-                />
+                  className={`stagger-${Math.min(index + 1, 6)}`}
+                >
+                  <TiltedProjectCard
+                    project={project}
+                    category={"Dev"}
+                    scrollToContact={scrollToContact}
+                  />
+                </div>
               ))}
             </div>
           </div>

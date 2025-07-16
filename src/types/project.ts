@@ -1,5 +1,6 @@
 export type Technology =
   | "React"
+  | "React Native"
   | "Node.js"
   | "TypeScript"
   | "MongoDB"
@@ -25,6 +26,7 @@ export type Category =
 
 export interface Project {
   id: number;
+  slug: string; // nuovo campo per URL friendly
   title: string;
   description?: string; // opzionale, per retrocompatibilità
   image: string;

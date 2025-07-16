@@ -81,12 +81,12 @@ const TiltedProjectCard: React.FC<TiltedProjectCardProps> = ({
   return (
     <figure
       ref={ref}
-      className="relative w-full h-full [perspective:800px] flex flex-col items-center justify-center"
+      className="relative w-full h-full [perspective:800px] flex flex-col items-center justify-center hover-lift animate-fade-in-up"
       style={{ height: "300px", width: "100%" }}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={() => navigate(`/progetti/${project.id}`)}
+      onClick={() => navigate(`/progetti/${project.slug}`)}
     >
       <motion.div
         className="relative [transform-style:preserve-3d]"
