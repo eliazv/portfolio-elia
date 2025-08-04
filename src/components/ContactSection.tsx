@@ -231,7 +231,7 @@ const ContactSection = () => {
             </div>
           </div>
           {/* Colonna destra: riepilogo competenze */}
-          <div>
+          {/* <div>
             <div className="rounded-3xl bg-white/10 backdrop-blur-md shadow-xl p-8 flex flex-col gap-8 animate-fade-in-up">
               <h3 className="text-2xl font-bold mb-4 text-primary">
                 Competenze
@@ -253,7 +253,7 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import TiltedProjectCard from "@/components/TiltedProjectCard";
+import SimpleProjectCard from "@/components/SimpleProjectCard";
 import type { Category, Project } from "@/types/project";
 import { projects } from "@/data/projects";
 
@@ -45,17 +45,11 @@ const ProjectsSection = () => {
         {projectsByCategory["Dev"] && projectsByCategory["Dev"].length > 0 && (
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {projectsByCategory["Dev"].map((project, index) => (
-                <div
+              {projectsByCategory["Dev"].map((project) => (
+                <SimpleProjectCard
                   key={project.id}
-                  className={`stagger-${Math.min(index + 1, 6)}`}
-                >
-                  <TiltedProjectCard
-                    project={project}
-                    category={"Dev"}
-                    scrollToContact={scrollToContact}
-                  />
-                </div>
+                  project={project}
+                />
               ))}
             </div>
           </div>

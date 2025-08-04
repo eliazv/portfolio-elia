@@ -36,11 +36,11 @@ const HeroSection = () => {
       </div>
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div className="inline-block bg-secondary/80 rounded-full px-6 py-3 text-lg font-semibold mb-8 animate-fade-in shadow-lg backdrop-blur-md">
+          {/* <div className="inline-block bg-secondary/80 rounded-full px-6 py-3 text-lg font-semibold mb-8 animate-fade-in shadow-lg backdrop-blur-md">
             <span className="text-primary font-bold tracking-widest uppercase">
               Full Stack Developer
             </span>
-          </div>
+          </div> */}
 
           {/* <ASCIIText text="Hey!" enableWaves={true} asciiFontSize={8} /> */}
           <h1
@@ -61,7 +61,7 @@ const HeroSection = () => {
             <span className="text-primary font-bold">soluzioni digitali</span>{" "}
             che fanno la differenza
           </p>
-          <div
+          {/* <div
             className="flex flex-col sm:flex-row gap-4 animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
@@ -76,7 +76,7 @@ const HeroSection = () => {
                 Contattami
               </a>
             </Button>
-          </div>
+          </div> */}
           <div
             className="flex items-center gap-6 mt-12 animate-fade-in"
             style={{ animationDelay: "0.4s" }}

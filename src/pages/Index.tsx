@@ -9,6 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/components/ScrollToTop";
+import FixedSidebar from "@/components/FixedSidebar";
 
 const Index = () => {
   useEffect(() => {
@@ -47,15 +48,18 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <CustomCursor />
-      <Header />
-      <main>
-        <HeroSection />
-        {/* <ServicesSection /> */}
-        <ProjectsSection />
-        <AboutSection />
-        <ContactSection />
-      </main>
-      <Footer />
+      <FixedSidebar />
+      <div className="lg:ml-[33.333333%] lg:max-w-[66.666667%]">
+        <Header />
+        <main>
+          <HeroSection />
+          {/* <ServicesSection /> */}
+          <ProjectsSection />
+          <AboutSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
       <ScrollToTop />
       <Analytics />
     </div>
