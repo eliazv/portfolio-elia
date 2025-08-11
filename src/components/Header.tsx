@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-4 px-6 transition-all duration-300">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-4xl p-0">
         <div className="bg-background/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg flex justify-between items-center">
           <a
             href="#"
@@ -90,7 +90,7 @@ const Header = () => {
                 </a>
               );
             })}
-            <Button asChild size="sm" className="rounded-full p-2">
+            {/* <Button asChild size="sm" className="rounded-full p-2">
               <a
                 href="https://wa.me/393938932793"
                 target="_blank"
@@ -98,7 +98,7 @@ const Header = () => {
               >
                 <MessageCircle size={16} />
               </a>
-            </Button>
+            </Button> */}
           </nav>
         </div>
       </div>

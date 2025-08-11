@@ -9,7 +9,6 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollToTop from "@/components/ScrollToTop";
-import FixedSidebar from "@/components/FixedSidebar";
 
 const Index = () => {
   useEffect(() => {
@@ -48,15 +47,26 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <CustomCursor />
-      <FixedSidebar />
-      <div className="lg:ml-[33.333333%] lg:max-w-[66.666667%]">
+      <div>
         <Header />
         <main>
           <HeroSection />
           {/* <ServicesSection /> */}
           <ProjectsSection />
-          <AboutSection />
-          <ContactSection />
+          <section className="py-16 bg-background">
+            <div className="container mx-auto px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                {/* Colonna sinistra: Chi sono */}
+                <div>
+                  <AboutSection />
+                </div>
+                {/* Colonna destra: Contattami */}
+                <div>
+                  <ContactSection />
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
         <Footer />
       </div>
