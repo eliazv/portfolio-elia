@@ -107,104 +107,116 @@ const techStack = [
 
 const ContactSection = () => {
   return (
-    <div id="contact" className="relative overflow-hidden">
-      <div id="informazioni-contatto">
-        <div className="rounded-3xl bg-white/10 backdrop-blur-md shadow-xl  animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-            Contattami
-          </h2>
-          <p className="text-foreground/70 mb-8">
-            Hai un progetto interessante in mente? O magari vuoi confrontarti su
-            qualche aspetto tecnico? <br />
-            Sono sempre disponibile per una chiacchierata e curioso di sentire
-            nuove idee.
-          </p>
-          <div className="space-y-6 mb-8">
-            <div className="flex items-start gap-4">
-              <div className="rounded-full bg-primary/10 p-3 text-primary">
-                <AtSign className="h-6 w-6" />
+    <div id="contact">
+      <div className="space-y-8">
+        {/* Header with accent line */}
+        <div className="relative">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Contattami</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+
+          {/* Main content card */}
+          <div className="bg-gradient-to-br from-card/50 to-card/30 rounded-2xl p-8 mt-8 border border-accent/10 backdrop-blur-sm shadow-lg">
+            {/* Intro message with better styling */}
+            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6 mb-8 border border-primary/20">
+              <p className="text-foreground/90 leading-relaxed text-lg">
+                Hai un{" "}
+                <span className="font-semibold text-primary">
+                  progetto interessante
+                </span>{" "}
+                in mente? O magari vuoi confrontarti su qualche aspetto tecnico?
+              </p>
+              <p className="text-foreground/80 mt-2">
+                Sono sempre disponibile per una{" "}
+                <span className="font-semibold text-accent">chiacchierata</span>{" "}
+                e curioso di sentire nuove idee.
+              </p>
+            </div>
+            <div className="space-y-6 mb-8">
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-3 text-primary">
+                  <AtSign className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium">Email</h4>
+                  <a
+                    href="mailto:zavattaelia@gmail.com"
+                    className="text-foreground/70 hover:text-primary transition-colors"
+                  >
+                    zavattaelia@gmail.com
+                  </a>
+                </div>
               </div>
-              <div>
-                <h4 className="text-lg font-medium">Email</h4>
-                <a
-                  href="mailto:zavattaelia@gmail.com"
-                  className="text-foreground/70 hover:text-primary transition-colors"
-                >
-                  zavattaelia@gmail.com
-                </a>
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-3 text-primary">
+                  <PhoneCall className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium">Telefono</h4>
+                  <a
+                    href="tel:+393938932793"
+                    className="text-foreground/70 hover:text-primary transition-colors"
+                  >
+                    +39 393 893 2793
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="rounded-full bg-primary/10 p-3 text-primary">
-                <PhoneCall className="h-6 w-6" />
-              </div>
-              <div>
-                <h4 className="text-lg font-medium">Telefono</h4>
-                <a
-                  href="tel:+393938932793"
-                  className="text-foreground/70 hover:text-primary transition-colors"
-                >
-                  +39 393 893 2793
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* Social icons */}
-          <div className="flex flex-wrap gap-5 mt-6">
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/393938932793"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="group rounded-full bg-white hover:bg-green-100 border border-green-400 transition-colors p-3 shadow-md flex items-center justify-center"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-                alt="WhatsApp"
-                className="w-7 h-7 text-green-600 group-hover:scale-110 transition-transform"
-                style={{
-                  filter:
-                    "invert(38%) sepia(99%) saturate(749%) hue-rotate(88deg) brightness(92%) contrast(92%)",
-                }}
-              />
-            </a>
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/in/eliazavatta/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="group rounded-full bg-white hover:bg-blue-100 border border-blue-400 transition-colors p-3 shadow-md flex items-center justify-center"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
-                alt="LinkedIn"
-                className="w-7 h-7 text-blue-700 group-hover:scale-110 transition-transform"
-                style={{
-                  filter:
-                    "invert(32%) sepia(99%) saturate(749%) hue-rotate(180deg) brightness(92%) contrast(92%)",
-                }}
-              />
-            </a>
-            {/* Email */}
-            <a
-              href="mailto:zavattaelia@gmail.com"
-              aria-label="Email"
-              className="group rounded-full bg-white hover:bg-red-100 border border-red-400 transition-colors p-3 shadow-md flex items-center justify-center"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"
-                alt="Email"
-                className="w-7 h-7 text-red-600 group-hover:scale-110 transition-transform"
-                style={{
-                  filter:
-                    "invert(32%) sepia(99%) saturate(749%) hue-rotate(0deg) brightness(92%) contrast(92%)",
-                }}
-              />
-            </a>
-            {/* Instagram */}
-            <a
+            {/* Social icons */}
+            <div className="flex flex-wrap gap-5 mt-6">
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/393938932793"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="group rounded-full bg-white hover:bg-green-100 border border-green-400 transition-colors p-3 shadow-md flex items-center justify-center"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+                  alt="WhatsApp"
+                  className="w-7 h-7 text-green-600 group-hover:scale-110 transition-transform"
+                  style={{
+                    filter:
+                      "invert(38%) sepia(99%) saturate(749%) hue-rotate(88deg) brightness(92%) contrast(92%)",
+                  }}
+                />
+              </a>
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/eliazavatta/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="group rounded-full bg-white hover:bg-blue-100 border border-blue-400 transition-colors p-3 shadow-md flex items-center justify-center"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                  alt="LinkedIn"
+                  className="w-7 h-7 text-blue-700 group-hover:scale-110 transition-transform"
+                  style={{
+                    filter:
+                      "invert(32%) sepia(99%) saturate(749%) hue-rotate(180deg) brightness(92%) contrast(92%)",
+                  }}
+                />
+              </a>
+              {/* Email */}
+              <a
+                href="mailto:zavattaelia@gmail.com"
+                aria-label="Email"
+                className="group rounded-full bg-white hover:bg-red-100 border border-red-400 transition-colors p-3 shadow-md flex items-center justify-center"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"
+                  alt="Email"
+                  className="w-7 h-7 text-red-600 group-hover:scale-110 transition-transform"
+                  style={{
+                    filter:
+                      "invert(32%) sepia(99%) saturate(749%) hue-rotate(0deg) brightness(92%) contrast(92%)",
+                  }}
+                />
+              </a>
+              {/* Instagram */}
+              {/* <a
               href="https://www.instagram.com/eliazavatta/"
               target="_blank"
               rel="noopener noreferrer"
@@ -220,7 +232,8 @@ const ContactSection = () => {
                     "invert(32%) sepia(99%) saturate(749%) hue-rotate(320deg) brightness(92%) contrast(92%)",
                 }}
               />
-            </a>
+            </a> */}
+            </div>
           </div>
         </div>
       </div>

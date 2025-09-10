@@ -13,7 +13,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = "Elia Zavatta - Full Stack Developer";
+    document.title = "Sviluppatore Freelance Siti Web e App Mobile Cesena | Elia Zavatta";
 
     // Add smooth scrolling for anchor links
     const handleAnchorClick = (e: MouseEvent) => {

@@ -1,2 +1,5 @@
-- marafone riscrivi il progetto con caratteristiche tecniche,
--
+- migliore seo per programmatore di siti web e app mobile a cesena
+- card progetto nella home:
+  - se cliccate devono mandare subito al sito , senza andare nella pagina /progetti/marafone-romagnolo
+  - devono avere icona app sopra alla immagine , come è fatto in pagina di progetto ad esempio
+- migliora sezione chi sono: rendila piu chiara e per tutti, non allungare il testo, migliora design
