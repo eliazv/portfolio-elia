@@ -8,7 +8,7 @@ export const projects: Project[] = [
     slug: "marafone-romagnolo",
     title: "Marafone Romagnolo",
     description:
-      "Marafone Romagnolo è il gioco di carte tradizionale più amato della Romagna, ora disponibile sul tuo smartphone! Vivi tutta l’autenticità del gioco romagnolo con regole fedeli alla tradizione e un’atmosfera che richiama le vere sfide tra amici.",
+      "App mobile ispirata a un tradizionale gioco di carte romagnolo, con modalità multiplayer online e single player contro l’IA",
     image:
       "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
     logoImage: "/marafone.jpg",
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     slug: "globo-ricambi",
     title: "Globo Ricambi",
     description:
-      "Sito web moderno e professionale per Globo Ricambi, azienda specializzata in ricambi per auto d'epoca dal 1986 a Gambettola (FC).",
+      "Sito web moderno e professionale per Globo Ricambi, azienda specializzata in ricambi per auto d'epoca",
     image: "globo/globo-desk.png",
     logoImage: "/globo.png",
     technologies: [
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     slug: "casa-vacanze",
     title: "Casa Vacanze in Affitto",
     description:
-      "Gestione e promozione di una Casa Vacanze con backoffice dedicato per ottimizzare prenotazioni e ricavi.",
+      "Sito Web per promozione e gestione di una Casa Vacanze, con backoffice dedicato per controllare prenotazioni e ricavi",
     image: "/immerso/immerso-desktop.png",
     technologies: [
       "React",

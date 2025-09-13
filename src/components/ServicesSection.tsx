@@ -13,6 +13,8 @@ const ServicesSection = () => {
         "Sviluppo di <span class='font-bold text-blue-600'>siti web</span> e <span class='font-bold text-blue-600'>app mobile</span> da zero, oltre a modifiche e implementazioni su progetti esistenti.",
       icon: <Code className="h-8 w-8" />,
       primary: true,
+      imageUrl:
+        "https://wallpapers.com/images/featured/coding-background-9izlympnd0ovmpli.jpg",
       features: [
         "<span class='font-bold text-blue-600'>Siti Web</span> e <span class='font-bold text-blue-600'>App</span> da Zero",
         "Modifiche a Siti Esistenti",
@@ -35,6 +37,8 @@ const ServicesSection = () => {
 
       icon: <Home className="h-8 w-8" />,
       primary: false,
+      imageUrl:
+        "https://www.shutterstock.com/image-photo/new-york-usa-22-september-600nw-2523504849.jpg",
       features: [
         "Gestione <span class='font-bold text-green-600'>Airbnb</span> & <span class='font-bold text-green-600'>Booking.com</span>",
         "Sincronizzazione Calendari",
@@ -56,7 +60,7 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block">
             <span className="relative z-10">I miei servizi</span>
-            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
+            <span className="absolute -bottom-1 left-0 w-full h-3 bg-green-500/30 -rotate-1"></span>
           </h2>
         </div>
 
@@ -79,14 +83,12 @@ const ServicesSection = () => {
               }}
             >
               <div className="relative overflow-hidden">
-                {/* Placeholder image with gradient */}
-                <div
-                  className={`w-full h-20 bg-gradient-to-br ${
-                    service.primary
-                      ? "from-blue-400/20 to-blue-600/30"
-                      : "from-green-400/20 to-green-600/30"
-                  } transition-all duration-700 group-hover:scale-110 group-hover:blur-[1px] group-hover:brightness-110`}
-                ></div>
+                {/* Service image */}
+                <img
+                  src={service.imageUrl}
+                  alt={service.title}
+                  className="w-full h-20 object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[1px] group-hover:brightness-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
                 {/* Overlay con effetto shimmer */}
@@ -116,7 +118,7 @@ const ServicesSection = () => {
                 )}
               </div>
 
-              <div className="p-6 relative">
+              <div className="p-4 relative">
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent via-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
 
                 <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">

@@ -31,7 +31,7 @@ const SimpleProjectCard: React.FC<SimpleProjectCardProps> = ({ project }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-52 object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[1px] group-hover:brightness-110"
+          className="w-full h-40 object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[1px] group-hover:brightness-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
@@ -78,13 +78,13 @@ const SimpleProjectCard: React.FC<SimpleProjectCardProps> = ({ project }) => {
         </div>
       </div>
 
-      <div className="p-6 relative">
+      <div className="p-4 relative">
         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent via-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
 
         <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
           {project.title}
         </h3>
-        <p className="text-foreground/70 text-sm leading-relaxed line-clamp-3">
+        <p className="text-foreground/70 text-sm leading-relaxed line-clamp-5">
           {project.description}
         </p>
 
