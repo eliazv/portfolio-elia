@@ -2,3 +2,4 @@
 - sotto ai miei progetti metti i miei servizi con : app web e mobile su misura; host per alloggi airbnb e booking
 - bolle nei progetti non sincronizzarle ma falle andare a ritmo diverso
 - toigli effetto sfondo a testi
+- se clicco su un servizio la card si espande e fa vedere altri dettagli

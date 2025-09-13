@@ -13,7 +13,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = "Sviluppatore Freelance Siti Web e App Mobile Cesena | Elia Zavatta";
+    document.title =
+      "Sviluppatore Freelance Siti Web e App Mobile Cesena | Elia Zavatta";
 
     // Add smooth scrolling for anchor links
     const handleAnchorClick = (e: MouseEvent) => {
@@ -51,8 +52,8 @@ const Index = () => {
         <Header />
         <main>
           <HeroSection />
-          {/* <ServicesSection /> */}
           <ProjectsSection />
+          <ServicesSection />
           <section className="py-16 bg-background">
             <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

@@ -33,7 +33,10 @@ const ProjectsSection = () => {
   // Mostra solo la categoria "Dev" e nasconde la scritta "Dev" e la sezione "Altro"
   const categoryOrder: Category[] = ["Dev"];
   const devProjects = projectsByCategory["Dev"] || [];
-  const { containerRef, visibleItems } = useStaggeredAnimation(devProjects.length, 150);
+  const { containerRef, visibleItems } = useStaggeredAnimation(
+    devProjects.length,
+    150
+  );
 
   return (
     <section id="projects" className="py-10 bg-secondary/30 section-background">
@@ -41,7 +44,8 @@ const ProjectsSection = () => {
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block animate-slide-in-top">
             <span className="relative z-10">I miei progetti</span>
-            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1 animate-shimmer"></span>
+            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
+            {/* <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1 animate-shimmer"></span> */}
           </h2>
         </div>
         {/* Mostra solo i progetti della categoria Dev, senza intestazione */}
@@ -53,8 +57,8 @@ const ProjectsSection = () => {
                   key={project.id}
                   className={`transform transition-all duration-700 ${
                     visibleItems[index]
-                      ? 'opacity-100 translate-y-0 scale-100'
-                      : 'opacity-0 translate-y-12 scale-95'
+                      ? "opacity-100 translate-y-0 scale-100"
+                      : "opacity-0 translate-y-12 scale-95"
                   }`}
                   style={{
                     transitionDelay: `${index * 100}ms`,

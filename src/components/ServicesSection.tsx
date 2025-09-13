@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Home, Star, Zap, Users, Trophy } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const ServicesSection = () => {
   const services = [
@@ -9,11 +10,11 @@ const ServicesSection = () => {
       id: 1,
       title: "Sviluppo Web & App",
       description:
-        "Sviluppo di siti web e applicazioni da zero, oltre a modifiche e implementazioni su progetti esistenti. Offro anche manutenzione, aggiornamenti e nuove funzionalità per siti già online, utilizzando le tecnologie più moderne.",
+        "Sviluppo di <span class='font-bold text-blue-600'>siti web</span> e <span class='font-bold text-blue-600'>app mobile</span> da zero, oltre a modifiche e implementazioni su progetti esistenti.",
       icon: <Code className="h-8 w-8" />,
       primary: true,
       features: [
-        "Siti Web e App da Zero",
+        "<span class='font-bold text-blue-600'>Siti Web</span> e <span class='font-bold text-blue-600'>App</span> da Zero",
         "Modifiche a Siti Esistenti",
         "Nuove Funzionalità",
         "Manutenzione e Aggiornamenti",
@@ -24,13 +25,18 @@ const ServicesSection = () => {
     },
     {
       id: 2,
-      title: "Gestione Affitti Brevi",
+      title: "Host Affitti Brevi",
       description:
-        "Gestione completa di proprietà su Airbnb e Booking.com, dalla sincronizzazione calendari all'ottimizzazione delle performance, comunicazione con gli ospiti e massimizzazione dei ricavi.",
+        "Gestione completa di proprietà su " +
+        "<span class='font-bold text-green-600'>Airbnb</span> e " +
+        "<span class='font-bold text-green-600'>Booking.com</span>, " +
+        "dalla sincronizzazione calendari all'ottimizzazione delle performance, comunicazione con gli ospiti e " +
+        "<span class='font-bold text-green-600'>massimizzazione dei ricavi</span> ",
+
       icon: <Home className="h-8 w-8" />,
       primary: false,
       features: [
-        "Gestione Airbnb & Booking.com",
+        "Gestione <span class='font-bold text-green-600'>Airbnb</span> & <span class='font-bold text-green-600'>Booking.com</span>",
         "Sincronizzazione Calendari",
         "Ottimizzazione Prezzi",
         "Reporting e Analytics",
@@ -39,88 +45,96 @@ const ServicesSection = () => {
     },
   ];
 
+  const { containerRef, visibleItems } = useStaggeredAnimation(
+    services.length,
+    150
+  );
+
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-10 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block">
             <span className="relative z-10">I miei servizi</span>
             <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
           </h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Offro soluzioni professionali per le tue esigenze digitali e di
-            business
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {services.map((service) => (
-            <Card
+        <div
+          ref={containerRef as React.RefObject<HTMLDivElement>}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
+          {services.map((service, index) => (
+            <div
               key={service.id}
-              className={`relative overflow-hidden transition-all duration-300 hover:scale-105 ${
-                service.primary
-                  ? `
-                    bg-gradient-to-br from-blue-50/50 to-blue-100/30
-                    border-2 border-blue-200/50
-                    shadow-[0_10px_40px_rgba(59,130,246,0.15)]
-                    hover:shadow-[0_20px_60px_rgba(59,130,246,0.25)]
-                  `
-                  : `
-                    bg-gradient-to-br from-green-50/50 to-green-100/30
-                    border-2 border-green-200/50
-                    shadow-[0_10px_40px_rgba(34,197,94,0.15)]
-                    hover:shadow-[0_20px_60px_rgba(34,197,94,0.25)]
-                  `
+              className={`group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer enhanced-card-hover magnetic-element animate-float-gentle border border-transparent hover:border-accent/20 backdrop-blur-sm transform transition-all duration-700 ${
+                visibleItems[index]
+                  ? "opacity-100 translate-y-0 scale-100"
+                  : "opacity-0 translate-y-12 scale-95"
               }`}
+              style={{
+                animationDelay: `${Math.random() * 2}s`,
+                animationDuration: `${4 + Math.random() * 2}s`,
+                transitionDelay: `${index * 100}ms`,
+              }}
             >
-              {service.primary && (
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Star className="h-3 w-3 mr-1" />
-                    Principale
-                  </Badge>
-                </div>
-              )}
+              <div className="relative overflow-hidden">
+                {/* Placeholder image with gradient */}
+                <div
+                  className={`w-full h-20 bg-gradient-to-br ${
+                    service.primary
+                      ? "from-blue-400/20 to-blue-600/30"
+                      : "from-green-400/20 to-green-600/30"
+                  } transition-all duration-700 group-hover:scale-110 group-hover:blur-[1px] group-hover:brightness-110`}
+                ></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-6">
+                {/* Overlay con effetto shimmer */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+
+                {/* Service icon overlay */}
+                <div className="absolute bottom-4 left-4 transition-all duration-500 transform group-hover:scale-110 group-hover:-rotate-3 group-hover:translate-y-[-4px]">
                   <div
                     className={`p-3 rounded-xl ${
                       service.primary
                         ? "bg-blue-100 text-blue-600"
                         : "bg-green-100 text-green-600"
-                    }`}
+                    } shadow-xl border border-white/30 backdrop-blur-sm group-hover:shadow-2xl group-hover:bg-white/95 transition-all duration-500 animate-morphing-border`}
                   >
                     {service.icon}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-                    <p className="text-foreground/70 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
                 </div>
 
-                {/* <div className="space-y-3">
-                  <h4 className="font-semibold text-lg flex items-center gap-2">
-                    <Zap className="h-4 w-4" />
-                    Caratteristiche principali:
-                  </h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <div
-                          className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                            service.primary ? "bg-blue-500" : "bg-green-500"
-                          }`}
-                        />
-                        <span className="text-foreground/80">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Badge for primary service */}
+                {service.primary && (
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Badge className="bg-blue-600 hover:bg-blue-700 text-white">
+                      <Star className="h-3 w-3 mr-1" />
+                      Principale
+                    </Badge>
+                  </div>
+                )}
+              </div>
+
+              <div className="p-6 relative">
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent via-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+
+                <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p
+                  className="text-foreground/70 text-sm leading-relaxed line-clamp-8"
+                  dangerouslySetInnerHTML={{ __html: service.description }}
+                ></p>
+
+                {/* <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="text-xs text-primary font-medium flex items-center gap-1">
+                    Scopri di più
+                    <Zap className="h-3 w-3" />
+                  </div>
                 </div> */}
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
