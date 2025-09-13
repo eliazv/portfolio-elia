@@ -125,7 +125,7 @@ const ServicesSection = () => {
                   {service.title}
                 </h3>
                 <p
-                  className="text-foreground/70 text-sm leading-relaxed line-clamp-8"
+                  className="text-foreground/70 text-md leading-relaxed line-clamp-8"
                   dangerouslySetInnerHTML={{ __html: service.description }}
                 ></p>
 
