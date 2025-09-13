@@ -11,6 +11,7 @@ import {
   PhoneCall,
   Smartphone,
 } from "lucide-react";
+import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const techStack = [
   {
@@ -106,55 +107,77 @@ const techStack = [
 ];
 
 const ContactSection = () => {
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { containerRef: techRef, visibleItems: techVisible } = useStaggeredAnimation(techStack.length, 100);
+
   return (
-    <div id="contact">
+    <div id="contact" ref={elementRef}>
       <div className="space-y-8">
         {/* Header with accent line */}
-        <div className="relative">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">Contattami</h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+        <div className={`relative transform transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 animate-text-focus-in" 
+              style={{ animationDelay: isVisible ? '0.2s' : 'none' }}>
+            Contattami
+          </h2>
+          <div className={`w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ${
+            isVisible ? 'w-16' : 'w-0'
+          }`} style={{ transitionDelay: '0.5s' }}></div>
 
           {/* Main content card */}
-          <div className="bg-gradient-to-br from-card/50 to-card/30 rounded-2xl p-8 mt-8 border border-accent/10 backdrop-blur-sm shadow-lg">
+          <div className={`bg-gradient-to-br from-card/50 to-card/30 rounded-2xl p-8 mt-8 border border-accent/10 backdrop-blur-sm shadow-lg enhanced-card-hover transform transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
+          }`} style={{ transitionDelay: '0.3s' }}>
             {/* Intro message with better styling */}
-            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6 mb-8 border border-primary/20">
-              <p className="text-foreground/90 leading-relaxed text-lg">
+            <div className={`bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6 mb-8 border border-primary/20 enhanced-card-hover animate-morphing-border transform transition-all duration-700 ${
+              isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+            }`} style={{ transitionDelay: '0.6s' }}>
+              <p className={`text-foreground/90 leading-relaxed text-lg animate-reveal-text ${
+                isVisible ? 'opacity-100' : 'opacity-0'
+              }`} style={{ animationDelay: '0.8s' }}>
                 Hai un{" "}
-                <span className="font-semibold text-primary">
+                <span className="font-semibold text-primary animate-gradient-shift">
                   progetto interessante
                 </span>{" "}
                 in mente? O magari vuoi confrontarti su qualche aspetto tecnico?
               </p>
-              <p className="text-foreground/80 mt-2">
+              <p className={`text-foreground/80 mt-2 animate-reveal-text ${
+                isVisible ? 'opacity-100' : 'opacity-0'
+              }`} style={{ animationDelay: '1s' }}>
                 Sono sempre disponibile per una{" "}
-                <span className="font-semibold text-accent">chiacchierata</span>{" "}
+                <span className="font-semibold text-accent animate-gradient-shift">chiacchierata</span>{" "}
                 e curioso di sentire nuove idee.
               </p>
             </div>
             <div className="space-y-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="rounded-full bg-primary/10 p-3 text-primary">
+              <div className={`flex items-start gap-4 transform transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`} style={{ transitionDelay: '1.2s' }}>
+                <div className="rounded-full bg-primary/10 p-3 text-primary magnetic-element animate-pulse-glow">
                   <AtSign className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium">Email</h4>
+                  <h4 className="text-lg font-medium animate-reveal-text" style={{ animationDelay: '1.4s' }}>Email</h4>
                   <a
                     href="mailto:zavattaelia@gmail.com"
-                    className="text-foreground/70 hover:text-primary transition-colors"
+                    className="text-foreground/70 hover:text-primary transition-all duration-300 magnetic-element hover-lift"
                   >
                     zavattaelia@gmail.com
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="rounded-full bg-primary/10 p-3 text-primary">
+              <div className={`flex items-start gap-4 transform transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`} style={{ transitionDelay: '1.4s' }}>
+                <div className="rounded-full bg-primary/10 p-3 text-primary magnetic-element animate-pulse-glow">
                   <PhoneCall className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium">Telefono</h4>
+                  <h4 className="text-lg font-medium animate-reveal-text" style={{ animationDelay: '1.6s' }}>Telefono</h4>
                   <a
                     href="tel:+393938932793"
-                    className="text-foreground/70 hover:text-primary transition-colors"
+                    className="text-foreground/70 hover:text-primary transition-all duration-300 magnetic-element hover-lift"
                   >
                     +39 393 893 2793
                   </a>
@@ -162,14 +185,17 @@ const ContactSection = () => {
               </div>
             </div>
             {/* Social icons */}
-            <div className="flex flex-wrap gap-5 mt-6">
+            <div className={`flex flex-wrap gap-5 mt-6 transform transition-all duration-700 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`} style={{ transitionDelay: '1.6s' }}>
               {/* WhatsApp */}
               <a
                 href="https://wa.me/393938932793"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="group rounded-full bg-white hover:bg-green-100 border border-green-400 transition-colors p-3 shadow-md flex items-center justify-center"
+                className="group rounded-full bg-white hover:bg-green-100 border border-green-400 transition-all duration-300 p-3 shadow-md flex items-center justify-center magnetic-element animate-float-gentle enhanced-card-hover"
+                style={{ animationDelay: '1.8s' }}
               >
                 <img
                   src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
@@ -187,7 +213,8 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="group rounded-full bg-white hover:bg-blue-100 border border-blue-400 transition-colors p-3 shadow-md flex items-center justify-center"
+                className="group rounded-full bg-white hover:bg-blue-100 border border-blue-400 transition-all duration-300 p-3 shadow-md flex items-center justify-center magnetic-element animate-float-wave enhanced-card-hover"
+                style={{ animationDelay: '2s' }}
               >
                 <img
                   src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
@@ -203,7 +230,8 @@ const ContactSection = () => {
               <a
                 href="mailto:zavattaelia@gmail.com"
                 aria-label="Email"
-                className="group rounded-full bg-white hover:bg-red-100 border border-red-400 transition-colors p-3 shadow-md flex items-center justify-center"
+                className="group rounded-full bg-white hover:bg-red-100 border border-red-400 transition-all duration-300 p-3 shadow-md flex items-center justify-center magnetic-element animate-float-gentle enhanced-card-hover"
+                style={{ animationDelay: '2.2s' }}
               >
                 <img
                   src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"

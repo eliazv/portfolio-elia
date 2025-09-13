@@ -1,6 +1,7 @@
 import SimpleProjectCard from "@/components/SimpleProjectCard";
 import type { Category, Project } from "@/types/project";
 import { projects } from "@/data/projects";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const ProjectsSection = () => {
   const scrollToContact = () => {
@@ -31,6 +32,8 @@ const ProjectsSection = () => {
 
   // Mostra solo la categoria "Dev" e nasconde la scritta "Dev" e la sezione "Altro"
   const categoryOrder: Category[] = ["Dev"];
+  const devProjects = projectsByCategory["Dev"] || [];
+  const { containerRef, visibleItems } = useStaggeredAnimation(devProjects.length, 150);
 
   return (
     <section id="projects" className="py-10 bg-secondary/30 section-background">
@@ -42,14 +45,23 @@ const ProjectsSection = () => {
           </h2>
         </div>
         {/* Mostra solo i progetti della categoria Dev, senza intestazione */}
-        {projectsByCategory["Dev"] && projectsByCategory["Dev"].length > 0 && (
-          <div>
+        {devProjects.length > 0 && (
+          <div ref={containerRef}>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {projectsByCategory["Dev"].map((project) => (
-                <SimpleProjectCard
+              {devProjects.map((project, index) => (
+                <div
                   key={project.id}
-                  project={project}
-                />
+                  className={`transform transition-all duration-700 ${
+                    visibleItems[index]
+                      ? 'opacity-100 translate-y-0 scale-100'
+                      : 'opacity-0 translate-y-12 scale-95'
+                  }`}
+                  style={{
+                    transitionDelay: `${index * 100}ms`,
+                  }}
+                >
+                  <SimpleProjectCard project={project} />
+                </div>
               ))}
             </div>
           </div>

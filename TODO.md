@@ -1,5 +1,4 @@
 - migliore seo per programmatore di siti web e app mobile a cesena
-- card progetto nella home:
-  - se cliccate devono mandare subito al sito , senza andare nella pagina /progetti/marafone-romagnolo
-  - devono avere icona app sopra alla immagine , come è fatto in pagina di progetto ad esempio
-- migliora sezione chi sono: rendila piu chiara e per tutti, non allungare il testo, migliora design
+- sotto ai miei progetti metti i miei servizi con : app web e mobile su misura; host per alloggi airbnb e booking
+- bolle nei progetti non sincronizzarle ma falle andare a ritmo diverso
+- toigli effetto sfondo a testi

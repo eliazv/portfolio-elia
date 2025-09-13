@@ -1,13 +1,25 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Iridescence from "./Iridescence";
 import Silk from "./Silk";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin, Mail } from "lucide-react";
 import GradientText from "./GradientText";
 import ASCIIText from "./ASCIIText";
+import InteractiveParticles from "./InteractiveParticles";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showTypewriter, setShowTypewriter] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+    const timer = setTimeout(() => {
+      setShowTypewriter(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section
@@ -34,6 +46,16 @@ const HeroSection = () => {
           speed={1.0}
         />
       </div>
+
+      {/* Interactive Particles */}
+      <div className="absolute inset-0 -z-5">
+        <InteractiveParticles
+          particleCount={30}
+          mouseRadius={120}
+          particleSize={3}
+          speed={0.3}
+        />
+      </div>
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* <div className="inline-block bg-secondary/80 rounded-full px-6 py-3 text-lg font-semibold mb-8 animate-fade-in shadow-lg backdrop-blur-md">
@@ -42,25 +64,60 @@ const HeroSection = () => {
             </span>
           </div> */}
 
-          {/* <ASCIIText text="Hey!" enableWaves={true} asciiFontSize={8} /> */}
-          <h1
-            className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading mb-8 animate-fade-in drop-shadow-xl text-white/95"
-            style={{
-              animationDelay: "0.1s",
-              letterSpacing: "-0.03em",
-              lineHeight: 1.05,
-            }}
+          {/* Nome con effetto reveal avanzato */}
+          <div className="text-reveal-container mb-8">
+            <h1
+              className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading animate-fade-in  text-white/95"
+              style={{
+                animationDelay: "0.1s",
+                letterSpacing: "-0.03em",
+                lineHeight: 1.05,
+              }}
+            >
+              <span className="text-gradient">Elia Zavatta</span>
+            </h1>
+          </div>
+
+          {/* Sottotitolo con typewriter effect */}
+          <div className="mb-12 max-w-3xl">
+            {showTypewriter ? (
+              <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg animate-typewriter">
+                Creo soluzioni digitali che fanno la differenza
+              </p>
+            ) : (
+              <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg opacity-0">
+                Creo soluzioni digitali che fanno la differenza
+              </p>
+            )}
+          </div>
+
+          {/* Call to Action Buttons con animazioni */}
+          <div
+            className={`flex flex-col sm:flex-row gap-4 mb-12 ${
+              isLoaded ? "animate-slide-up-stagger" : "opacity-0"
+            }`}
+            style={{ animationDelay: "2.5s" }}
           >
-            <span className="text-gradient">Elia Zavatta</span>
-          </h1>
-          <p
-            className="text-2xl md:text-3xl text-primary mb-12 max-w-3xl animate-fade-in font-medium drop-shadow-lg"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Creo{" "}
-            <span className="text-primary font-bold">soluzioni digitali</span>{" "}
-            che fanno la differenza
-          </p>
+            <Button
+              size="lg"
+              className="group magnetic-element enhanced-card-hover animate-pulse-glow"
+            >
+              <a href="#projects" className="inline-flex items-center">
+                Scopri i miei progetti
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="magnetic-element enhanced-card-hover animate-morphing-border"
+              asChild
+            >
+              <a href="#about" className="inline-flex items-center">
+                Chi sono
+              </a>
+            </Button>
+          </div>
           {/* <div
             className="flex flex-col sm:flex-row gap-4 animate-fade-in"
             style={{ animationDelay: "0.3s" }}
@@ -77,19 +134,24 @@ const HeroSection = () => {
               </a>
             </Button>
           </div> */}
+          {/* Social links con animazioni fluttuanti */}
           <div
-            className="flex items-center gap-6 mt-12 animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
+            className={`flex items-center gap-6 ${
+              isLoaded ? "animate-slide-up-stagger" : "opacity-0"
+            }`}
+            style={{ animationDelay: "3s" }}
           >
             <a
               href="mailto:zavattaelia@gmail.com"
-              className="text-foreground/70 hover:text-primary transition-colors"
+              className="text-foreground/70 hover:text-primary magnetic-element animate-float-gentle p-3 rounded-full hover:bg-primary/10 backdrop-blur-sm transition-all"
+              style={{ animationDelay: "0.1s" }}
             >
               <Mail className="h-5 w-5" />
             </a>
             <a
               href="https://www.linkedin.com/in/eliazavatta/"
-              className="text-foreground/70 hover:text-primary transition-colors"
+              className="text-foreground/70 hover:text-primary magnetic-element animate-float-wave p-3 rounded-full hover:bg-primary/10 backdrop-blur-sm transition-all"
+              style={{ animationDelay: "0.3s" }}
             >
               <Linkedin className="h-5 w-5" />
             </a>
@@ -98,7 +160,8 @@ const HeroSection = () => {
               href="https://wa.me/393938932793"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/70 hover:text-primary transition-colors"
+              className="text-foreground/70 hover:text-primary magnetic-element animate-float-gentle p-3 rounded-full hover:bg-primary/10 backdrop-blur-sm transition-all"
+              style={{ animationDelay: "0.5s" }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
