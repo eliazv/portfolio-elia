@@ -81,12 +81,14 @@ const HeroSection = () => {
           {/* Sottotitolo con typewriter effect */}
           <div className="mb-12 max-w-3xl">
             {showTypewriter ? (
-              <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg animate-typewriter">
-                Creo soluzioni digitali che fanno la differenza
+              <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg animate-typewriter break-words text-balance">
+                Creo soluzioni digitali
+                <br className="block sm:hidden" /> che fanno la differenza
               </p>
             ) : (
-              <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg opacity-0">
-                Creo soluzioni digitali che fanno la differenza
+              <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg opacity-0 break-words text-balance">
+                Creo soluzioni digitali
+                <br className="block sm:hidden" /> che fanno la differenza
               </p>
             )}
           </div>
