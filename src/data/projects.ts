@@ -20,7 +20,7 @@ export const projects: Project[] = [
     // appStoreUrl: "https://apps.apple.com/app",
   },
   {
-    id: 4,
+    id: 2,
     slug: "globo-ricambi",
     title: "Globo Ricambi",
     description:
@@ -58,6 +58,31 @@ export const projects: Project[] = [
     demoUrl: "https://immerso-nella-pineta.vercel.app/",
     logoImage: "/immerso/targhetta.jpg",
   },
+  {
+    id: 4,
+    slug: "contaspicci",
+    title: "ContaSpicci",
+    description:
+      "App mobile per la gestione delle finanze personali. Permette di monitorare entrate, spese e investimenti, con grafici intuitivi e statistiche automatiche. Semplice, potente e completamente offline-friendly.",
+    image: "sfondo.jpg",
+    technologies: [],
+    category: "Dev",
+    demoUrl: "/contaspicci",
+    logoImage: "/contaspicci.jpg",
+  },
+  {
+    id: 5,
+    slug: "scadenzario",
+    title: "Scadenzario",
+    description:
+      "App per gestire promemoria e scadenze di bollette, documenti, medicinali e abbonamenti. Interfaccia minimale con notifiche smart e backup automatico. Ideale per chi vuole avere tutto sotto controllo.",
+    image: "sfondo.jpg",
+    technologies: [],
+    category: "Dev",
+    demoUrl: "/scadenzario",
+    logoImage: "/scadenzario.png",
+  },
+
   // {
   //   id: 2,
   //   slug: "toolkit",
@@ -92,28 +117,28 @@ export const projects: Project[] = [
   //   category: "Dev",
   //   // demoUrl: "https://inzona.app/",
   // },
-  {
-    id: 6,
-    slug: "vendita-online",
-    title: "Vendita Online",
-    description:
-      "Esperienza diretta nella vendita online tramite portali come eBay e Vinted, con gestione di spedizioni, comunicazione clienti e ottimizzazione delle inserzioni.",
-    image:
-      "https://www.pixartprinting.it/blog/wp-content/uploads/2021/10/Siti_Vendita_On_Line.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: [],
-    category: "Altro",
-    contactBtn: true,
-  },
-  {
-    id: 7,
-    slug: "property-management",
-    title: "Property Management",
-    description:
-      "Gestisco direttamente appartamenti su piattaforme come Airbnb e Booking, occupandomi di sincronizzazione calendari, comunicazione con gli ospiti e ottimizzazione delle performance.",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE3-BLfV4xJDgA05snZ2RAC4-nEk6zOCrmMw&s?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    technologies: [],
-    category: "Altro",
-    contactBtn: true,
-  },
+  // {
+  //   id: 6,
+  //   slug: "vendita-online",
+  //   title: "Vendita Online",
+  //   description:
+  //     "Esperienza diretta nella vendita online tramite portali come eBay e Vinted, con gestione di spedizioni, comunicazione clienti e ottimizzazione delle inserzioni.",
+  //   image:
+  //     "https://www.pixartprinting.it/blog/wp-content/uploads/2021/10/Siti_Vendita_On_Line.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  //   technologies: [],
+  //   category: "Altro",
+  //   contactBtn: true,
+  // },
+  // {
+  //   id: 7,
+  //   slug: "property-management",
+  //   title: "Property Management",
+  //   description:
+  //     "Gestisco direttamente appartamenti su piattaforme come Airbnb e Booking, occupandomi di sincronizzazione calendari, comunicazione con gli ospiti e ottimizzazione delle performance.",
+  //   image:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE3-BLfV4xJDgA05snZ2RAC4-nEk6zOCrmMw&s?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  //   technologies: [],
+  //   category: "Altro",
+  //   contactBtn: true,
+  // },
 ];
