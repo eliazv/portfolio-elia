@@ -3,3 +3,4 @@
 - bolle nei progetti non sincronizzarle ma falle andare a ritmo diverso
 - toigli effetto sfondo a testi
 - se clicco su un servizio la card si espande e fa vedere altri dettagli
+- facebook.com, 1457566628603107, DIRECT, c3e20eee3f780d68
