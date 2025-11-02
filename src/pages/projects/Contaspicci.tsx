@@ -235,6 +235,19 @@ const ContaSpicci: React.FC = () => {
             ))}
           </div>
         </section>
+
+        {/* PRIVACY POLICY BUTTON */}
+        <section className="mb-24 text-center">
+          <Button
+            onClick={() => navigate("/contaspicci/privacy")}
+            variant="outline"
+            size="lg"
+            className="border-emerald-300 hover:bg-emerald-50 hover:border-emerald-500 text-emerald-700 font-semibold"
+          >
+            <Shield className="mr-2 h-5 w-5" />
+            Privacy Policy
+          </Button>
+        </section>
       </main>
 
       <Footer />

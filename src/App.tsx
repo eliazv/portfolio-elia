@@ -13,6 +13,8 @@ import DiarioPersonale from "./pages/projects/DiarioPersonale";
 import InZona from "./pages/projects/InZona";
 import ContaSpicci from "./pages/projects/Contaspicci";
 import Scadenzario from "./pages/projects/Scadenzario";
+import ContaSpicciPrivacy from "./pages/ContaSpicciPrivacy";
+import ScadenzarioPrivacy from "./pages/ScadenzarioPrivacy";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/progetti/inzona" element={<InZona />} />
           <Route path="/contaspicci" element={<ContaSpicci />} />
           <Route path="/scadenzario" element={<Scadenzario />} />
+          <Route path="/contaspicci/privacy" element={<ContaSpicciPrivacy />} />
+          <Route path="/scadenzario/privacy" element={<ScadenzarioPrivacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

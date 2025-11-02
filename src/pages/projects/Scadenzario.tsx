@@ -237,6 +237,19 @@ const Scadenzario: React.FC = () => {
             ))}
           </div>
         </section>
+
+        {/* PRIVACY POLICY BUTTON */}
+        <section className="mb-24 text-center">
+          <Button
+            onClick={() => navigate("/scadenzario/privacy")}
+            variant="outline"
+            size="lg"
+            className="border-indigo-300 hover:bg-indigo-50 hover:border-indigo-500 text-indigo-700 font-semibold"
+          >
+            <Shield className="mr-2 h-5 w-5" />
+            Privacy Policy
+          </Button>
+        </section>
       </main>
 
       <Footer />
