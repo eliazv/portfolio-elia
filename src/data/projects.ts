@@ -82,6 +82,18 @@ export const projects: Project[] = [
     demoUrl: "/scadenzario",
     logoImage: "/scadenzario.png",
   },
+  {
+    id: 6,
+    slug: "hostpilot",
+    title: "Hostpilot",
+    description:
+      "Piattaforma innovativa per la gestione e monitoraggio di server e hosting, con dashboard intuitiva e automazione avanzata.",
+    image: "sfondo.jpg",
+    technologies: ["React", "TypeScript", "Node.js"],
+    category: "Dev",
+    demoUrl: "/hostpilot",
+    logoImage: "/hostpilot.svg",
+  },
 
   // {
   //   id: 2,
