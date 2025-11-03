@@ -19,6 +19,7 @@ import {
   Smartphone,
   Star,
   Quote,
+  X,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -200,14 +201,27 @@ const Hostpilot: React.FC = () => {
           >
             <Card className="border-red-200 bg-red-50 p-6 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-0">
-                <h3 className="flex items-center text-2xl font-bold mb-3 text-gray-800">
+                <h3 className="flex items-center text-2xl font-bold mb-4 text-gray-800">
                   <Shield className="h-8 w-8 text-red-400 mr-3" /> Il problema
                 </h3>
-                <p className="text-gray-600 text-lg">
-                  Gestire affitti brevi può essere caotico: sincronizzazioni
-                  manuali tra piattaforme, calcoli fiscali complessi, gestione
-                  ospiti disorganizzata e mancanza di insight finanziari.
-                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <X className="h-5 w-5 text-red-400 mr-2 mt-0.5 flex-shrink-0" />
+                    Sincronizzazioni manuali tra piattaforme
+                  </li>
+                  <li className="flex items-start">
+                    <X className="h-5 w-5 text-red-400 mr-2 mt-0.5 flex-shrink-0" />
+                    Calcoli fiscali complessi
+                  </li>
+                  <li className="flex items-start">
+                    <X className="h-5 w-5 text-red-400 mr-2 mt-0.5 flex-shrink-0" />
+                    Gestione ospiti disorganizzata
+                  </li>
+                  <li className="flex items-start">
+                    <X className="h-5 w-5 text-red-400 mr-2 mt-0.5 flex-shrink-0" />
+                    Mancanza di insight finanziari
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </motion.div>
@@ -220,15 +234,28 @@ const Hostpilot: React.FC = () => {
           >
             <Card className="border-blue-200 bg-blue-50 p-6 hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardContent className="p-0">
-                <h3 className="flex items-center text-2xl font-bold mb-3 text-gray-800">
+                <h3 className="flex items-center text-2xl font-bold mb-4 text-gray-800">
                   <CheckCircle className="h-8 w-8 text-blue-500 mr-3" /> La
                   soluzione
                 </h3>
-                <p className="text-gray-600 text-lg">
-                  HostPilot unifica tutto in un'unica piattaforma: channel
-                  manager intelligente, gestione finanziaria automatica e
-                  analytics avanzati per massimizzare i tuoi profitti.
-                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Piattaforma unificata per tutto
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Gestione finanziaria automatica
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Analytics avanzati per decisioni
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Massimizzazione profitti
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </motion.div>
@@ -257,42 +284,32 @@ const Hostpilot: React.FC = () => {
               {
                 icon: Calendar,
                 title: "Channel Manager",
-                desc: "Sincronizza automaticamente Airbnb, Booking.com, Vrbo, Expedia e prenotazioni dirette. Calendario unificato con iCal in tempo reale per evitare doppie prenotazioni.",
+                desc: "Sincronizzazione automatica con Airbnb, Booking.com, Vrbo, Expedia. Calendario unificato iCal per evitare doppie prenotazioni.",
               },
               {
                 icon: BarChart3,
-                title: "Gestione finanziaria avanzata",
-                desc: "Calcolo automatico tasse italiane (cedolare secca 21%, tassa di soggiorno). Monitoraggio commissioni OTA, spese e costi extra. Report su ROI, margini e crescita.",
+                title: "Gestione Finanziaria",
+                desc: "Calcolo automatico tasse italiane  (cedolare secca, soggiorno). Report su ROI, commissioni e profitti. Conformità fiscale completa.",
               },
               {
                 icon: Zap,
-                title: "Automazioni intelligenti",
-                desc: "Notifiche per check-in/out, pulizia e manutenzione. Workflow automatizzati per una gestione senza stress.",
-              },
-              {
-                icon: Users,
-                title: "Gestione ospiti",
-                desc: "Storico completo di prenotazioni e clienti. Profili dettagliati per un servizio personalizzato.",
+                title: "Automazioni Smart",
+                desc: "Notifiche automatiche per check-in/out, pulizia e manutenzione. Workflow senza stress e gestione ospiti integrata.",
               },
               {
                 icon: TrendingUp,
-                title: "Analytics e Business Intelligence",
-                desc: "Dashboard con KPI in tempo reale. Occupazione, trend stagionali e previsioni. Confronto anno su anno e analisi dei canali più redditizi.",
+                title: "Analytics Avanzati",
+                desc: "Dashboard KPI real-time. Trend stagionali, previsioni e confronto anno su anno.",
               },
               {
                 icon: Home,
-                title: "Multi-proprietà",
-                desc: "Calendari e tariffe separati per ogni immobile. Orari check-in/out personalizzabili. Gestione portfolio completa.",
+                title: "Multi-Proprietà",
+                desc: "Calendari separati per ogni immobile. Tariffe e orari personalizzabili.",
               },
               {
                 icon: Smartphone,
-                title: "Cross-platform",
-                desc: "App disponibile su mobile, web e desktop. Sincronizzazione cloud e backup automatico. Sicurezza dati e accesso ovunque.",
-              },
-              {
-                icon: Lock,
-                title: "Conformità italiana",
-                desc: "Calcolo automatico tasse turistiche. Gestione cedolare secca. Registrazione ospiti conforme alla normativa.",
+                title: "Cross-Platform",
+                desc: "App mobile, web e desktop. Sincronizzazione cloud e backup sicuro.",
               },
             ].map((f, i) => (
               <motion.div
