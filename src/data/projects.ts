@@ -58,18 +58,18 @@ export const projects: Project[] = [
     demoUrl: "https://immerso-nella-pineta.vercel.app/",
     logoImage: "/immerso/targhetta.jpg",
   },
-  {
-    id: 4,
-    slug: "contaspicci",
-    title: "ContaSpicci",
-    description:
-      "App mobile per la gestione delle finanze personali. Permette di monitorare entrate, spese e investimenti, con grafici intuitivi e statistiche automatiche. Semplice, potente e completamente offline-friendly.",
-    image: "sfondo.jpg",
-    technologies: [],
-    category: "Dev",
-    demoUrl: "/contaspicci",
-    logoImage: "/contaspicci.jpg",
-  },
+  // {
+  //   id: 4,
+  //   slug: "contaspicci",
+  //   title: "ContaSpicci",
+  //   description:
+  //     "App mobile per la gestione delle finanze personali. Permette di monitorare entrate, spese e investimenti, con grafici intuitivi e statistiche automatiche. Semplice, potente e completamente offline-friendly.",
+  //   image: "sfondo.jpg",
+  //   technologies: [],
+  //   category: "Dev",
+  //   demoUrl: "/contaspicci",
+  //   logoImage: "/contaspicci.jpg",
+  // },
   {
     id: 5,
     slug: "scadenzario",
