@@ -10,7 +10,7 @@ const ServicesSection = () => {
       id: 1,
       title: "Sviluppo Web & App",
       description:
-        "Sviluppo di <span class='font-bold text-blue-600'>siti web</span> e <span class='font-bold text-blue-600'>app mobile</span> da zero, oltre a modifiche e implementazioni su progetti esistenti.",
+        "Sviluppo di <span class='font-bold text-blue-600'>siti web</span> e <span class='font-bold text-blue-600'>app mobile</span> da zero, oltre a modifiche e implementazioni su progetti esistenti per aziende e professionisti.",
       icon: <Code className="h-8 w-8" />,
       primary: true,
       imageUrl:

@@ -23,9 +23,97 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const Hostpilot: React.FC = () => {
   const navigate = useNavigate();
+  useSEO({
+    title: "Hostpilot | Channel manager affitti brevi e case vacanza",
+    description:
+      "Hostpilot è il channel manager per affitti brevi ideato da Elia Zavatta: sincronizza Airbnb, Booking.com e portali OTA, automatizza tasse di soggiorno e messaggi agli ospiti con dashboard intuitiva.",
+    keywords: [
+      "Hostpilot channel manager",
+      "gestione affitti brevi romagna",
+      "software affitti brevi cesena",
+      "channel manager italiano",
+      "app gestione case vacanza",
+    ],
+    canonicalUrl: "https://eliazavatta.it/hostpilot",
+    og: {
+      title: "Hostpilot | Channel manager per affitti brevi",
+      description:
+        "Software per host e property manager: sincronizzazione calendari, automazioni fiscali e dashboard centralizzata.",
+      url: "https://eliazavatta.it/hostpilot",
+      type: "product",
+      image: "https://eliazavatta.it/hostpilot.svg",
+      locale: "it_IT",
+      site_name: "Hostpilot - Gestione affitti brevi",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Hostpilot | Channel manager per affitti brevi",
+      description:
+        "Gestisci annunci, prezzi e comunicazioni degli affitti brevi con Hostpilot, la piattaforma sviluppata da Elia Zavatta.",
+      image: "https://eliazavatta.it/hostpilot.svg",
+    },
+    structuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Hostpilot",
+        applicationCategory: "BusinessApplication",
+        applicationSubCategory: "PropertyManagementApplication",
+        operatingSystem: "Web, iOS",
+        offers: [
+          {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+          },
+        ],
+        screenshot: "https://eliazavatta.it/hostpilot.svg",
+        description:
+          "Channel manager per affitti brevi che centralizza calendari, messaggi agli ospiti, gestione tasse di soggiorno e performance analytics.",
+        creator: {
+          "@type": "Person",
+          name: "Elia Zavatta",
+          url: "https://eliazavatta.it/",
+        },
+        keywords: [
+          "channel manager affitti brevi",
+          "gestione case vacanza",
+          "software property manager",
+          "sincronizzazione calendari OTA",
+        ],
+        featureList: [
+          "Sincronizzazione calendari Airbnb, Booking.com e portali OTA",
+          "Calcolo automatico tasse di soggiorno e imposta di bollo",
+          "Dashboard multi-proprietà con analisi performance",
+          "Applicazione mobile e web per host e collaboratori",
+        ],
+        applicationSuite: "Soluzioni digitali Elia Zavatta",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://eliazavatta.it/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Hostpilot",
+            item: "https://eliazavatta.it/hostpilot",
+          },
+        ],
+      },
+    ],
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -76,9 +164,20 @@ const Hostpilot: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            Gestisci prenotazioni, tasse e ospiti in modo professionale! Con
-            HostPilot inizi a gestire i tuoi affitti brevi in modo semplice e
-            professionale.
+            Hostpilot è il channel manager per affitti brevi per property
+            manager e host. Sincronizzi calendari e tariffe su Airbnb,
+            Booking.com e portali OTA, automatizzi messaggi e adempimenti
+            fiscali da un'unica dashboard.
+          </motion.p>
+          <motion.p
+            className="text-base text-gray-600 mb-12 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+          >
+            Dalla tassa di soggiorno alla gestione ospiti, Hostpilot supporta
+            chi affitta case vacanza con analytics, automazioni e un'app mobile
+            dedicata alla collaborazione del team.
           </motion.p>
 
           <motion.div

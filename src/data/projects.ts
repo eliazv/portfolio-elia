@@ -87,7 +87,7 @@ export const projects: Project[] = [
     slug: "hostpilot",
     title: "Hostpilot",
     description:
-      "Piattaforma innovativa per la gestione e monitoraggio di server e hosting, con dashboard intuitiva e automazione avanzata.",
+      "Piattaforma intelligente per gestire affitti e prenotazioni, con dashboard centralizzata, sincronizzazione calendari e automazioni per host professionali.",
     image: "sfondo.jpg",
     technologies: ["React", "TypeScript", "Node.js"],
     category: "Dev",

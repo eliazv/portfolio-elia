@@ -21,9 +21,100 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const Scadenzario: React.FC = () => {
   const navigate = useNavigate();
+  useSEO({
+    title: "Scadenzario | App promemoria scadenze bollette e documenti",
+    description:
+      "Scadenzario è l'app promemoria scadenze ideata da Elia Zavatta per gestire bollette, documenti, medicinali e pagamenti ricorrenti con notifiche intelligenti su Android e iOS.",
+    keywords: [
+      "Scadenzario app promemoria",
+      "app promemoria bollette",
+      "gestione scadenze documenti",
+      "promemoria farmaci",
+      "app promemoria pagamenti ricorrenti",
+    ],
+    canonicalUrl: "https://eliazavatta.it/scadenzario",
+    og: {
+      title: "Scadenzario | App promemoria scadenze smart",
+      description:
+        "Gestisci bollette, documenti e pagamenti con l'app Scadenzario: notifiche intelligenti, calendario e ricorrenze automatiche.",
+      url: "https://eliazavatta.it/scadenzario",
+      type: "product",
+      image: "https://eliazavatta.it/scadenzario.png",
+      locale: "it_IT",
+      site_name: "Scadenzario - App promemoria scadenze",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Scadenzario | App promemoria scadenze smart",
+      description:
+        "Promemoria per bollette, farmaci e documenti con Scadenzario, l'app sviluppata da Elia Zavatta per Android e iOS.",
+      image: "https://eliazavatta.it/scadenzario.png",
+    },
+    structuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Scadenzario",
+        applicationCategory: "ProductivityApplication",
+        applicationSubCategory: "ReminderApplication",
+        operatingSystem: "Android, iOS",
+        offers: [
+          {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+          },
+        ],
+        downloadUrl:
+          "https://play.google.com/store/apps/details?id=com.eliazavatta.scadenzario",
+        installUrl:
+          "https://apps.apple.com/it/app/scadenzario-gestione-memo/id6751818289",
+        screenshot: "https://eliazavatta.it/scadenzario.png",
+        description:
+          "App promemoria per scadenze di bollette, documenti, farmaci e pagamenti ricorrenti con notifiche intelligenti e calendario condiviso.",
+        creator: {
+          "@type": "Person",
+          name: "Elia Zavatta",
+          url: "https://eliazavatta.it/",
+        },
+        keywords: [
+          "promemoria scadenze",
+          "scadenzario digitale",
+          "app gestione bollette",
+          "promemoria documenti",
+        ],
+        featureList: [
+          "Notifiche intelligenti e ricorrenze personalizzate",
+          "Calendario mensile e vista elenco per priorità",
+          "Gestione allegati PDF e foto dei documenti",
+          "Sincronizzazione multi-dispositivo",
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://eliazavatta.it/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Scadenzario",
+            item: "https://eliazavatta.it/scadenzario",
+          },
+        ],
+      },
+    ],
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -72,10 +163,21 @@ const Scadenzario: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Scadenzario è l'app per promemoria scadenze che ti aiuta a gestire
-            tutto in modo semplice e organizzato. Tutto in un'unica app per
-            gestire le tue scadenze, con notifiche intelligenti, calendario e
-            ricorrenze automatiche.
+            Scadenzario è l'app promemoria scadenze per amministrare bollette,
+            documenti e pagamenti ricorrenti in modo semplice. Disponibile per
+            Android e iOS, offre notifiche intelligenti, calendario condiviso e
+            gestione allegati per avere tutto sotto controllo.
+          </motion.p>
+          <motion.p
+            className="text-base text-gray-600 mb-12 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+            Nato per chi gestisce casa, studio o attività sul territorio,
+            Scadenzario rende facile ricordare scadenze fiscali, farmaci,
+            assicurazioni, manutenzioni e appuntamenti condividendo le liste con
+            famiglia e colleghi.
           </motion.p>
 
           <motion.div

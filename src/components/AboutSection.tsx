@@ -85,7 +85,7 @@ const AboutSection = () => {
                   }`}
                   style={{ animationDelay: "1.2s" }}
                 >
-                  Full Stack Developer
+                  Sviluppatore Web & Mobile - Cesena e Romagna
                 </p>
                 <div
                   className={`flex items-center justify-center sm:justify-start gap-2 text-sm text-foreground/70 animate-fade-in-left ${
@@ -144,6 +144,12 @@ const AboutSection = () => {
                 }`}
                 style={{ transitionDelay: "1.8s" }}
               >
+                <p className="text-foreground/80 text-base leading-relaxed">
+                  Aiuto imprese locali, professionisti e startup della Romagna
+                  a trasformare le loro idee in prodotti digitali scalabili,
+                  lavorando fianco a fianco dalla strategia allo sviluppo di web
+                  app, siti vetrina e applicazioni mobile.
+                </p>
                 {/* Punti di forza principali */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl p-4 border border-primary/20 enhanced-card-hover">
