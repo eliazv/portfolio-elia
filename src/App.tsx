@@ -17,6 +17,7 @@ import Hostpilot from "./pages/projects/Hostpilot";
 import ContaSpicciPrivacy from "./pages/ContaSpicciPrivacy";
 import ScadenzarioPrivacy from "./pages/ScadenzarioPrivacy";
 import HostpilotPrivacy from "./pages/HostpilotPrivacy";
+import HostpilotTerms from "./pages/HostpilotTerms";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/contaspicci/privacy" element={<ContaSpicciPrivacy />} />
           <Route path="/scadenzario/privacy" element={<ScadenzarioPrivacy />} />
           <Route path="/hostpilot/privacy" element={<HostpilotPrivacy />} />
+          <Route path="/hostpilot/terms" element={<HostpilotTerms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

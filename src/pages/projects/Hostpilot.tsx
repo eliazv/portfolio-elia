@@ -652,15 +652,26 @@ const Hostpilot: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="outline"
-              onClick={() => navigate("/hostpilot/privacy")}
-              className="border-blue-200 hover:border-blue-400 hover:bg-blue-50 text-blue-600 hover:text-blue-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Leggi l'Informativa sulla Privacy
-            </Button>
-          </motion.div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="outline"
+                onClick={() => navigate("/hostpilot/privacy")}
+                className="border-blue-200 hover:border-blue-400 hover:bg-blue-50 text-blue-600 hover:text-blue-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Read Privacy Policy
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="outline"
+                onClick={() => navigate("/hostpilot/terms")}
+                className="border-blue-200 hover:border-blue-400 hover:bg-blue-50 text-blue-600 hover:text-blue-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Read Terms & Conditions
+              </Button>
+            </motion.div>
+          </div>
         </motion.section>
       </main>
 
