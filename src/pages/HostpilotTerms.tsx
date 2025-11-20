@@ -692,19 +692,19 @@ const HostpilotTerms: React.FC = () => {
                 <p className="text-gray-700">
                   <strong>Email:</strong>{" "}
                   <a
-                    href="mailto:eliazavatta.dev@gmail.com"
+                    href="mailto:info@eliazavatta.it"
                     className="text-blue-600 hover:underline"
                   >
-                    eliazavatta.dev@gmail.com
+                    info@eliazavatta.it
                   </a>
                 </p>
                 <p className="text-gray-700">
                   <strong>Legal Email:</strong>{" "}
                   <a
-                    href="mailto:eliazavatta.dev@gmail.com"
+                    href="mailto:info@eliazavatta.it"
                     className="text-blue-600 hover:underline"
                   >
-                    eliazavatta.dev@gmail.com
+                    info@eliazavatta.it
                   </a>
                 </p>
               </div>
