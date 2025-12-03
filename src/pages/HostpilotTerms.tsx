@@ -37,8 +37,9 @@ const HostpilotTerms: React.FC = () => {
 
   useEffect(() => {
     // Redirect to Apple's standard EULA
-    window.location.href =
-      "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
+    // window.location.href =
+    // "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
+    window.scrollTo(0, 0);
   }, []);
 
   return (
