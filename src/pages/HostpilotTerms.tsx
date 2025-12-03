@@ -101,6 +101,15 @@ const HostpilotTerms: React.FC = () => {
               the standard Apple EULA to address the specific features and
               requirements of the HostPilot application.
             </p>
+            <p className="text-gray-800 leading-relaxed mt-4 font-semibold">
+              <strong>Apple Minimum Terms Acknowledgement:</strong> You and the
+              End-User acknowledge that this EULA is concluded between you and
+              Licensor only, and not with Apple. Licensor (not Apple) is solely
+              responsible for the Licensed Application and its content. The
+              End-User acknowledges that they have had the opportunity to review
+              the Apple Media Services Terms and Conditions and that this EULA
+              does not conflict with the Usage Rules set forth therein.
+            </p>
           </div>
 
           <div className="prose prose-blue max-w-none">
@@ -124,11 +133,16 @@ const HostpilotTerms: React.FC = () => {
                 Subject to your compliance with this EULA, Elia Zavatta
                 ("Licensor") grants you a limited, non-exclusive,
                 non-transferable, revocable license to download, install, and
-                use the Licensed Application on any Apple-branded or Android
-                device that you own or control, strictly in accordance with the
-                Licensed Application's documentation and the Usage Rules set
-                forth in the App Store Terms of Service or Google Play Terms of
-                Service.
+                use the Licensed Application on devices that you own or control,
+                strictly in accordance with the Licensed Application's
+                documentation and the Usage Rules set forth in the App Store
+                Terms of Service or Google Play Terms of Service. For clarity,
+                when distributed via Apple's App Store the license is limited to
+                a non-transferable license to use the Licensed Application on
+                any Apple-branded products that the End-User owns or controls,
+                and may be accessed and used by other accounts associated with
+                the purchaser via Family Sharing or volume purchasing, as
+                permitted by Apple.
               </p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
@@ -175,6 +189,18 @@ const HostpilotTerms: React.FC = () => {
                 Licensor reserves all rights in and to the Licensed Application
                 not expressly granted to you under this EULA. The Licensed
                 Application is licensed, not sold.
+              </p>
+
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
+                1.4 Maintenance and Support
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Licensor is solely responsible for providing any maintenance and
+                support services with respect to the Licensed Application, as
+                specified in this EULA or as required under applicable law. You
+                and the End-User acknowledge that Apple has no obligation
+                whatsoever to furnish any maintenance or support services with
+                respect to the Licensed Application.
               </p>
             </motion.section>
 
@@ -241,6 +267,11 @@ const HostpilotTerms: React.FC = () => {
                 Airbnb, Booking.com, and other OTA platforms (collectively and
                 individually, "External Services"). You agree to use the
                 External Services at your sole risk.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                You must comply with any applicable third-party terms of
+                agreement when using External Services (for example, any terms
+                required by an OTA or other third-party platform).
               </p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
@@ -328,6 +359,14 @@ const HostpilotTerms: React.FC = () => {
                 THE LICENSED APPLICATION OR SERVICES PROVE DEFECTIVE, YOU ASSUME
                 THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR, OR
                 CORRECTION.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                To the extent permitted by applicable law, if the Licensed
+                Application fails to conform to any applicable warranty, you may
+                notify Apple and Apple will refund the purchase price for the
+                Licensed Application to you. Apple will have no other warranty
+                obligation with respect to the Licensed Application.
               </p>
 
               <p className="text-gray-700 leading-relaxed italic">
@@ -693,6 +732,27 @@ const HostpilotTerms: React.FC = () => {
                 Application, you grant Licensor a limited license to process
                 your data for the purpose of providing the services.
               </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                In the event of any third party claim that the Licensed
+                Application or your possession and use of the Licensed
+                Application infringes that third party's intellectual property
+                rights, you and the End-User acknowledge that Licensor (not
+                Apple) will be solely responsible for the investigation,
+                defense, settlement and discharge of any such intellectual
+                property infringement claim.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                You and the End-User also acknowledge that Licensor (not Apple)
+                is responsible for addressing any claims relating to the
+                Licensed Application or the End-User's possession and/or use of
+                the Licensed Application, including but not limited to product
+                liability claims, claims that the Licensed Application fails to
+                conform to any legal or regulatory requirement, and claims
+                arising under consumer protection or privacy legislation. The
+                EULA may not limit Licensor's liability to the End-User beyond
+                what is permitted by applicable law.
+              </p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
                 10.7 Service Availability and Modifications
@@ -896,6 +956,13 @@ const HostpilotTerms: React.FC = () => {
               <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
                 <p className="text-gray-700">
                   <strong>Licensor:</strong> Elia Zavatta
+                </p>
+                <p className="text-gray-700">
+                  <strong>Address:</strong> Largo Marino Maestri 68, 47525
+                  Gambettola (FC), Italy
+                </p>
+                <p className="text-gray-700">
+                  <strong>Telephone:</strong> +39 3938932793
                 </p>
                 <p className="text-gray-700">
                   <strong>Email:</strong>{" "}
