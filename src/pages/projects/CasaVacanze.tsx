@@ -12,9 +12,22 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const CasaVacanze: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Casa Vacanze | Sito web gestione affitti brevi",
+    description:
+      "Sito web per gestione e promozione casa vacanze con backoffice dedicato. Progetto sviluppato da Elia Zavatta, sviluppatore web e mobile freelance in Romagna.",
+    keywords: [
+      "sito web casa vacanze",
+      "sviluppo web affitti brevi",
+      "sito gestione prenotazioni cesena",
+    ],
+    canonicalUrl: "https://www.eliazavatta.it/progetti/casa-vacanze",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

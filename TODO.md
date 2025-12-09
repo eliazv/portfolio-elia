@@ -1,3 +1,4 @@
+- obbiettivo: migliroare al massimo la seo di questo progetto sito web e passa a Next.js per migliroare seo sito
 - migliore seo per programmatore di siti web e app mobile a cesena
 - sotto ai miei progetti metti i miei servizi con : app web e mobile su misura; host per alloggi airbnb e booking
 - bolle nei progetti non sincronizzarle ma falle andare a ritmo diverso

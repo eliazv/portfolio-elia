@@ -36,14 +36,14 @@ const Scadenzario: React.FC = () => {
       "promemoria farmaci",
       "app promemoria pagamenti ricorrenti",
     ],
-    canonicalUrl: "https://eliazavatta.it/scadenzario",
+    canonicalUrl: "https://www.eliazavatta.it/scadenzario",
     og: {
       title: "Scadenzario | App promemoria scadenze smart",
       description:
         "Gestisci bollette, documenti e pagamenti con l'app Scadenzario: notifiche intelligenti, calendario e ricorrenze automatiche.",
-      url: "https://eliazavatta.it/scadenzario",
+      url: "https://www.eliazavatta.it/scadenzario",
       type: "product",
-      image: "https://eliazavatta.it/scadenzario.png",
+      image: "https://www.eliazavatta.it/scadenzario.png",
       locale: "it_IT",
       site_name: "Scadenzario - App promemoria scadenze",
     },
@@ -52,7 +52,7 @@ const Scadenzario: React.FC = () => {
       title: "Scadenzario | App promemoria scadenze smart",
       description:
         "Promemoria per bollette, farmaci e documenti con Scadenzario, l'app sviluppata da Elia Zavatta per Android e iOS.",
-      image: "https://eliazavatta.it/scadenzario.png",
+      image: "https://www.eliazavatta.it/scadenzario.png",
     },
     structuredData: [
       {
@@ -74,13 +74,13 @@ const Scadenzario: React.FC = () => {
           "https://play.google.com/store/apps/details?id=com.eliazavatta.scadenzario",
         installUrl:
           "https://apps.apple.com/it/app/scadenzario-gestione-memo/id6751818289",
-        screenshot: "https://eliazavatta.it/scadenzario.png",
+        screenshot: "https://www.eliazavatta.it/scadenzario.png",
         description:
           "App promemoria per scadenze di bollette, documenti, farmaci e pagamenti ricorrenti con notifiche intelligenti e calendario condiviso.",
         creator: {
           "@type": "Person",
           name: "Elia Zavatta",
-          url: "https://eliazavatta.it/",
+          url: "https://www.eliazavatta.it/",
         },
         keywords: [
           "promemoria scadenze",
@@ -103,13 +103,13 @@ const Scadenzario: React.FC = () => {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://eliazavatta.it/",
+            item: "https://www.eliazavatta.it/",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Scadenzario",
-            item: "https://eliazavatta.it/scadenzario",
+            item: "https://www.eliazavatta.it/scadenzario",
           },
         ],
       },

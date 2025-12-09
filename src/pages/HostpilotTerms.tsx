@@ -22,14 +22,14 @@ const HostpilotTerms: React.FC = () => {
       "vacation rental terms",
       "service agreement",
     ],
-    canonicalUrl: "https://eliazavatta.it/hostpilot/terms",
+    canonicalUrl: "https://www.eliazavatta.it/hostpilot/terms",
     og: {
       title: "End User License Agreement - Hostpilot",
       description:
         "End User License Agreement for HostPilot vacation rental management platform.",
-      url: "https://eliazavatta.it/hostpilot/terms",
+      url: "https://www.eliazavatta.it/hostpilot/terms",
       type: "article",
-      image: "https://eliazavatta.it/hostpilot.svg",
+      image: "https://www.eliazavatta.it/hostpilot.svg",
       locale: "en_US",
       site_name: "Hostpilot",
     },

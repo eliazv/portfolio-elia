@@ -38,14 +38,14 @@ const Hostpilot: React.FC = () => {
       "channel manager italiano",
       "app gestione case vacanza",
     ],
-    canonicalUrl: "https://eliazavatta.it/hostpilot",
+    canonicalUrl: "https://www.eliazavatta.it/hostpilot",
     og: {
       title: "Hostpilot | Channel manager per affitti brevi",
       description:
         "Software per host e property manager: sincronizzazione calendari, automazioni fiscali e dashboard centralizzata.",
-      url: "https://eliazavatta.it/hostpilot",
+      url: "https://www.eliazavatta.it/hostpilot",
       type: "product",
-      image: "https://eliazavatta.it/hostpilot.svg",
+      image: "https://www.eliazavatta.it/hostpilot.svg",
       locale: "it_IT",
       site_name: "Hostpilot - Gestione affitti brevi",
     },
@@ -54,7 +54,7 @@ const Hostpilot: React.FC = () => {
       title: "Hostpilot | Channel manager per affitti brevi",
       description:
         "Gestisci annunci, prezzi e comunicazioni degli affitti brevi con Hostpilot, la piattaforma sviluppata da Elia Zavatta.",
-      image: "https://eliazavatta.it/hostpilot.svg",
+      image: "https://www.eliazavatta.it/hostpilot.svg",
     },
     structuredData: [
       {
@@ -72,13 +72,13 @@ const Hostpilot: React.FC = () => {
             availability: "https://schema.org/InStock",
           },
         ],
-        screenshot: "https://eliazavatta.it/hostpilot.svg",
+        screenshot: "https://www.eliazavatta.it/hostpilot.svg",
         description:
           "Channel manager per affitti brevi che centralizza calendari, messaggi agli ospiti, gestione tasse di soggiorno e performance analytics.",
         creator: {
           "@type": "Person",
           name: "Elia Zavatta",
-          url: "https://eliazavatta.it/",
+          url: "https://www.eliazavatta.it/",
         },
         keywords: [
           "channel manager affitti brevi",
@@ -102,13 +102,13 @@ const Hostpilot: React.FC = () => {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://eliazavatta.it/",
+            item: "https://www.eliazavatta.it/",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Hostpilot",
-            item: "https://eliazavatta.it/hostpilot",
+            item: "https://www.eliazavatta.it/hostpilot",
           },
         ],
       },

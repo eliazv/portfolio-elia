@@ -11,9 +11,22 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const GloboRicambi: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Globo Ricambi | Sito web ricambi auto d'epoca",
+    description:
+      "Sito web professionale per Globo Ricambi, azienda di ricambi auto d'epoca a Gambettola. Progetto di sviluppo web realizzato da Elia Zavatta, sviluppatore freelance in Romagna.",
+    keywords: [
+      "sito web ricambi auto",
+      "sviluppo web romagna",
+      "sito aziendale cesena",
+    ],
+    canonicalUrl: "https://www.eliazavatta.it/progetti/globo-ricambi",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

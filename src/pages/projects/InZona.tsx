@@ -23,10 +23,23 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 // TODO header non si vede
 const InZona: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "inZona | App eventi Romagna",
+    description:
+      "App mobile per scoprire eventi, sagre, concerti e feste in Romagna. Progetto sviluppato da Elia Zavatta, sviluppatore app mobile a Cesena.",
+    keywords: [
+      "app eventi romagna",
+      "sviluppo app mobile cesena",
+      "app sagre romagna",
+    ],
+    canonicalUrl: "https://www.eliazavatta.it/progetti/inzona",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

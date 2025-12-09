@@ -4,9 +4,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const HostpilotPrivacy: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Privacy Policy - Hostpilot",
+    description:
+      "Informativa sulla privacy dell'app Hostpilot per la gestione di affitti brevi.",
+    canonicalUrl: "https://www.eliazavatta.it/hostpilot/privacy",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

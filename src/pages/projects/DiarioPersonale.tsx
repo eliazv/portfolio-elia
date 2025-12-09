@@ -12,9 +12,22 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const DiarioPersonale: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Diario Personale | Web app React",
+    description:
+      "Web app minimalista per la gestione di diari personali. Progetto React sviluppato da Elia Zavatta, sviluppatore web freelance a Cesena.",
+    keywords: [
+      "web app react",
+      "sviluppo web cesena",
+      "applicazione diario personale",
+    ],
+    canonicalUrl: "https://www.eliazavatta.it/progetti/diario-personale",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

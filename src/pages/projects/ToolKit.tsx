@@ -12,9 +12,22 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const ToolKit: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "ToolKit | Strumenti online gratuiti",
+    description:
+      "Suite di strumenti online gratuiti per PDF, testo, immagini e calcoli. Web app sviluppata da Elia Zavatta, sviluppatore freelance a Cesena.",
+    keywords: [
+      "strumenti online gratuiti",
+      "web app toolkit",
+      "sviluppo web cesena",
+    ],
+    canonicalUrl: "https://www.eliazavatta.it/progetti/toolkit",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

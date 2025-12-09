@@ -4,9 +4,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const ScadenzarioPrivacy: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Privacy Policy - Scadenzario",
+    description:
+      "Informativa sulla privacy dell'app Scadenzario per la gestione di scadenze e promemoria.",
+    canonicalUrl: "https://www.eliazavatta.it/scadenzario/privacy",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

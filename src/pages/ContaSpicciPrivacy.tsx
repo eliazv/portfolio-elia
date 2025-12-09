@@ -4,9 +4,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const ContaSpicciPrivacy: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Privacy Policy - ContaSpicci",
+    description: "Informativa sulla privacy dell'app ContaSpicci.",
+    canonicalUrl: "https://www.eliazavatta.it/contaspicci/privacy",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

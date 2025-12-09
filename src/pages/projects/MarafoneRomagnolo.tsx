@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const PlayStoreIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor">
@@ -21,6 +22,18 @@ const PlayStoreIcon = ({ className }: { className?: string }) => (
 
 const MarafoneRomagnolo: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Marafone Romagnolo | App gioco carte tradizionale",
+    description:
+      "App mobile del Marafone Romagnolo, il gioco di carte tradizionale della Romagna. Sviluppata da Elia Zavatta, sviluppatore app mobile freelance a Cesena.",
+    keywords: [
+      "marafone romagnolo app",
+      "gioco carte romagna",
+      "sviluppo app mobile cesena",
+    ],
+    canonicalUrl: "https://www.eliazavatta.it/progetti/marafone-romagnolo",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

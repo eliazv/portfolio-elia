@@ -1,8 +1,16 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /contaspicci/privacy
+Disallow: /scadenzario/privacy
+Disallow: /hostpilot/privacy
+Disallow: /hostpilot/terms
 
 User-agent: Bingbot
 Allow: /
+Disallow: /contaspicci/privacy
+Disallow: /scadenzario/privacy
+Disallow: /hostpilot/privacy
+Disallow: /hostpilot/terms
 
 User-agent: Twitterbot
 Allow: /
@@ -12,5 +20,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /contaspicci/privacy
+Disallow: /scadenzario/privacy
+Disallow: /hostpilot/privacy
+Disallow: /hostpilot/terms
 
 Sitemap: https://www.eliazavatta.it/sitemap.xml

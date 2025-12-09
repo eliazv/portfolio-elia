@@ -18,9 +18,61 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import useSEO from "@/hooks/useSEO";
 
 const ContaSpicci: React.FC = () => {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "ContaSpicci | App gestione spese e investimenti",
+    description:
+      "ContaSpicci è l'app gratuita per gestire spese personali, budget mensili e portafoglio investimenti in modo semplice e 100% offline. Sviluppata da Elia Zavatta.",
+    keywords: [
+      "ContaSpicci app",
+      "app gestione spese",
+      "app budget personale",
+      "app investimenti offline",
+      "gestione finanze personali",
+    ],
+    canonicalUrl: "https://www.eliazavatta.it/contaspicci",
+    og: {
+      title: "ContaSpicci | App gestione spese e investimenti",
+      description:
+        "Gestisci spese, risparmi e investimenti con un'unica app semplice e completamente offline.",
+      url: "https://www.eliazavatta.it/contaspicci",
+      type: "product",
+      image: "https://www.eliazavatta.it/contaspicci.png",
+      locale: "it_IT",
+      site_name: "ContaSpicci - App finanze personali",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "ContaSpicci | App gestione spese e investimenti",
+      description:
+        "App gratuita per gestire spese, budget e investimenti - 100% offline.",
+      image: "https://www.eliazavatta.it/contaspicci.png",
+    },
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "ContaSpicci",
+      applicationCategory: "FinanceApplication",
+      operatingSystem: "Android, iOS",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+      description:
+        "App gratuita per gestire spese personali, budget mensili e portafoglio investimenti in modo semplice e 100% offline.",
+      creator: {
+        "@type": "Person",
+        name: "Elia Zavatta",
+        url: "https://www.eliazavatta.it/",
+      },
+    },
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
