@@ -136,7 +136,7 @@ export default function Home() {
           {/* FAQ visibile per AI e utenti - design moderno con accordions */}
           <section
             aria-labelledby="faq-title"
-            className="py-16 bg-background relative overflow-hidden"
+            className="py-4 bg-background relative overflow-hidden"
           >
             {/* Background decoration */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -145,28 +145,28 @@ export default function Home() {
             <div className="container mx-auto px-6 relative">
               {/* Header */}
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
                   <span className="text-lg">💬</span>
                   <span className="text-sm font-medium text-primary">FAQ</span>
-                </div>
+                </div> */}
                 <h2
+                  className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block animate-slide-in-top"
                   id="faq-title"
-                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent"
                 >
-                  Domande Frequenti
+                  <span className="relative z-10">Domande Frequenti</span>
+                  <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
                 </h2>
-                <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-                  Tutto quello che devi sapere prima di iniziare un progetto
-                  insieme
-                </p>
+                {/* <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
+                  Tutto quello che devi sapere
+                </p> */}
               </div>
 
               {/* FAQ Grid */}
               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* FAQ Item 1 */}
-                <div className="group p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                  <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                <div className="group p-5 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+                  <div className="flex items-start gap-1">
+                    <span className="flex-shrink-0 w-14 h-14 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
                       👤
                     </span>
                     <div>
@@ -193,9 +193,9 @@ export default function Home() {
                 </div>
 
                 {/* FAQ Item 2 */}
-                <div className="group p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                  <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                <div className="group p-5 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+                  <div className="flex items-start gap-1">
+                    <span className="flex-shrink-0 w-14 h-14 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
                       🛠️
                     </span>
                     <div>
@@ -218,9 +218,9 @@ export default function Home() {
                 </div>
 
                 {/* FAQ Item 3 */}
-                <div className="group p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                  <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                <div className="group p-5 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+                  <div className="flex items-start gap-1">
+                    <span className="flex-shrink-0 w-14 h-14 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
                       ⚡
                     </span>
                     <div>
@@ -242,9 +242,9 @@ export default function Home() {
                 </div>
 
                 {/* FAQ Item 4 */}
-                <div className="group p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                  <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                <div className="group p-5 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+                  <div className="flex items-start gap-1">
+                    <span className="flex-shrink-0 w-14 h-14 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
                       🏢
                     </span>
                     <div>
@@ -266,9 +266,9 @@ export default function Home() {
                 </div>
 
                 {/* FAQ Item 5 */}
-                <div className="group p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                  <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                <div className="group p-5 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+                  <div className="flex items-start gap-1">
+                    <span className="flex-shrink-0 w-14 h-14 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
                       ⏱️
                     </span>
                     <div>
@@ -291,9 +291,9 @@ export default function Home() {
                 </div>
 
                 {/* FAQ Item 6 */}
-                <div className="group p-5 rounded-2xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                  <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                <div className="group p-5 rounded-3xl bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+                  <div className="flex items-start gap-1">
+                    <span className="flex-shrink-0 w-14 h-14 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
                       🌍
                     </span>
                     <div>
@@ -317,9 +317,9 @@ export default function Home() {
                 </div>
 
                 {/* FAQ Item 7 - Full width CTA */}
-                <div className="md:col-span-2 group p-5 rounded-2xl bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
-                  <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                <div className="md:col-span-2 group p-5 rounded-3xl bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                  <div className="flex items-start gap-1">
+                    <span className="flex-shrink-0 w-14 h-14 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
                       📧
                     </span>
                     <div>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Iridescence from "./Iridescence";
@@ -93,11 +93,102 @@ const HeroSection = () => {
                 <br className="block sm:hidden" /> che fanno la differenza
               </p>
             )}
-            {/* Sottotitolo SEO-visible con tecnologie e località */}
-            <p className="text-base md:text-lg text-foreground/70 mt-4 font-normal">
-              Sviluppatore Web e Mobile Freelance • Cesena, Romagna • 
-              React, Flutter, NestJS • Disponibile in remoto in tutta Italia
-            </p>
+            {/* Sottotitolo SEO-visible con tecnologie e località (design modernizzato) */}
+            <div className="mt-6 font-normal max-w-4xl mx-auto">
+              {/* Riga principale: ruolo e località */}
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center mb-4">
+                <span className="text-foreground/80 text-base md:text-lg font-medium">
+                  Sviluppatore Web e Mobile Freelance
+                </span>
+                <span className="hidden sm:inline-block text-foreground/40">•</span>
+                <span className="text-foreground/70 text-sm md:text-base">
+                  📍 Cesena, Romagna
+                </span>
+              </div>
+
+              {/* Tecnologie con loghi */}
+              <div className="flex flex-wrap items-center justify-center gap-3 ">
+                {/* React */}
+                <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png" 
+                    alt="React" 
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                    React
+                  </span>
+                </div>
+
+                {/* Next.js */}
+                <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                  <img 
+                    src="https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254" 
+                    alt="Next.js" 
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                    Next.js
+                  </span>
+                </div>
+
+                {/* Flutter */}
+                <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg" 
+                    alt="Flutter" 
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                    Flutter
+                  </span>
+                </div>
+
+                {/* NestJS */}
+                <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png" 
+                    alt="NestJS" 
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                    NestJS
+                  </span>
+                </div>
+
+                {/* Node.js */}
+                <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                  <img 
+                    src="https://nodejs.org/static/logos/jsIconGreen.svg" 
+                    alt="Node.js" 
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                    Node.js
+                  </span>
+                </div>
+
+                {/* TypeScript */}
+                <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png" 
+                    alt="TypeScript" 
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                    TypeScript
+                  </span>
+                </div>
+              </div>
+
+              {/* Disponibilità */}
+              {/* <div className="text-center">
+                <span className="inline-flex items-center gap-2 text-sm text-foreground/60 px-4 py-2 rounded-full bg-background/20 backdrop-blur-sm border border-foreground/5">
+                  <span className="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  Disponibile in remoto in tutta Italia
+                </span>
+              </div> */}
+            </div>
           </div>
 
           {/* Call to Action Buttons con animazioni */}
