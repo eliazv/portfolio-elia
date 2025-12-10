@@ -81,7 +81,7 @@ const HeroSection = () => {
           </div>
 
           {/* Sottotitolo con typewriter effect */}
-          <div className="mb-12 max-w-3xl">
+          <div className="mb-8 max-w-3xl">
             {showTypewriter ? (
               <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg animate-typewriter break-words text-balance">
                 Creo soluzioni digitali
@@ -93,6 +93,11 @@ const HeroSection = () => {
                 <br className="block sm:hidden" /> che fanno la differenza
               </p>
             )}
+            {/* Sottotitolo SEO-visible con tecnologie e località */}
+            <p className="text-base md:text-lg text-foreground/70 mt-4 font-normal">
+              Sviluppatore Web e Mobile Freelance • Cesena, Romagna • 
+              React, Flutter, NestJS • Disponibile in remoto in tutta Italia
+            </p>
           </div>
 
           {/* Call to Action Buttons con animazioni */}

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -125,18 +125,10 @@ const ContactSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-2 animate-text-focus-in"
-            style={{ animationDelay: isVisible ? "0.2s" : "none" }}
-          >
-            Contattami
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block animate-slide-in-top">
+            <span className="relative z-10">Chi sono</span>
+            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
           </h2>
-          <div
-            className={`w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ${
-              isVisible ? "w-16" : "w-0"
-            }`}
-            style={{ transitionDelay: "0.5s" }}
-          ></div>
 
           {/* Main content card */}
           <div

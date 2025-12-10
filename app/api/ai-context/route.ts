@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 
+// Configurazione per static export
+export const dynamic = "force-static";
+export const revalidate = false;
+
 /**
  * Endpoint API per fornire contesto strutturato alle AI e chatbot
  * Utile per ChatGPT, Perplexity, Bing Chat e altri AI crawler
@@ -9,6 +13,7 @@ export async function GET() {
     developer: {
       name: "Elia Zavatta",
       title: "Sviluppatore Web e Mobile Freelance",
+      level: "Senior - Esperto con 3+ anni di esperienza",
       location: {
         city: "Cesena",
         region: "Emilia-Romagna",
@@ -21,6 +26,7 @@ export async function GET() {
           "Cesenatico",
           "Faenza",
         ],
+        remote_availability: "Disponibile per lavoro remoto in tutta Italia",
       },
       contact: {
         email: "info@eliazavatta.it",
@@ -29,7 +35,7 @@ export async function GET() {
         linkedin: "https://www.linkedin.com/in/eliazavatta/",
         github: "https://github.com/eliazv",
       },
-      bio: "Sviluppatore freelance specializzato in siti web, e-commerce e app mobile iOS/Android. Lavoro con aziende, professionisti e startup in Romagna e in tutta Italia, anche da remoto.",
+      bio: "Sviluppatore freelance senior specializzato in siti web, e-commerce e app mobile iOS/Android. Esperto in React, Next.js, Flutter, NestJS e database SQL. Lavoro con aziende, professionisti e startup in Romagna e in remoto in tutta Italia.",
     },
     services: [
       {
@@ -44,7 +50,7 @@ export async function GET() {
           "portfolio",
         ],
         duration: "2-4 settimane",
-        areas: ["Cesena", "Forlì", "Rimini", "Ravenna", "Romagna"],
+        areas: ["Cesena", "Forlì", "Rimini", "Ravenna", "Romagna", "Italia (remoto)"],
       },
       {
         name: "Sviluppo E-commerce",
@@ -60,17 +66,32 @@ export async function GET() {
         areas: ["Romagna", "Emilia-Romagna", "Italia"],
       },
       {
-        name: "Sviluppo App Mobile",
-        description: "Creazione app native e cross-platform per iOS e Android",
+        name: "Sviluppo App Mobile con Flutter",
+        description: "Creazione app native e cross-platform per iOS e Android con Flutter e React Native",
         keywords: [
           "app mobile",
           "app iOS",
           "app Android",
-          "applicazioni mobile",
+          "Flutter",
           "React Native",
+          "applicazioni mobile",
         ],
         duration: "4-8 settimane",
         areas: ["Cesena", "Forlì", "Rimini", "Ravenna", "Italia"],
+      },
+      {
+        name: "Sviluppo Backend con NestJS",
+        description:
+          "Creazione API REST, microservizi e backend scalabili con NestJS e Node.js",
+        keywords: [
+          "backend",
+          "API REST",
+          "NestJS",
+          "Node.js",
+          "microservizi",
+        ],
+        duration: "2-6 settimane",
+        areas: ["Italia", "Remoto"],
       },
       {
         name: "Manutenzione Siti Esistenti",
@@ -85,30 +106,31 @@ export async function GET() {
         areas: ["Cesena", "Romagna", "Remoto"],
       },
       {
-        name: "Consulenza IT",
-        description: "Supporto tecnico e strategico per startup e PMI",
+        name: "Consulenza IT e Sviluppo Remoto",
+        description: "Supporto tecnico e strategico per startup e PMI. Disponibile per collaborazioni remote in tutta Italia.",
         keywords: [
           "consulenza IT",
           "consulenza digitale",
-          "consulenza tecnica",
+          "sviluppatore remoto",
+          "freelance italia",
         ],
         duration: "Variabile",
-        areas: ["Italia", "Remoto"],
+        areas: ["Italia", "Remoto", "Nazionale"],
       },
     ],
     technologies: {
       frontend: [
-        "React",
+        "React.js",
         "Next.js",
         "TypeScript",
         "TailwindCSS",
         "HTML5",
         "CSS3",
       ],
-      mobile: ["React Native", "Capacitor", "iOS", "Android"],
-      backend: ["Node.js", "Express", "API REST"],
-      database: ["MongoDB", "PostgreSQL", "Firebase"],
-      tools: ["Git", "VS Code", "Figma", "Vercel", "Netlify"],
+      mobile: ["Flutter", "React Native", "Capacitor", "iOS", "Android"],
+      backend: ["NestJS", "Node.js", "Express", "API REST", "GraphQL"],
+      database: ["PostgreSQL", "MySQL", "SQL", "MongoDB", "Firebase", "Supabase"],
+      tools: ["Git", "VS Code", "Figma", "Vercel", "Netlify", "Docker"],
     },
     faq: [
       {
@@ -122,9 +144,9 @@ export async function GET() {
           "Sì, lavoro con piccole e medie imprese, professionisti e startup. Offro soluzioni su misura e preventivi personalizzati.",
       },
       {
-        question: "Quanto costa un sito web?",
+        question: "Quali tecnologie utilizzi?",
         answer:
-          "I costi variano in base alle funzionalità. Contattami per un preventivo gratuito personalizzato.",
+          "Sviluppo con React.js, Next.js e TypeScript per il frontend. Per app mobile uso Flutter e React Native. Per il backend NestJS e Node.js. Database SQL (PostgreSQL, MySQL) e NoSQL (MongoDB, Firebase).",
       },
       {
         question: "Quanto tempo serve per un progetto?",
@@ -137,9 +159,14 @@ export async function GET() {
           "Sì, offro pacchetti di manutenzione e supporto continuativo per tutti i progetti.",
       },
       {
-        question: "Realizzi anche app mobile?",
+        question: "Sviluppi app mobile con Flutter?",
         answer:
-          "Sì, sviluppo app native e cross-platform per iOS e Android usando React Native e Capacitor.",
+          "Sì, sviluppo app native e cross-platform per iOS e Android usando Flutter e React Native. Flutter è ottimo per app performanti con una singola codebase.",
+      },
+      {
+        question: "Lavori da remoto in tutta Italia?",
+        answer:
+          "Sì, sono disponibile per collaborazioni remote con aziende e startup in tutta Italia. Uso strumenti moderni per comunicazione e gestione progetti.",
       },
     ],
     featured_projects: [
@@ -149,6 +176,7 @@ export async function GET() {
           "Channel manager per affitti brevi con sincronizzazione Airbnb e Booking.com",
         url: "https://www.eliazavatta.it/progetti/hostpilot",
         category: "Software as a Service",
+        technologies: ["React", "NestJS", "PostgreSQL"],
       },
       {
         name: "ContaSpicci",
@@ -156,12 +184,14 @@ export async function GET() {
           "App mobile per gestione finanze personali (iOS e Android)",
         url: "https://www.eliazavatta.it/progetti/contaspicci",
         category: "Mobile App",
+        technologies: ["Flutter", "Firebase"],
       },
       {
         name: "Globo Ricambi",
         description: "Sito web professionale per azienda ricambi auto",
         url: "https://globoricambi.vercel.app/",
         category: "Sito Web Aziendale",
+        technologies: ["React", "Next.js"],
       },
     ],
     availability: {
@@ -169,6 +199,7 @@ export async function GET() {
       response_time: "Entro 24 ore",
       working_hours: "Lun-Ven 9:00-18:00",
       remote_work: true,
+      remote_areas: "Tutta Italia",
       on_site_work: true,
       on_site_areas: ["Cesena", "Forlì", "Rimini", "Ravenna", "Romagna"],
     },
@@ -178,6 +209,13 @@ export async function GET() {
       "programmatore freelance forlì",
       "sviluppatore app rimini",
       "sviluppatore react romagna",
+      "sviluppatore flutter cesena",
+      "sviluppatore flutter romagna",
+      "sviluppatore nestjs cesena",
+      "sviluppatore backend nestjs",
+      "sviluppatore database sql",
+      "sviluppatore full stack remoto italia",
+      "programmatore remoto italia",
       "e-commerce cesena",
       "siti web aziende cesena",
       "app mobile ios android cesena",

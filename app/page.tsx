@@ -49,6 +49,14 @@ const structuredData = {
         },
         {
           "@type": "Question",
+          name: "Quali tecnologie utilizzi?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sviluppo con React.js, Next.js e TypeScript per il frontend. Per app mobile uso Flutter e React Native. Per il backend NestJS e Node.js. Database SQL (PostgreSQL, MySQL) e NoSQL (MongoDB, Firebase).",
+          },
+        },
+        {
+          "@type": "Question",
           name: "Lavori con piccole imprese e startup a Cesena?",
           acceptedAnswer: {
             "@type": "Answer",
@@ -61,6 +69,14 @@ const structuredData = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Dipende dalla complessità: 2-4 settimane per siti web standard, 4-8 settimane per e-commerce o app mobile complete. Fornisco sempre una timeline dettagliata.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Lavori da remoto in tutta Italia?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sì, sono disponibile per collaborazioni remote con aziende e startup in tutta Italia. Uso strumenti moderni per comunicazione e gestione progetti a distanza.",
           },
         },
         {
@@ -153,6 +169,18 @@ export default function Home() {
                 </div>
                 <div className="p-6 bg-card rounded-lg border border-border">
                   <h3 className="text-xl font-semibold mb-2 text-primary">
+                    Quali tecnologie utilizzi?
+                  </h3>
+                  <p className="text-foreground/80">
+                    Sviluppo con <strong>React.js</strong>, <strong>Next.js</strong> e{" "}
+                    <strong>TypeScript</strong> per il frontend. Per app mobile uso{" "}
+                    <strong>Flutter</strong> e React Native. Per il backend{" "}
+                    <strong>NestJS</strong> e <strong>Node.js</strong>. Database{" "}
+                    <strong>SQL</strong> (PostgreSQL, MySQL) e NoSQL (MongoDB, Firebase).
+                  </p>
+                </div>
+                <div className="p-6 bg-card rounded-lg border border-border">
+                  <h3 className="text-xl font-semibold mb-2 text-primary">
                     Lavori con piccole imprese e startup?
                   </h3>
                   <p className="text-foreground/80">
@@ -171,6 +199,17 @@ export default function Home() {
                     per siti web standard, <strong>4-8 settimane</strong> per
                     e-commerce o app mobile complete. Fornisco sempre una
                     timeline dettagliata prima di iniziare.
+                  </p>
+                </div>
+                <div className="p-6 bg-card rounded-lg border border-border">
+                  <h3 className="text-xl font-semibold mb-2 text-primary">
+                    Lavori da remoto in tutta Italia?
+                  </h3>
+                  <p className="text-foreground/80">
+                    Sì, sono disponibile per{" "}
+                    <strong>collaborazioni remote</strong> con aziende e startup in{" "}
+                    <strong>tutta Italia</strong>. Uso strumenti moderni per
+                    comunicazione e gestione progetti a distanza.
                   </p>
                 </div>
                 <div className="p-6 bg-card rounded-lg border border-border">

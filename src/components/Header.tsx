@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Home, User, FolderOpen, Mail } from "lucide-react";
 import Link from "next/link";
@@ -8,6 +8,40 @@ import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();
+
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [nameVariant, setNameVariant] = useState<"full" | "short" | "initials">(
+    "full"
+  );
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const update = () => {
+      const parentRect = el.getBoundingClientRect();
+      const children = Array.from(el.children) as HTMLElement[];
+      const siblings = children.slice(1);
+      const occupied = siblings.reduce(
+        (s, c) => s + c.getBoundingClientRect().width,
+        0
+      );
+      const available = parentRect.width - occupied - 24; // padding safety
+
+      if (available > 160) setNameVariant("full");
+      else if (available > 90) setNameVariant("short");
+      else setNameVariant("initials");
+    };
+
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    window.addEventListener("resize", update);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   const navItems = [
     { name: "Home", href: "/#home", icon: Home },
@@ -39,13 +73,22 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-4 px-6 transition-all duration-300">
       <div className="container mx-auto max-w-4xl p-0">
-        <div className="bg-background/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg flex justify-between items-center enhanced-card-hover">
+        <div
+          ref={containerRef}
+          className="bg-background/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg flex justify-between items-center enhanced-card-hover"
+        >
           <Link
             href="/"
             className="text-xl md:text-2xl font-bold font-heading text-gradient magnetic-element"
+            aria-label="Torna alla home"
           >
-            <span className="hidden md:inline">Elia Zavatta</span>
-            <span className="md:hidden">Elia Z</span>
+            <span>
+              {nameVariant === "full"
+                ? "Elia Zavatta"
+                : nameVariant === "short"
+                ? "Elia Z"
+                : "EZ"}
+            </span>
           </Link>
 
           {/* Desktop Menu */}

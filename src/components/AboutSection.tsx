@@ -14,60 +14,49 @@ const AboutSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-2 animate-text-focus-in"
-            style={{ animationDelay: isVisible ? "0.2s" : "none" }}
-          >
-            Chi sono
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block animate-slide-in-top">
+            <span className="relative z-10">Chi sono</span>
+            <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
           </h2>
-          <div
-            className={`w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ${
-              isVisible ? "w-16" : "w-0"
-            }`}
-            style={{ transitionDelay: "0.5s" }}
-          ></div>
         </div>
 
         {/* Main content card */}
         <div
-          className={`bg-card rounded-xl p-8 border border-border shadow-sm hover:shadow-md transform transition-all duration-500 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          className={`bg-gradient-to-br from-card/50 to-card/30 rounded-2xl p-8 mt-8 border border-accent/10 backdrop-blur-sm shadow-lg enhanced-card-hover transform transition-all duration-700 ${
+            isVisible
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-12 scale-95"
           }`}
-          style={{ transitionDelay: "0.2s" }}
+          style={{ transitionDelay: "0.3s" }}
         >
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
-            {/* Profile image */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 items-start gap-8">
+            {/* Profile image (affiancata solo alla sezione Name and title su sm+) */}
             <div
-              className={`flex-shrink-0 relative transform transition-all duration-500 ${
+              className={`relative transform transition-all duration-500 sm:col-span-1 ${
                 isVisible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 -translate-x-8"
               }`}
               style={{ transitionDelay: "0.3s" }}
             >
-              <div className="relative">
+              <div className="relative mx-auto sm:mx-0">
                 <img
                   src="/elia-persona.png"
                   alt="Elia Zavatta - Sviluppatore Full Stack"
                   className="w-40 h-52 object-cover rounded-xl shadow-lg border border-border"
                 />
-                {/* Badge "Disponibile" */}
-                {/* <div className="absolute -bottom-2 -right-2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
-                  ✅ Disponibile
-                </div> */}
               </div>
             </div>
 
-            {/* Content */}
+            {/* Name and title (affiancata all'immagine su sm+) */}
             <div
-              className={`flex-1 text-center sm:text-left transform transition-all duration-500 ${
+              className={`transform transition-all duration-500 sm:col-span-2 text-center sm:text-left ${
                 isVisible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-8"
               }`}
-              style={{ transitionDelay: "0.4s" }}
+              style={{ transitionDelay: "0.35s" }}
             >
-              {/* Name and title */}
               <div className="mb-6 space-y-2">
                 <h3 className="text-2xl font-bold mb-1">Elia Zavatta</h3>
                 <p className="text-lg text-muted-foreground font-medium mb-1">
@@ -86,7 +75,17 @@ const AboutSection = () => {
                   <span>3+ anni di esperienza</span>
                 </div>
               </div>
+            </div>
 
+            {/* Full-width content: dopo Name/Title, occupa tutta la larghezza */}
+            <div
+              className={`sm:col-span-3 transform transition-all duration-500 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "0.4s" }}
+            >
               {/* Experience highlight */}
               {/* <div className="bg-primary/10 rounded-xl p-6 mb-4 border-l-4 border-primary">
                 <div className="flex items-center gap-3 mb-3">
