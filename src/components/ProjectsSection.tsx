@@ -1,11 +1,14 @@
-'use client';
+"use client";
 
+import { useState } from "react";
 import SimpleProjectCard from "@/components/SimpleProjectCard";
 import type { Category, Project } from "@/types/project";
 import { projects } from "@/data/projects";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const ProjectsSection = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const scrollToContact = () => {
     const contactSection = document.getElementById("informazioni-contatto");
     if (contactSection) {
@@ -35,8 +38,9 @@ const ProjectsSection = () => {
   // Mostra solo la categoria "Dev" e nasconde la scritta "Dev" e la sezione "Altro"
   const categoryOrder: Category[] = ["Dev"];
   const devProjects = projectsByCategory["Dev"] || [];
+  const displayedProjects = showAll ? devProjects : devProjects.slice(0, 3);
   const { containerRef, visibleItems } = useStaggeredAnimation(
-    devProjects.length,
+    displayedProjects.length,
     150
   );
 
@@ -51,10 +55,10 @@ const ProjectsSection = () => {
           </h2>
         </div>
         {/* Mostra solo i progetti della categoria Dev, senza intestazione */}
-        {devProjects.length > 0 && (
+        {displayedProjects.length > 0 && (
           <div ref={containerRef}>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {devProjects.map((project, index) => (
+              {displayedProjects.map((project, index) => (
                 <div
                   key={project.id}
                   className={`transform transition-all duration-700 ${
@@ -70,6 +74,16 @@ const ProjectsSection = () => {
                 </div>
               ))}
             </div>
+            {!showAll && devProjects.length > 3 && (
+              <div className="mt-12 text-center">
+                <button
+                  onClick={() => setShowAll(true)}
+                  className="px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Mostra altri progetti
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

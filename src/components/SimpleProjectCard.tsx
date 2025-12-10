@@ -15,7 +15,7 @@ const SimpleProjectCard: React.FC<SimpleProjectCardProps> = ({ project }) => {
 
     if (project.demoUrl) {
       // Link interni navigano direttamente
-      if (project.demoUrl.startsWith('/')) {
+      if (project.demoUrl.startsWith("/")) {
         window.location.href = project.demoUrl;
       } else {
         // Link esterni si aprono in nuova tab
@@ -99,12 +99,12 @@ const SimpleProjectCard: React.FC<SimpleProjectCardProps> = ({ project }) => {
           {project.description}
         </p>
 
-        <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+        {/* <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
           <div className="text-xs text-primary font-medium flex items-center gap-1">
             Visita il sito
             <ExternalLink className="h-3 w-3" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

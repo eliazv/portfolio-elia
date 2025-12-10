@@ -55,7 +55,7 @@ export const projects: Project[] = [
       "shadcn-ui",
     ],
     category: "Dev",
-    demoUrl: "https://pinarella.eliazavatta.it/",
+    demoUrl: "https://immerso-nella-pineta.vercel.app/",
     logoImage: "/immerso/targhetta.jpg",
   },
   // {
