@@ -1,22 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  output: 'export',
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    unoptimized: true, // Necessario per export statico
   },
   // Ottimizzazioni per SEO e performance
   compress: true,
   poweredByHeader: false,
-  // Configurazione per Vercel
-  experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-  },
+  trailingSlash: true, // Per compatibilità routing statico
 };
 
 export default nextConfig;

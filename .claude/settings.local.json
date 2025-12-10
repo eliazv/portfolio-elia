@@ -16,7 +16,9 @@
       "Bash(ls:*)",
       "Bash(for project in casa-vacanze contaspicci diario-personale globo-ricambi hostpilot in-zona marafone-romagnolo scadenzario toolkit)",
       "Bash(do mkdir -p \"app/progetti/$project\")",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
     ]
   }
 }
