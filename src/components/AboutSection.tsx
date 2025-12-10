@@ -2,13 +2,28 @@
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
+const technologies = [
+  { name: "React", icon: "⚛️" },
+  { name: "Next.js", icon: "▲" },
+  { name: "Flutter", icon: "🦋" },
+  { name: "NestJS", icon: "🐱" },
+  { name: "TypeScript", icon: "💙" },
+  { name: "Node.js", icon: "💚" },
+];
+
+const stats = [
+  { value: "3+", label: "Anni di esperienza" },
+  { value: "20+", label: "Progetti completati" },
+  { value: "100%", label: "Clienti soddisfatti" },
+];
+
 const AboutSection = () => {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <div id="about" ref={elementRef}>
+    <div id="about" ref={elementRef as React.RefObject<HTMLDivElement>}>
       <div className="space-y-8">
-        {/* Header with accent line */}
+        {/* Header con design moderno */}
         <div
           className={`relative transform transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -20,135 +35,137 @@ const AboutSection = () => {
           </h2>
         </div>
 
-        {/* Main content card */}
+        {/* Main card con glassmorphism */}
         <div
-          className={`bg-gradient-to-br from-card/50 to-card/30 rounded-2xl p-8 mt-8 border border-accent/10 backdrop-blur-sm shadow-lg enhanced-card-hover transform transition-all duration-700 ${
-            isVisible
-              ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 translate-y-12 scale-95"
+          className={`relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-white/10 shadow-2xl transform transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
-          style={{ transitionDelay: "0.3s" }}
+          style={{ transitionDelay: "0.2s" }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-3 items-start gap-8">
-            {/* Profile image (affiancata solo alla sezione Name and title su sm+) */}
-            <div
-              className={`relative transform transition-all duration-500 sm:col-span-1 ${
-                isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-8"
-              }`}
-              style={{ transitionDelay: "0.3s" }}
-            >
-              <div className="relative mx-auto sm:mx-0">
-                <img
-                  src="/elia-persona.png"
-                  alt="Elia Zavatta - Sviluppatore Full Stack"
-                  className="w-40 h-52 object-cover rounded-xl shadow-lg border border-border"
-                />
-              </div>
-            </div>
+          {/* Decorative gradient orbs */}
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent/20 rounded-full blur-3xl" />
 
-            {/* Name and title (affiancata all'immagine su sm+) */}
-            <div
-              className={`transform transition-all duration-500 sm:col-span-2 text-center sm:text-left ${
-                isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-8"
-              }`}
-              style={{ transitionDelay: "0.35s" }}
-            >
-              <div className="mb-6 space-y-2">
-                <h3 className="text-2xl font-bold mb-1">Elia Zavatta</h3>
-                <p className="text-lg text-muted-foreground font-medium mb-1">
-                  Sviluppatore Web & Mobile
+          <div className="relative p-6 md:p-8">
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Profile section */}
+              <div
+                className={`flex flex-col items-center md:items-start md:w-1/3 transform transition-all duration-500 ${
+                  isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-8"
+                }`}
+                style={{ transitionDelay: "0.3s" }}
+              >
+                {/* Avatar con glow effect */}
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
+                  <img
+                    src="/elia-persona.png"
+                    alt="Elia Zavatta - Sviluppatore Full Stack"
+                    className="relative w-36 h-48 object-cover rounded-2xl border-2 border-white/20 shadow-xl"
+                  />
+                  {/* Status badge */}
+                  {/* <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-green-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                    Disponibile
+                  </div> */}
+                </div>
+
+                {/* Name and title */}
+                <div className="mt-6 text-center md:text-left">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                    Elia Zavatta
+                  </h3>
+                  <p className="text-primary font-medium mt-1">
+                    Sviluppatore Web & Mobile
+                  </p>
+                </div>
+
+                {/* Quick info pills */}
+                <div className="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
+                  <span className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-muted/50 border border-border hover:border-primary/50 transition-colors">
+                    📍 Cesena, Romagna
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-muted/50 border border-border hover:border-primary/50 transition-colors">
+                    🎓 Ing. Informatica
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-muted/50 border border-border hover:border-primary/50 transition-colors">
+                    🌍 Remoto Italia
+                  </span>
+                </div>
+              </div>
+
+              {/* Content section */}
+              <div
+                className={`flex-1 transform transition-all duration-500 ${
+                  isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-8"
+                }`}
+                style={{ transitionDelay: "0.4s" }}
+              >
+                {/* Bio */}
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
+                  Aiuto{" "}
+                  <strong className="text-foreground">imprese locali</strong>,{" "}
+                  <strong className="text-foreground">professionisti</strong> e{" "}
+                  <strong className="text-foreground">startup</strong> della
+                  Romagna a trasformare le loro idee in prodotti digitali
+                  concreti, lavorando fianco a fianco dalla strategia allo
+                  sviluppo.
                 </p>
-                <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground">
-                  <span>📍</span>
-                  <span>Cesena, Romagna</span>
-                </div>
-                <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground">
-                  <span>🎓</span>
-                  <span>Ingegneria e Scienze Informatiche</span>
-                </div>
-                <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground">
-                  <span>💼</span>
-                  <span>3+ anni di esperienza</span>
-                </div>
-              </div>
-            </div>
 
-            {/* Full-width content: dopo Name/Title, occupa tutta la larghezza */}
-            <div
-              className={`sm:col-span-3 transform transition-all duration-500 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
-              style={{ transitionDelay: "0.4s" }}
-            >
-              {/* Experience highlight */}
-              {/* <div className="bg-primary/10 rounded-xl p-6 mb-4 border-l-4 border-primary">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-primary/20 p-2 rounded-lg">
-                    <span className="text-2xl font-bold text-primary">3+</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">
-                      Anni di esperienza
-                    </p>
-                    <p className="text-sm text-foreground/70">
-                      nello sviluppo software
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["React", "TypeScript", "Node.js"].map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                {/* Stats row */}
+                {/* <div className="grid grid-cols-3 gap-4 mb-6">
+                  {stats.map((stat, index) => (
+                    <div
+                      key={stat.label}
+                      className={`text-center p-3 rounded-xl bg-gradient-to-br from-muted/50 to-muted/30 border border-border hover:border-primary/30 transition-all duration-300 transform ${
+                        isVisible
+                          ? "opacity-100 scale-100"
+                          : "opacity-0 scale-90"
+                      }`}
+                      style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
                     >
-                      {tech}
-                    </span>
+                      <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        {stat.value}
+                      </div>
+                      <div className="text-xs md:text-sm text-muted-foreground mt-1">
+                        {stat.label}
+                      </div>
+                    </div>
                   ))}
-                </div>
-              </div> */}
+                </div> */}
 
-              {/* Key strengths - più chiaro e organizzato */}
-              <div className="space-y-4">
-                <p className="text-muted-foreground text-base leading-relaxed">
-                  Aiuto imprese locali, professionisti e startup della Romagna a
-                  trasformare le loro idee in prodotti digitali concreti,
-                  lavorando fianco a fianco dalla strategia allo sviluppo.
-                </p>
-
-                {/* Competenze principali */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div className="bg-muted/50 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xl">💻</span>
-                      <h4 className="font-semibold">Full Stack Development</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Frontend e Backend con tecnologie moderne
-                    </p>
-                  </div>
-
-                  <div className="bg-muted/50 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xl">📱</span>
-                      <h4 className="font-semibold">Mobile & Responsive</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      App e siti ottimizzati per ogni dispositivo
-                    </p>
+                {/* Technologies */}
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">
+                    Tecnologie principali:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies.map((tech, index) => (
+                      <span
+                        key={tech.name}
+                        className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 text-sm font-medium hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 transform ${
+                          isVisible
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-4"
+                        }`}
+                        style={{ transitionDelay: `${0.6 + index * 0.05}s` }}
+                      >
+                        <span>{tech.icon}</span>
+                        <span>{tech.name}</span>
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* CTA semplice */}
-                <div className="bg-muted/30 rounded-lg p-4 border border-border">
-                  <p className="text-foreground text-center">
-                    Trasformo le tue idee in <strong>soluzioni digitali</strong>{" "}
+                {/* CTA */}
+                <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 border border-primary/10">
+                  <p className="text-center text-foreground">
+                    ✨ Trasformo le tue idee in{" "}
+                    <strong className="text-primary">soluzioni digitali</strong>{" "}
                     che funzionano
                   </p>
                 </div>

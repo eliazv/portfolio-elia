@@ -140,10 +140,10 @@ const ContaSpicciPrivacy: React.FC = () => {
               If you have any questions about this Privacy Policy, please
               contact us at{" "}
               <a
-                href="mailto:zavattaelia@gmail.com"
+                href="mailto:info@eliazavatta.it"
                 className="text-emerald-600 hover:text-emerald-700 font-medium"
               >
-                zavattaelia@gmail.com
+                info@eliazavatta.it
               </a>
             </p>
           </div>

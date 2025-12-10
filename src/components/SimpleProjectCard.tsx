@@ -31,7 +31,7 @@ const SimpleProjectCard: React.FC<SimpleProjectCardProps> = ({ project }) => {
 
   return (
     <div
-      className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer enhanced-card-hover magnetic-element animate-float-gentle border border-transparent hover:border-accent/20 backdrop-blur-sm"
+      className="group bg-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer enhanced-card-hover magnetic-element animate-float-gentle border border-transparent hover:border-accent/20 backdrop-blur-sm"
       onClick={handleCardClick}
       style={{
         animationDelay: `${animationDelay}s`,

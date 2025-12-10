@@ -1,4 +1,5 @@
 - Chi sono card migliroa design rendilo meno ai come design
+- Creo soluzioni digitali che fanno la differenza fai che scrive e cancella alla fine queste parle Creo soluzioni digitali che fanno la differenza in React, calcella in react in flutter, in nestjs, in node.js ecc con tutte le tecnologie
 - obbiettivo: migliorare al massimo la seo di questo progetto sito web passando da vite a Next.js. analizza Seo.md che ha qualche indicazione epr la seo di questo sito. non cambaire i testi dell'app (magari segnami in un file quelli piu importati da cambire se essenzaili per seo) . il sito è gia deployato su vercel vorrei che dopo i cambiamenti sia comunque compatibile. ottimizza tutto per seo
 - migliore seo per programmatore di siti web e app mobile a cesena
 - sotto ai miei progetti metti i miei servizi con : app web e mobile su misura; host per alloggi airbnb e booking

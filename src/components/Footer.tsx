@@ -44,7 +44,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="mailto:zavattaelia@gmail.com"
+              href="mailto:info@eliazavatta.it"
               className="text-foreground/70 hover:text-primary transition-colors"
             >
               <Mail className="h-5 w-5" />

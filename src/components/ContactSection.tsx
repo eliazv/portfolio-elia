@@ -126,13 +126,13 @@ const ContactSection = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block animate-slide-in-top">
-            <span className="relative z-10">Chi sono</span>
+            <span className="relative z-10">Contatti</span>
             <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
           </h2>
 
           {/* Main content card */}
           <div
-            className={`bg-gradient-to-br from-card/50 to-card/30 rounded-2xl p-8 mt-8 border border-accent/10 backdrop-blur-sm shadow-lg enhanced-card-hover transform transition-all duration-700 ${
+            className={`bg-gradient-to-br from-card/50 to-card/30 rounded-3xl p-8 mt-8 border border-accent/10 backdrop-blur-sm shadow-lg enhanced-card-hover transform transition-all duration-700 ${
               isVisible
                 ? "opacity-100 translate-y-0 scale-100"
                 : "opacity-0 translate-y-12 scale-95"
@@ -191,10 +191,10 @@ const ContactSection = () => {
                     Email
                   </h4>
                   <a
-                    href="mailto:zavattaelia@gmail.com"
+                    href="mailto:info@eliazavatta.it"
                     className="text-foreground/70 hover:text-primary transition-all duration-300 magnetic-element hover-lift"
                   >
-                    zavattaelia@gmail.com
+                    info@eliazavatta.it
                   </a>
                 </div>
               </div>
@@ -274,7 +274,7 @@ const ContactSection = () => {
               </a>
               {/* Email */}
               <a
-                href="mailto:zavattaelia@gmail.com"
+                href="mailto:info@eliazavatta.it"
                 aria-label="Email"
                 className="group rounded-full bg-white hover:bg-red-100 border border-red-400 transition-all duration-300 p-3 shadow-md flex items-center justify-center magnetic-element animate-float-gentle enhanced-card-hover"
                 style={{ animationDelay: "2.2s" }}

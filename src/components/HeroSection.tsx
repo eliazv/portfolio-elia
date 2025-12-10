@@ -151,7 +151,7 @@ const HeroSection = () => {
             style={{ animationDelay: "3s" }}
           >
             <a
-              href="mailto:zavattaelia@gmail.com"
+              href="mailto:info@eliazavatta.it"
               className="text-foreground/70 hover:text-primary magnetic-element animate-float-gentle p-3 rounded-full hover:bg-primary/10 backdrop-blur-sm transition-all"
               style={{ animationDelay: "0.1s" }}
             >
