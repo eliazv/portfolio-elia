@@ -5,6 +5,8 @@ import SimpleProjectCard from "@/components/SimpleProjectCard";
 import type { Category, Project } from "@/types/project";
 import { projects } from "@/data/projects";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 const ProjectsSection = () => {
   const [showAll, setShowAll] = useState(false);
@@ -76,12 +78,18 @@ const ProjectsSection = () => {
             </div>
             {!showAll && devProjects.length > 3 && (
               <div className="mt-12 text-center">
-                <button
-                  onClick={() => setShowAll(true)}
-                  className="px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  Mostra altri progetti
-                </button>
+                <div className="mt-12 text-center">
+                  <Button
+                    size="lg"
+                    onClick={() => setShowAll(true)}
+                    className="group magnetic-element enhanced-card-hover animate-pulse-glow"
+                  >
+                    <span className="inline-flex items-center">
+                      Mostra altri progetti
+                      <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Button>
+                </div>
               </div>
             )}
           </div>

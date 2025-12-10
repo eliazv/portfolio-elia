@@ -188,7 +188,6 @@ const jsonLd = {
             name: "Sviluppo siti web su misura",
             description:
               "Realizzazione siti web professionali per aziende e PMI",
-            serviceType: "Web Development",
           },
           areaServed: ["Cesena", "Rimini", "Forlì", "Ravenna", "Romagna"],
         },
@@ -198,7 +197,6 @@ const jsonLd = {
             "@type": "Service",
             name: "Sviluppo e-commerce",
             description: "Creazione negozi online e piattaforme e-commerce",
-            serviceType: "E-commerce Development",
           },
           areaServed: ["Romagna", "Emilia-Romagna"],
         },
@@ -209,7 +207,6 @@ const jsonLd = {
             name: "Sviluppo app mobile iOS e Android",
             description:
               "Creazione applicazioni mobile native e cross-platform",
-            serviceType: "Mobile App Development",
           },
           areaServed: ["Cesena", "Rimini", "Forlì", "Ravenna", "Cervia"],
         },
@@ -219,7 +216,6 @@ const jsonLd = {
             "@type": "Service",
             name: "Consulenza IT e digitale",
             description: "Consulenza tecnica per startup e aziende",
-            serviceType: "IT Consulting",
           },
           areaServed: "Italia",
         },

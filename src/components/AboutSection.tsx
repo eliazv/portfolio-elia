@@ -3,12 +3,30 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const technologies = [
-  { name: "React", icon: "⚛️" },
-  { name: "Next.js", icon: "▲" },
-  { name: "Flutter", icon: "🦋" },
-  { name: "NestJS", icon: "🐱" },
-  { name: "TypeScript", icon: "💙" },
-  { name: "Node.js", icon: "💚" },
+  { 
+    name: "React", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png" 
+  },
+  { 
+    name: "Next.js", 
+    logo: "https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254" 
+  },
+  { 
+    name: "Flutter", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg" 
+  },
+  { 
+    name: "NestJS", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png" 
+  },
+  { 
+    name: "Node.js", 
+    logo: "https://nodejs.org/static/logos/jsIconGreen.svg" 
+  },
+  { 
+    name: "TypeScript", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png" 
+  },
 ];
 
 const stats = [
@@ -143,20 +161,26 @@ const AboutSection = () => {
                   <p className="text-sm font-medium text-muted-foreground">
                     Tecnologie principali:
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {technologies.map((tech, index) => (
-                      <span
+                      <div
                         key={tech.name}
-                        className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 text-sm font-medium hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 transform ${
+                        className={`group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transform ${
                           isVisible
                             ? "opacity-100 translate-y-0"
                             : "opacity-0 translate-y-4"
                         }`}
                         style={{ transitionDelay: `${0.6 + index * 0.05}s` }}
                       >
-                        <span>{tech.icon}</span>
-                        <span>{tech.name}</span>
-                      </span>
+                        <img 
+                          src={tech.logo} 
+                          alt={tech.name} 
+                          className="w-4 h-4 object-contain"
+                        />
+                        <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                          {tech.name}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>
