@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -30,30 +30,26 @@ const AboutSection = () => {
 
         {/* Main content card */}
         <div
-          className={`bg-gradient-to-br from-card/50 to-card/30 rounded-2xl p-8 border border-accent/10 backdrop-blur-sm shadow-lg enhanced-card-hover transform transition-all duration-700 ${
-            isVisible
-              ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 translate-y-12 scale-95"
+          className={`bg-card rounded-xl p-8 border border-border shadow-sm hover:shadow-md transform transition-all duration-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: "0.3s" }}
+          style={{ transitionDelay: "0.2s" }}
         >
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
-            {/* Profile image - più prominente */}
+            {/* Profile image */}
             <div
-              className={`flex-shrink-0 relative group transform transition-all duration-700 ${
+              className={`flex-shrink-0 relative transform transition-all duration-500 ${
                 isVisible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 -translate-x-8"
               }`}
-              style={{ transitionDelay: "0.6s" }}
+              style={{ transitionDelay: "0.3s" }}
             >
-              <div className="absolute -inset-2 bg-gradient-to-r from-primary via-accent to-primary rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-500 animate-pulse-glow"></div>
               <div className="relative">
                 <img
                   src="/elia-persona.png"
                   alt="Elia Zavatta - Sviluppatore Full Stack"
-                  className="relative w-40 h-52 object-cover rounded-2xl shadow-2xl border-3 border-white/30 animate-float-gentle backdrop-blur-sm"
-                  style={{ animationDelay: "1s" }}
+                  className="w-40 h-52 object-cover rounded-xl shadow-lg border border-border"
                 />
                 {/* Badge "Disponibile" */}
                 {/* <div className="absolute -bottom-2 -right-2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
@@ -64,48 +60,30 @@ const AboutSection = () => {
 
             {/* Content */}
             <div
-              className={`flex-1 text-center sm:text-left transform transition-all duration-700 ${
+              className={`flex-1 text-center sm:text-left transform transition-all duration-500 ${
                 isVisible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-8"
               }`}
-              style={{ transitionDelay: "0.8s" }}
+              style={{ transitionDelay: "0.4s" }}
             >
               {/* Name and title */}
               <div className="mb-6 space-y-2">
-                <h3
-                  className={`text-2xl font-bold mb-1 text-primary animate-reveal-text ${
-                    isVisible ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{ animationDelay: "1s" }}
-                >
-                  Elia Zavatta
-                </h3>
-                <p
-                  className={`text-lg text-foreground/90 font-semibold mb-1 animate-reveal-text ${
-                    isVisible ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{ animationDelay: "1.2s" }}
-                >
-                  Sviluppatore Web & Mobile - Cesena e Romagna
+                <h3 className="text-2xl font-bold mb-1">Elia Zavatta</h3>
+                <p className="text-lg text-muted-foreground font-medium mb-1">
+                  Sviluppatore Web & Mobile
                 </p>
-                <div
-                  className={`flex items-center justify-center sm:justify-start gap-2 text-sm text-foreground/70 animate-fade-in-left ${
-                    isVisible ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{ animationDelay: "1.4s" }}
-                >
-                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                  <span>Laureato in Ingegneria e Scienze Informatiche</span>
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground">
+                  <span>📍</span>
+                  <span>Cesena, Romagna</span>
                 </div>
-                <div
-                  className={`flex items-center justify-center sm:justify-start gap-2 text-sm text-foreground/70 animate-fade-in-left ${
-                    isVisible ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{ animationDelay: "1.6s" }}
-                >
-                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                  <span>3+ Anni di esperienza</span>
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground">
+                  <span>🎓</span>
+                  <span>Ingegneria e Scienze Informatiche</span>
+                </div>
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground">
+                  <span>💼</span>
+                  <span>3+ anni di esperienza</span>
                 </div>
               </div>
 
@@ -138,60 +116,41 @@ const AboutSection = () => {
               </div> */}
 
               {/* Key strengths - più chiaro e organizzato */}
-              <div
-                className={`space-y-4 transform transition-all duration-700 ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: "1.8s" }}
-              >
-                <p className="text-foreground/80 text-base leading-relaxed">
-                  Aiuto imprese locali, professionisti e startup della Romagna
-                  a trasformare le loro idee in prodotti digitali scalabili,
-                  lavorando fianco a fianco dalla strategia allo sviluppo di web
-                  app, siti vetrina e applicazioni mobile.
+              <div className="space-y-4">
+                <p className="text-muted-foreground text-base leading-relaxed">
+                  Aiuto imprese locali, professionisti e startup della Romagna a
+                  trasformare le loro idee in prodotti digitali concreti,
+                  lavorando fianco a fianco dalla strategia allo sviluppo.
                 </p>
-                {/* Punti di forza principali */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl p-4 border border-primary/20 enhanced-card-hover">
+
+                {/* Competenze principali */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div className="bg-muted/50 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors">
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span className="text-primary text-sm font-bold">
-                          💻
-                        </span>
-                      </div>
-                      <h4 className="font-semibold text-primary">Full Stack</h4>
+                      <span className="text-xl">💻</span>
+                      <h4 className="font-semibold">Full Stack Development</h4>
                     </div>
-                    <p className="text-sm text-foreground/80">
-                      Frontend e Backend con le tecnologie più moderne
+                    <p className="text-sm text-muted-foreground">
+                      Frontend e Backend con tecnologie moderne
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-r from-accent/10 to-accent/5 rounded-xl p-4 border border-accent/20 enhanced-card-hover">
+                  <div className="bg-muted/50 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors">
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
-                        <span className="text-accent text-sm font-bold">
-                          📱
-                        </span>
-                      </div>
-                      <h4 className="font-semibold text-accent">
-                        Mobile First
-                      </h4>
+                      <span className="text-xl">📱</span>
+                      <h4 className="font-semibold">Mobile & Responsive</h4>
                     </div>
-                    <p className="text-sm text-foreground/80">
-                      App e siti responsive per tutti i dispositivi
+                    <p className="text-sm text-muted-foreground">
+                      App e siti ottimizzati per ogni dispositivo
                     </p>
                   </div>
                 </div>
 
-                {/* Messaggio personale semplificato */}
-                <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-4 border border-primary/10">
-                  <p className="text-foreground/90 text-center">
-                    🚀 Trasformo le tue{" "}
-                    <strong className="text-primary">idee</strong> in{" "}
-                    <strong className="text-accent">soluzioni digitali</strong>{" "}
-                    che funzionano davvero
+                {/* CTA semplice */}
+                <div className="bg-muted/30 rounded-lg p-4 border border-border">
+                  <p className="text-foreground text-center">
+                    Trasformo le tue idee in <strong>soluzioni digitali</strong>{" "}
+                    che funzionano
                   </p>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -100,6 +100,20 @@ const CasaVacanze: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contenuto principale */}
           <div className="lg:col-span-2">
+            {/* TL;DR - Riepilogo rapido per AI e utenti */}
+            <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-lg border-l-4 border-blue-500">
+              <h2 className="text-xl font-semibold mb-2 text-blue-900 dark:text-blue-100">
+                📌 In breve
+              </h2>
+              <p className="text-foreground/90 leading-relaxed">
+                Sito web completo per casa vacanze che include vetrina pubblica
+                con galleria fotografica, form contatti, e backoffice privato
+                per gestire prenotazioni, ricavi e calendario disponibilità.
+                Disponibile anche come app mobile iOS/Android grazie a
+                Capacitor.
+              </p>
+            </div>
+
             {/* Panoramica */}
             <div className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">Panoramica</h2>

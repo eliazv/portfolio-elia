@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Home, User, FolderOpen, Mail } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Home, User, FolderOpen, Mail } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();
@@ -24,11 +24,11 @@ const Header = () => {
     e.preventDefault();
     const id = href.replace("/#", "");
 
-    if (pathname !== '/') {
-      window.location.href = '/';
+    if (pathname !== "/") {
+      window.location.href = "/";
       setTimeout(() => {
         const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 300);
     } else {
       const el = document.getElementById(id);
@@ -45,7 +45,7 @@ const Header = () => {
             className="text-xl md:text-2xl font-bold font-heading text-gradient magnetic-element"
           >
             <span className="hidden md:inline">Elia Zavatta</span>
-            <span className="md:hidden">EZ</span>
+            <span className="md:hidden">Elia Z</span>
           </Link>
 
           {/* Desktop Menu */}
