@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -77,8 +79,8 @@ const ServicesSection = () => {
                   : "opacity-0 translate-y-12 scale-95"
               }`}
               style={{
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${4 + Math.random() * 2}s`,
+                animationDelay: `${((index * 0.5) % 2).toFixed(2)}s`,
+                animationDuration: `${(4 + ((index * 0.3) % 2)).toFixed(2)}s`,
                 transitionDelay: `${index * 100}ms`,
               }}
             >

@@ -1,4 +1,4 @@
-- obbiettivo: migliroare al massimo la seo di questo progetto sito web e passa a Next.js per migliroare seo sito
+- obbiettivo: migliorare al massimo la seo di questo progetto sito web passando da vite a Next.js. analizza Seo.md che ha qualche indicazione epr la seo di questo sito. non cambaire i testi dell'app (magari segnami in un file quelli piu importati da cambire se essenzaili per seo) . il sito è gia deployato su vercel vorrei che dopo i cambiamenti sia comunque compatibile. ottimizza tutto per seo
 - migliore seo per programmatore di siti web e app mobile a cesena
 - sotto ai miei progetti metti i miei servizi con : app web e mobile su misura; host per alloggi airbnb e booking
 - bolle nei progetti non sincronizzarle ma falle andare a ritmo diverso

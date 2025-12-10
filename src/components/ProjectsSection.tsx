@@ -1,3 +1,5 @@
+'use client';
+
 import SimpleProjectCard from "@/components/SimpleProjectCard";
 import type { Category, Project } from "@/types/project";
 import { projects } from "@/data/projects";

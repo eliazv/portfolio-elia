@@ -14,17 +14,28 @@ const SimpleProjectCard: React.FC<SimpleProjectCardProps> = ({ project }) => {
     }
 
     if (project.demoUrl) {
-      window.open(project.demoUrl, "_blank", "noopener,noreferrer");
+      // Link interni navigano direttamente
+      if (project.demoUrl.startsWith('/')) {
+        window.location.href = project.demoUrl;
+      } else {
+        // Link esterni si aprono in nuova tab
+        window.open(project.demoUrl, "_blank", "noopener,noreferrer");
+      }
     }
   };
+
+  // Genera valori deterministici basati sull'ID del progetto per evitare hydration errors
+  const seed = project.id || 0;
+  const animationDelay = ((seed * 0.3) % 2).toFixed(2);
+  const animationDuration = (4 + ((seed * 0.5) % 2)).toFixed(2);
 
   return (
     <div
       className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer enhanced-card-hover magnetic-element animate-float-gentle border border-transparent hover:border-accent/20 backdrop-blur-sm"
       onClick={handleCardClick}
       style={{
-        animationDelay: `${Math.random() * 2}s`,
-        animationDuration: `${4 + Math.random() * 2}s`,
+        animationDelay: `${animationDelay}s`,
+        animationDuration: `${animationDuration}s`,
       }}
     >
       <div className="relative overflow-hidden">

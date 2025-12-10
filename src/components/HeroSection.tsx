@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from "react";
 import Iridescence from "./Iridescence";
 import Silk from "./Silk";
