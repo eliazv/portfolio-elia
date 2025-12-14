@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface UseScrollAnimationOptions {
   threshold?: number;
@@ -12,7 +12,7 @@ interface UseScrollAnimationOptions {
 export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const {
     threshold = 0.1,
-    rootMargin = '0px',
+    rootMargin = "0px",
     triggerOnce = true,
     delay = 0,
   } = options;
@@ -30,7 +30,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
           setTimeout(() => {
             setIsVisible(true);
           }, delay);
-          
+
           if (triggerOnce) {
             observer.unobserve(element);
           }
@@ -55,9 +55,14 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
 };
 
 // Hook per animazioni staggered
-export const useStaggeredAnimation = (itemsCount: number, baseDelay: number = 100) => {
-  const containerRef = useRef<HTMLElement>(null);
-  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemsCount).fill(false));
+export const useStaggeredAnimation = (
+  itemsCount: number,
+  baseDelay: number = 100
+) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(
+    new Array(itemsCount).fill(false)
+  );
 
   useEffect(() => {
     const container = containerRef.current;
@@ -69,14 +74,14 @@ export const useStaggeredAnimation = (itemsCount: number, baseDelay: number = 10
           // Attiva gli elementi uno dopo l'altro
           for (let i = 0; i < itemsCount; i++) {
             setTimeout(() => {
-              setVisibleItems(prev => {
+              setVisibleItems((prev) => {
                 const newState = [...prev];
                 newState[i] = true;
                 return newState;
               });
             }, i * baseDelay);
           }
-          
+
           observer.unobserve(container);
         }
       },
@@ -107,8 +112,8 @@ export const useParallax = (speed: number = 0.5) => {
       element.style.transform = `translateY(${parallax}px)`;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [speed]);
 
   return elementRef;

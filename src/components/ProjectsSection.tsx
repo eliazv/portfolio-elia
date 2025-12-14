@@ -49,12 +49,46 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-10 bg-secondary/30 section-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 relative inline-block animate-slide-in-top">
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-8 gap-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading relative inline-block animate-slide-in-top">
             <span className="relative z-10">I miei progetti</span>
             <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
             {/* <span className="absolute -bottom-1 left-0 w-full h-3 bg-accent/20 -rotate-1 animate-shimmer"></span> */}
           </h2>
+          <div className="flex gap-2">
+            <a
+              href="https://play.google.com/store/apps/dev?id=6125059238513590938"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Play_2022_icon.svg/960px-Google_Play_2022_icon.svg.png"
+                  alt="Google Play"
+                  className="w-4 h-4 object-contain"
+                />
+                <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                  Google Play
+                </span>
+              </div>
+            </a>
+            <a
+              href="https://apps.apple.com/us/developer/elia-zavatta/id1831227514"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg"
+                  alt="App Store"
+                  className="w-4 h-4 object-contain"
+                />
+                <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                  App Store
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
         {/* Mostra solo i progetti della categoria Dev, senza intestazione */}
         {displayedProjects.length > 0 && (

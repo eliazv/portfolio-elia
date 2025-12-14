@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Iridescence from "./Iridescence";
 import Silk from "./Silk";
+import Marquee from "react-fast-marquee";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin, Mail } from "lucide-react";
 import GradientText from "./GradientText";
@@ -14,6 +15,45 @@ const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);
+
+  const techLogos = [
+    {
+      id: "react",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png",
+      alt: "React",
+      label: "React",
+    },
+    {
+      id: "nextjs",
+      src: "https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254",
+      alt: "Next.js",
+      label: "Next.js",
+    },
+    {
+      id: "flutter",
+      src: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg",
+      alt: "Flutter",
+      label: "Flutter",
+    },
+    {
+      id: "nestjs",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png",
+      alt: "NestJS",
+      label: "NestJS",
+    },
+    {
+      id: "node",
+      src: "https://nodejs.org/static/logos/jsIconGreen.svg",
+      alt: "Node.js",
+      label: "Node.js",
+    },
+    {
+      id: "typescript",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png",
+      alt: "TypeScript",
+      label: "TypeScript",
+    },
+  ];
 
   useEffect(() => {
     setIsLoaded(true);
@@ -59,7 +99,7 @@ const HeroSection = () => {
         />
       </div>
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[60vh]">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center text-center w-full md:max-w-4xl mx-auto">
           {/* <div className="inline-block bg-secondary/80 rounded-full px-6 py-3 text-lg font-semibold mb-8 animate-fade-in shadow-lg backdrop-blur-md">
             <span className="text-primary font-bold tracking-widest uppercase">
               Full Stack Developer
@@ -81,7 +121,7 @@ const HeroSection = () => {
           </div>
 
           {/* Sottotitolo con typewriter effect */}
-          <div className="mb-8 max-w-3xl">
+          <div className="mb-6 max-w-3xl">
             {showTypewriter ? (
               <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg animate-typewriter break-words text-balance">
                 Creo soluzioni digitali
@@ -94,25 +134,50 @@ const HeroSection = () => {
               </p>
             )}
             {/* Sottotitolo SEO-visible con tecnologie e località (design modernizzato) */}
-            <div className="mt-6 font-normal max-w-4xl mx-auto">
-              {/* Riga principale: ruolo e località */}
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center mb-4">
-                <span className="text-foreground/80 text-base md:text-lg font-medium">
+            <div className="mt-6 font-normal w-full md:max-w-4xl mx-auto">
+              {/* Riga principale: ruolo e località (stack on mobile, row on sm+) */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-x-3 text-center mb-4">
+                <span className="text-foreground/80 text-base md:text-lg font-medium break-words">
                   Sviluppatore Web e Mobile Freelance
                 </span>
-                <span className="hidden sm:inline-block text-foreground/40">•</span>
-                <span className="text-foreground/70 text-sm md:text-base">
+                <span className="hidden sm:inline-block text-foreground/40">
+                  •
+                </span>
+                <span className="text-foreground/70 text-sm md:text-base break-words">
                   📍 Cesena, Romagna
                 </span>
               </div>
 
               {/* Tecnologie con loghi */}
-              <div className="flex flex-wrap items-center justify-center gap-3 ">
+              {/* Mobile: continuous marquee */}
+              <div className="w-full sm:hidden mt-2">
+                <Marquee speed={45} pauseOnHover={true} className="py-2">
+                  {techLogos.concat(techLogos).map((logo, idx) => (
+                    <div
+                      key={`${logo.id}-${idx}`}
+                      className="mx-3 group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="w-4 h-4 object-contain"
+                        loading="lazy"
+                      />
+                      <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                        {logo.label}
+                      </span>
+                    </div>
+                  ))}
+                </Marquee>
+              </div>
+
+              {/* Desktop / tablet: original badges */}
+              <div className="hidden sm:flex flex-wrap items-center justify-center gap-3 ">
                 {/* React */}
                 <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png" 
-                    alt="React" 
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png"
+                    alt="React"
                     className="w-4 h-4 object-contain"
                   />
                   <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
@@ -122,9 +187,9 @@ const HeroSection = () => {
 
                 {/* Next.js */}
                 <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
-                  <img 
-                    src="https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254" 
-                    alt="Next.js" 
+                  <img
+                    src="https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254"
+                    alt="Next.js"
                     className="w-4 h-4 object-contain"
                   />
                   <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
@@ -134,9 +199,9 @@ const HeroSection = () => {
 
                 {/* Flutter */}
                 <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg" 
-                    alt="Flutter" 
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg"
+                    alt="Flutter"
                     className="w-4 h-4 object-contain"
                   />
                   <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
@@ -146,9 +211,9 @@ const HeroSection = () => {
 
                 {/* NestJS */}
                 <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png" 
-                    alt="NestJS" 
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png"
+                    alt="NestJS"
                     className="w-4 h-4 object-contain"
                   />
                   <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
@@ -158,9 +223,9 @@ const HeroSection = () => {
 
                 {/* Node.js */}
                 <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
-                  <img 
-                    src="https://nodejs.org/static/logos/jsIconGreen.svg" 
-                    alt="Node.js" 
+                  <img
+                    src="https://nodejs.org/static/logos/jsIconGreen.svg"
+                    alt="Node.js"
                     className="w-4 h-4 object-contain"
                   />
                   <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
@@ -170,9 +235,9 @@ const HeroSection = () => {
 
                 {/* TypeScript */}
                 <div className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png" 
-                    alt="TypeScript" 
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png"
+                    alt="TypeScript"
                     className="w-4 h-4 object-contain"
                   />
                   <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
