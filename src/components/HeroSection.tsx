@@ -107,7 +107,7 @@ const HeroSection = () => {
           </div> */}
 
           {/* Nome con effetto reveal avanzato */}
-          <div className="text-reveal-container mb-8">
+          <div className="text-reveal-container mb-6">
             <h1
               className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading animate-fade-in  text-white/95"
               style={{
@@ -118,6 +118,18 @@ const HeroSection = () => {
             >
               <span className="text-gradient">Elia Zavatta</span>
             </h1>
+          </div>
+
+          {/* H2 con keyword SEO complete */}
+          <div className="mb-8">
+            <h2
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary/90 animate-fade-in"
+              style={{
+                animationDelay: "0.3s",
+              }}
+            >
+              Programmatore Freelance a Cesena
+            </h2>
           </div>
 
           {/* Sottotitolo con typewriter effect */}
@@ -135,16 +147,23 @@ const HeroSection = () => {
             )}
             {/* Sottotitolo SEO-visible con tecnologie e località (design modernizzato) */}
             <div className="mt-6 font-normal w-full md:max-w-4xl mx-auto">
-              {/* Riga principale: ruolo e località (stack on mobile, row on sm+) */}
+              {/* Testo descrittivo ottimizzato SEO */}
+              <p className="text-foreground/85 text-base md:text-lg text-center mb-4 leading-relaxed max-w-2xl mx-auto">
+                Sono un{" "}
+                <strong className="text-primary font-semibold">
+                  programmatore freelance
+                </strong>{" "}
+                con sede a{" "}
+                <strong className="text-primary font-semibold">Cesena</strong>,
+                specializzato in sviluppo web e mobile. Aiuto aziende, startup e
+                professionisti in{" "}
+                <strong className="font-semibold">Romagna</strong> (Forlì,
+                Rimini, Ravenna) a realizzare i loro progetti digitali.
+              </p>
+              {/* Riga località */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-x-3 text-center mb-4">
-                <span className="text-foreground/80 text-base md:text-lg font-medium break-words">
-                  Sviluppatore Web e Mobile Freelance
-                </span>
-                <span className="hidden sm:inline-block text-foreground/40">
-                  •
-                </span>
                 <span className="text-foreground/70 text-sm md:text-base break-words">
-                  📍 Cesena, Romagna
+                  📍 Cesena, Emilia-Romagna | Disponibile anche da remoto
                 </span>
               </div>
 
@@ -279,7 +298,7 @@ const HeroSection = () => {
               asChild
             >
               <a href="#about" className="inline-flex items-center">
-                Chi sono
+                Contattami
               </a>
             </Button>
           </div>

@@ -36,7 +36,7 @@ const structuredData = {
           name: "Chi sei e dove lavori?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Sono Elia Zavatta, sviluppatore web e mobile freelance con sede a Cesena. Lavoro con clienti in tutta la Romagna (Forlì, Rimini, Ravenna, Cervia) e sono disponibile anche per progetti da remoto in tutta Italia.",
+            text: "Sono Elia Zavatta, programmatore freelance con sede a Cesena. Lavoro con clienti in tutta la Romagna (Forlì, Rimini, Ravenna, Cervia) e sono disponibile anche per progetti da remoto in tutta Italia.",
           },
         },
         {
@@ -104,18 +104,6 @@ export default function Home() {
       <div>
         <Header />
         <main>
-          {/* TL;DR nascosto visivamente ma accessibile per SEO, AI e screen reader */}
-          <section aria-label="Riepilogo" className="sr-only">
-            <div>
-              <h2>Sviluppatore Web e Mobile Freelance a Cesena</h2>
-              <p>
-                Sono Elia Zavatta, sviluppatore freelance specializzato in siti
-                web, e-commerce e app mobile iOS/Android. Lavoro con aziende e
-                professionisti a Cesena, Forlì, Rimini, Ravenna e in tutta la
-                Romagna. Disponibile anche per progetti da remoto.
-              </p>
-            </div>
-          </section>
           <HeroSection />
           <ProjectsSection />
           {/* <ServicesSection /> */}
@@ -178,7 +166,11 @@ export default function Home() {
                         <strong className="text-foreground">
                           Elia Zavatta
                         </strong>
-                        , sviluppatore web e mobile freelance con sede a{" "}
+                        ,{" "}
+                        <strong className="text-foreground">
+                          programmatore freelance
+                        </strong>{" "}
+                        con sede a{" "}
                         <strong className="text-foreground">Cesena</strong>.
                         Lavoro con clienti in tutta la{" "}
                         <strong className="text-foreground">Romagna</strong> e

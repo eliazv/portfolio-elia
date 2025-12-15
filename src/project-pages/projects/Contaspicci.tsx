@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -301,6 +301,30 @@ const ContaSpicci: React.FC = () => {
             <Shield className="mr-2 h-5 w-5" />
             Privacy Policy
           </Button>
+        </section>
+
+        {/* Footer interno con riferimento SEO */}
+        <section className="mb-12 text-center py-8 border-t border-emerald-200/30">
+          <p className="text-gray-600 text-sm md:text-base">
+            App sviluppata da{" "}
+            <a
+              href="https://www.eliazavatta.it"
+              className="text-emerald-600 hover:text-emerald-700 font-semibold hover:underline transition-colors"
+            >
+              Elia Zavatta
+            </a>
+            , programmatore freelance a Cesena specializzato in sviluppo app
+            mobile e web.
+          </p>
+          <p className="text-gray-500 text-xs md:text-sm mt-2">
+            Cerchi un sviluppatore per la tua app o sito web?{" "}
+            <a
+              href="https://www.eliazavatta.it#about"
+              className="text-emerald-600 hover:text-emerald-700 font-medium hover:underline"
+            >
+              Contattami
+            </a>
+          </p>
         </section>
       </main>
 
