@@ -63,6 +63,26 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Structured data for SEO (JSON-LD)
+  const seoJson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Elia Zavatta",
+    url: "https://eliazavatta.it",
+    jobTitle: "Programmatore Freelance",
+    description:
+      "Programmatore freelance a Cesena specializzato in sviluppo web e mobile. Offro servizi di sviluppo con React, Next.js, Flutter, NestJS, Node.js e TypeScript per aziende e professionisti in Romagna e da remoto.",
+    sameAs: ["https://www.linkedin.com/in/eliazavatta/"],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Cesena",
+      addressRegion: "Emilia-Romagna",
+      addressCountry: "IT",
+    },
+    email: "info@eliazavatta.it",
+    areaServed: ["Cesena", "Forlì", "Rimini", "Ravenna", "Romagna", "Italia"],
+  };
+
   return (
     <section
       id="home"
@@ -120,18 +140,6 @@ const HeroSection = () => {
             </h1>
           </div>
 
-          {/* H2 con keyword SEO complete */}
-          <div className="mb-8">
-            <h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary/90 animate-fade-in"
-              style={{
-                animationDelay: "0.3s",
-              }}
-            >
-              Programmatore Freelance a Cesena
-            </h2>
-          </div>
-
           {/* Sottotitolo con typewriter effect */}
           <div className="mb-6 max-w-3xl">
             {showTypewriter ? (
@@ -147,23 +155,14 @@ const HeroSection = () => {
             )}
             {/* Sottotitolo SEO-visible con tecnologie e località (design modernizzato) */}
             <div className="mt-6 font-normal w-full md:max-w-4xl mx-auto">
-              {/* Testo descrittivo ottimizzato SEO */}
-              <p className="text-foreground/85 text-base md:text-lg text-center mb-4 leading-relaxed max-w-2xl mx-auto">
-                Sono un{" "}
-                <strong className="text-primary font-semibold">
-                  programmatore freelance
-                </strong>{" "}
-                con sede a{" "}
-                <strong className="text-primary font-semibold">Cesena</strong>,
-                specializzato in sviluppo web e mobile. Aiuto aziende, startup e
-                professionisti in{" "}
-                <strong className="font-semibold">Romagna</strong> (Forlì,
-                Rimini, Ravenna) a realizzare i loro progetti digitali.
-              </p>
+              <h2 className="text-foreground/85 text-base md:text-lg text-center mb-4 leading-relaxed max-w-2xl mx-auto">
+                Sviluppatore web e mobile Freelance
+              </h2>
+
               {/* Riga località */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-x-3 text-center mb-4">
                 <span className="text-foreground/70 text-sm md:text-base break-words">
-                  📍 Cesena, Emilia-Romagna | Disponibile anche da remoto
+                  📍 Cesena, Emilia-Romagna
                 </span>
               </div>
 
@@ -359,6 +358,11 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      {/* JSON-LD structured data per SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seoJson) }}
+      />
     </section>
   );
 };

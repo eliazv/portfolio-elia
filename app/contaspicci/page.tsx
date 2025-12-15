@@ -1,4 +1,4 @@
-import Contaspicci from "@/project-pages/projects/Contaspicci";
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
 const SITE_URL = "https://www.eliazavatta.it";
@@ -37,5 +37,6 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <Contaspicci />;
+  // Redirect permanente alla home
+  redirect("/");
 }
