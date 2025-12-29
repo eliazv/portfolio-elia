@@ -8,7 +8,7 @@ export const projects: Project[] = [
     slug: "marafone-romagnolo",
     title: "Marafone Romagnolo",
     description:
-      "App mobile ispirata a un tradizionale gioco di carte romagnolo, con modalità multiplayer online e single player contro l’IA",
+      "App mobile ispirata a un tradizionale gioco di carte romagnolo, con modalità multiplayer online e single player contro l'IA",
     image:
       "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
     logoImage: "/marafone.jpg",
@@ -21,6 +21,23 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: "sette-e-mezzo",
+    title: "Sette e Mezzo",
+    description:
+      "Il classico gioco di carte italiano 7 e mezzo. Gioca offline con carte napoletane, piacentine e altri mazzi regionali. Il vero blackjack italiano!",
+    image:
+      "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
+    logoImage:
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/bd/25/dabd2565-aca8-0beb-8baf-a473b6195e59/Placeholder.mill/400x400bb-75.webp",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
+    category: "Dev",
+    demoUrl: "/progetti/sette-e-mezzo",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.eliazavatta.settemezzo",
+    appStoreUrl: "https://apps.apple.com/it/app/id6753985213",
+  },
+  {
+    id: 3,
     slug: "globo-ricambi",
     title: "Globo Ricambi",
     description:
@@ -40,7 +57,7 @@ export const projects: Project[] = [
     demoUrl: "https://globoricambi.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     slug: "casa-vacanze",
     title: "Casa Vacanze in Affitto",
     description:

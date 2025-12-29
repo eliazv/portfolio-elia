@@ -363,7 +363,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/png" href="/EZlogo.png" />
         <link

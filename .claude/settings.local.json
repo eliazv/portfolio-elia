@@ -18,7 +18,8 @@
       "Bash(do mkdir -p \"app/progetti/$project\")",
       "Bash(echo:*)",
       "Bash(cat:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(mkdir:*)"
     ]
   }
 }
