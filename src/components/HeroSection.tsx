@@ -12,6 +12,16 @@ const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);
 
+  // Gestione scroll smooth per i pulsanti
+  const handleScrollClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    id: string
+  ) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const techLogos = [
     {
       id: "react",
@@ -281,7 +291,11 @@ const HeroSection = () => {
               size="lg"
               className="group magnetic-element enhanced-card-hover animate-pulse-glow"
             >
-              <a href="#projects" className="inline-flex items-center">
+              <a
+                href="#projects"
+                onClick={(e) => handleScrollClick(e, "projects")}
+                className="inline-flex items-center"
+              >
                 Scopri i miei progetti
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
@@ -292,7 +306,11 @@ const HeroSection = () => {
               className="magnetic-element enhanced-card-hover animate-morphing-border"
               asChild
             >
-              <a href="#about" className="inline-flex items-center">
+              <a
+                href="#contact"
+                onClick={(e) => handleScrollClick(e, "contact")}
+                className="inline-flex items-center"
+              >
                 Contattami
               </a>
             </Button>
