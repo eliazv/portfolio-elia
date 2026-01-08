@@ -29,12 +29,6 @@ const technologies = [
   },
 ];
 
-const stats = [
-  { value: "3+", label: "Anni di esperienza" },
-  { value: "20+", label: "Progetti completati" },
-  { value: "100%", label: "Clienti soddisfatti" },
-];
-
 const AboutSection = () => {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 

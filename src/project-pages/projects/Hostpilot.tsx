@@ -13,14 +13,9 @@ import {
   BarChart3,
   Monitor,
   Zap,
-  Lock,
-  LineChart,
   Home,
-  Users,
   TrendingUp,
   Smartphone,
-  Star,
-  Quote,
   X,
 } from "lucide-react";
 import Header from "@/components/Header";

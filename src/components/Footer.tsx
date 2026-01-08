@@ -1,14 +1,7 @@
 import React from "react";
-import { ArrowUp, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <footer className="bg-background py-12">
       <div className="container mx-auto px-6">

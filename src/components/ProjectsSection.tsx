@@ -6,25 +6,10 @@ import type { Category, Project } from "@/types/project";
 import { projects } from "@/data/projects";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 const ProjectsSection = () => {
   const [showAll, setShowAll] = useState(false);
-
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("informazioni-contatto");
-    if (contactSection) {
-      // Aggiungi un piccolo delay per assicurarsi che il DOM sia pronto
-      setTimeout(() => {
-        contactSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 100);
-    } else {
-      console.warn("Sezione 'Informazioni di contatto' non trovata");
-    }
-  };
 
   const projectsByCategory: Record<Category, Project[]> = projects.reduce(
     (acc, project) => {
@@ -38,7 +23,6 @@ const ProjectsSection = () => {
   );
 
   // Mostra solo la categoria "Dev" e nasconde la scritta "Dev" e la sezione "Altro"
-  const categoryOrder: Category[] = ["Dev"];
   const devProjects = projectsByCategory["Dev"] || [];
   const displayedProjects = showAll ? devProjects : devProjects.slice(0, 3);
   const { containerRef, visibleItems } = useStaggeredAnimation(

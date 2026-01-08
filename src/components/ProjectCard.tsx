@@ -1,19 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
-import type { Project, Category } from "@/types/project";
+import type { Project } from "@/types/project";
 import React from "react";
 
 type ProjectCardProps = {
   project: Project;
-  category: Category;
   openProjectDetails: (project: Project) => void;
-  scrollToContact: () => void;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
-  category,
   openProjectDetails,
-  scrollToContact,
 }) => (
   <Card
     key={project.id}
@@ -32,9 +28,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {project.title}
       </h3>
       <p className="text-sm text-muted-foreground leading-relaxed">
-        {project.description.length > 120 
-          ? `${project.description.substring(0, 120)}...` 
-          : project.description}
+        {project.description && project.description.length > 120
+          ? `${project.description.substring(0, 120)}...`
+          : project.description || ''}
       </p>
     </CardContent>
   </Card>

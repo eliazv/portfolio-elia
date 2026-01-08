@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Github,
   ExternalLink,
   ArrowLeft,
   Smartphone,
@@ -40,10 +39,6 @@ const MarafoneRomagnolo: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const scrollToContact = () => {
-    router.push("/#contact");
-  };
 
   return (
     <div className="min-h-screen bg-background">

@@ -1,123 +1,19 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import {
   AtSign,
-  Code,
-  Database,
-  Github,
-  Layout,
-  MapPin,
   PhoneCall,
-  Smartphone,
 } from "lucide-react";
 import {
   useScrollAnimation,
-  useStaggeredAnimation,
 } from "@/hooks/useScrollAnimation";
-
-const techStack = [
-  {
-    name: "React",
-    icon: (
-      <img
-        src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/react/react-original-wordmark.svg"
-        alt="React"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "TypeScript",
-    icon: (
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-        alt="TypeScript"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "Node.js",
-    icon: (
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-        alt="Node.js"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "Python",
-    icon: (
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-        alt="Python"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "Docker",
-    icon: (
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-        alt="Docker"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "Git",
-    icon: (
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-        alt="Git"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "HTML5",
-    icon: (
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-        alt="HTML5"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "CSS3",
-    icon: (
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-        alt="CSS3"
-        className="h-8 w-8"
-      />
-    ),
-  },
-  {
-    name: "Tailwind",
-    icon: (
-      <img
-        src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.d52e9897.svg"
-        alt="Tailwind"
-        className="h-8 w-8"
-      />
-    ),
-  },
-];
 
 const ContactSection = () => {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
-  const { containerRef: techRef, visibleItems: techVisible } =
-    useStaggeredAnimation(techStack.length, 100);
 
   return (
-    <div id="contact" ref={elementRef}>
+    <div id="contact" ref={elementRef as React.RefObject<HTMLDivElement>}>
       <div className="space-y-8">
         {/* Header with accent line */}
         <div

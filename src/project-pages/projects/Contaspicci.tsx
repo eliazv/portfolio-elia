@@ -4,11 +4,9 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Smartphone,
-  Download,
   CheckCircle,
   Shield,
   BarChart3,

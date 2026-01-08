@@ -93,7 +93,7 @@ export const projects: Project[] = [
     title: "Scadenzario",
     description:
       "App per gestire promemoria e scadenze di bollette, documenti, medicinali e abbonamenti. Interfaccia minimale con notifiche smart e backup automatico. Ideale per chi vuole avere tutto sotto controllo.",
-    image: "sfondo.jpg",
+    image: "/images/projects/scadenzario.png",
     technologies: [],
     category: "Dev",
     demoUrl: "/scadenzario",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     title: "Hostpilot",
     description:
       "Piattaforma intelligente per gestire affitti e prenotazioni, con dashboard centralizzata, sincronizzazione calendari e automazioni per host professionali.",
-    image: "sfondo.jpg",
+    image: "/images/projects/hostpilot.svg",
     technologies: ["React", "TypeScript", "Node.js"],
     category: "Dev",
     demoUrl: "/hostpilot",

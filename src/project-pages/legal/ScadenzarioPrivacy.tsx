@@ -29,7 +29,7 @@ const ScadenzarioPrivacy: React.FC = () => {
       <main className="container mx-auto px-4 py-20 max-w-4xl">
         <Button
           variant="ghost"
-          onClick={() => router.push(-1)}
+          onClick={() => router.back()}
           className="mb-8 hover:bg-indigo-100"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />

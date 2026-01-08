@@ -1,9 +1,8 @@
 'use client';
 
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Home, Star, Zap, Users, Trophy } from "lucide-react";
+import { Code, Home, Star } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const ServicesSection = () => {

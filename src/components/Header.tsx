@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Home, User, FolderOpen, Mail } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

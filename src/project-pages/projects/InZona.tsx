@@ -8,15 +8,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowLeft,
   Smartphone,
-  Users,
-  Trophy,
   Search,
   MapPin,
   Star,
   Download,
   ExternalLink,
-  Mail,
-  Phone,
   CheckCircle,
   AlertTriangle,
   BarChart3,
@@ -46,10 +42,6 @@ const InZona: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const scrollToContact = () => {
-    router.push("/#contact");
-  };
 
   return (
     <div className="min-h-screen bg-[#040533] text-white">
