@@ -1,15 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Iridescence from "./Iridescence";
-import Silk from "./Silk";
 import Marquee from "react-fast-marquee";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin, Mail } from "lucide-react";
-import GradientText from "./GradientText";
-import ASCIIText from "./ASCIIText";
 import InteractiveParticles from "./InteractiveParticles";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);

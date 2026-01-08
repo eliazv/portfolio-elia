@@ -11,7 +11,7 @@ export const projects: Project[] = [
       "App mobile ispirata a un tradizionale gioco di carte romagnolo, con modalità multiplayer online e single player contro l'IA",
     image:
       "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
-    logoImage: "/marafone.jpg",
+    logoImage: "/images/projects/marafone.jpg",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Dev",
     demoUrl: "https://marafone-romagnolo.it/",
@@ -42,8 +42,8 @@ export const projects: Project[] = [
     title: "Globo Ricambi",
     description:
       "Sito web moderno e professionale per Globo Ricambi, azienda specializzata in ricambi per auto d'epoca",
-    image: "globo/globo-desk.png",
-    logoImage: "/globo.png",
+    image: "/images/projects/globo/globo-desk.png",
+    logoImage: "/images/projects/globo.png",
     technologies: [
       "React",
       "TypeScript",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     title: "Casa Vacanze in Affitto",
     description:
       "Sito Web per promozione e gestione di una Casa Vacanze, con backoffice dedicato per controllare prenotazioni e ricavi",
-    image: "/immerso/immerso-desktop.png",
+    image: "/images/projects/immerso/immerso-desktop.png",
     technologies: [
       "React",
       "TypeScript",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     ],
     category: "Dev",
     demoUrl: "https://immerso-nella-pineta.vercel.app/",
-    logoImage: "/immerso/targhetta.jpg",
+    logoImage: "/images/projects/immerso/targhetta.jpg",
   },
   // {
   //   id: 4,
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     technologies: [],
     category: "Dev",
     demoUrl: "/scadenzario",
-    logoImage: "/scadenzario.png",
+    logoImage: "/images/projects/scadenzario.png",
   },
   {
     id: 6,
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Node.js"],
     category: "Dev",
     demoUrl: "/hostpilot",
-    logoImage: "/hostpilot.svg",
+    logoImage: "/images/projects/hostpilot.svg",
   },
 
   // {

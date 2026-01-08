@@ -79,7 +79,7 @@ const AboutSection = () => {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
                   <img
-                    src="/elia-persona.png"
+                    src="/images/profile/elia-persona.png"
                     alt="Elia Zavatta - Sviluppatore Full Stack"
                     className="relative w-36 h-48 object-cover rounded-2xl border-2 border-white/20 shadow-xl"
                   />

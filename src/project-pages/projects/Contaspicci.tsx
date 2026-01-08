@@ -108,7 +108,7 @@ const ContaSpicci: React.FC = () => {
               className="w-full sm:w-auto flex-1"
             >
               <img
-                src="/playstore.png"
+                src="/images/icons/playstore.png"
                 alt="Scarica su Google Play"
                 className="w-full h-auto max-w-[280px] mx-auto drop-shadow-2xl transition-transform hover:scale-[1.03]"
                 style={{ minWidth: 180, minHeight: 60 }}
@@ -123,7 +123,7 @@ const ContaSpicci: React.FC = () => {
               className="w-full sm:w-auto flex-1"
             >
               <img
-                src="/appstore.png"
+                src="/images/icons/appstore.png"
                 alt="Scarica su App Store"
                 className="w-full h-auto max-w-[280px] mx-auto drop-shadow-2xl transition-transform hover:scale-[1.03]"
                 style={{ minWidth: 180, minHeight: 60 }}

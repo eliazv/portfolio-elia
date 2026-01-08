@@ -19,7 +19,9 @@
       "Bash(echo:*)",
       "Bash(cat:*)",
       "Bash(git add:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }

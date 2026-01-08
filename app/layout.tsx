@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     siteName: "Elia Zavatta - Sviluppatore Web e Mobile Freelance",
     images: [
       {
-        url: "https://www.eliazavatta.it/og-image.jpg",
+        url: "https://www.eliazavatta.it/images/profile/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Elia Zavatta - Sviluppatore Web e Mobile Freelance",
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
     title: "Elia Zavatta | Sviluppatore Web Freelance Senior Cesena",
     description:
       "Sviluppatore freelance esperto: siti web, e-commerce, app mobile per aziende e startup in Romagna. Consulente IT professionista.",
-    images: ["https://www.eliazavatta.it/og-image.jpg"],
+    images: ["https://www.eliazavatta.it/images/profile/og-image.jpg"],
   },
   verification: {
     google: "google-site-verification-code", // Aggiorna con il tuo codice
@@ -127,7 +127,7 @@ const jsonLd = {
       "@type": "Person",
       name: "Elia Zavatta",
       jobTitle: "Sviluppatore Web e Mobile Freelance Senior",
-      image: "https://www.eliazavatta.it/og-image.jpg",
+      image: "https://www.eliazavatta.it/images/profile/og-image.jpg",
       url: "https://www.eliazavatta.it/",
       description:
         "Sviluppatore freelance esperto e professionista specializzato in siti web, e-commerce, app iOS e Android per aziende, startup e PMI a Cesena, Rimini, Forlì, Ravenna e Cervia. Consulente IT disponibile anche da remoto.",
@@ -365,7 +365,7 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/png" href="/EZlogo.png" />
+        <link rel="icon" type="image/png" href="/images/icons/EZlogo.png" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
