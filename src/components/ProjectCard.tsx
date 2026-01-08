@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/types/project";
-import React from "react";
 
 type ProjectCardProps = {
   project: Project;

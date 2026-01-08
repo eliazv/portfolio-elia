@@ -1,6 +1,5 @@
 'use client';
 
-import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Code, Home, Star } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
