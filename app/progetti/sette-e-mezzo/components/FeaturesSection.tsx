@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Brain,
-  Smartphone,
-  Trophy,
-  Zap,
-  Heart,
-  Sparkles,
-} from "lucide-react";
+import { Brain, Smartphone, Trophy, Zap, Heart, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const FeaturesSection = () => {
@@ -80,8 +73,8 @@ const FeaturesSection = () => {
             <strong>gioco di carte online</strong> della tradizione italiana.
             Che tu lo consideri il vero <strong>Blackjack Italiano</strong> o il
             passatempo delle feste, l'emozione della sfida contro il banco è a
-            portata di tap. Gioca <strong>gratis online</strong> o scarica
-            l'<strong>app per Android e iOS</strong>.
+            portata di tap. Gioca <strong>gratis online</strong> o scarica l'
+            <strong>app per Android e iOS</strong>.
           </p>
         </motion.div>
 
@@ -144,7 +137,7 @@ const FeaturesSection = () => {
               }}
             >
               <img
-                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/bd/25/dabd2565-aca8-0beb-8baf-a473b6195e59/Placeholder.mill/400x400bb-75.webp"
+                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/03/9e/f4/039ef4ef-f139-4836-6f78-cf205485490f/1.png/300x650bb.webp"
                 alt="Screenshot del gioco Sette e Mezzo"
                 className="object-cover w-full rounded-2xl shadow-lg"
                 loading="lazy"
@@ -201,7 +194,7 @@ const FeaturesSection = () => {
               }}
             >
               <img
-                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/bd/25/dabd2565-aca8-0beb-8baf-a473b6195e59/Placeholder.mill/400x400bb-75.webp"
+                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/04/d4/5004d442-229e-c2e2-d1fa-c14e54cec9a6/sette_e_mezzo_screen.png/300x650bb.webp"
                 alt="Partita in corso"
                 className="object-cover w-full rounded-2xl shadow-lg"
                 loading="lazy"
@@ -258,7 +251,7 @@ const FeaturesSection = () => {
               }}
             >
               <img
-                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/bd/25/dabd2565-aca8-0beb-8baf-a473b6195e59/Placeholder.mill/400x400bb-75.webp"
+                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/28/74/e8/2874e8e7-8f7e-8694-8997-ee812a5c4589/3.png/300x650bb.webp"
                 alt="Screenshot del gioco Sette e Mezzo"
                 className="object-cover w-full rounded-2xl shadow-lg"
                 loading="lazy"

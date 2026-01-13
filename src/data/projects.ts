@@ -28,7 +28,7 @@ export const projects: Project[] = [
     image:
       "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
     logoImage:
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/bd/25/dabd2565-aca8-0beb-8baf-a473b6195e59/Placeholder.mill/400x400bb-75.webp",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/81/47/ac8147ec-b495-8f4f-1b49-c69906b18317/Placeholder.mill/400x400bb-75.webp",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Dev",
     demoUrl: "/progetti/sette-e-mezzo",

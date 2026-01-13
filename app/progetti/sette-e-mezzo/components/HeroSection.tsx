@@ -76,9 +76,9 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <img
-                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/bd/25/dabd2565-aca8-0beb-8baf-a473b6195e59/Placeholder.mill/400x400bb-75.webp"
+                src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/81/47/ac8147ec-b495-8f4f-1b49-c69906b18317/Placeholder.mill/400x400bb-75.webp"
                 alt="Sette e Mezzo Logo"
-                className="w-32 h-32 md:w-40 md:h-40 rounded-3xl shadow-2xl"
+                className="w-44 h-44 md:w-40 md:h-40 rounded-3xl shadow-2xl"
               />
             </motion.div>
 
@@ -142,8 +142,7 @@ const HeroSection = () => {
               className="font-game text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto font-semibold relative"
               style={{ textShadow: "0 2px 8px #000, 0 1px 0 #fff8" }}
             >
-              Il classico gioco di 7 e Mezzo!{" "}
-              <br className="hidden md:block" />
+              Il classico gioco di 7 e Mezzo! <br className="hidden md:block" />
               Blackjack con le carte napoletane offline
             </p>
           </motion.div>
