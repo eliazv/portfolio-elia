@@ -94,46 +94,54 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
               </Link>
 
               <div className="space-y-6">
-                {toolGroups.map((group) => (
-                  <div key={group.id}>
-                    <h3 className="px-3 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      {group.name}
-                    </h3>
-                    <ul className="space-y-1">
-                      {group.tools.map((tool) => {
-                        const Icon = tool.icon;
-                        const toolPath = `/strumenti/${tool.slug}`;
-                        const isActive = pathname === toolPath || pathname === `${toolPath}/` || pathname?.startsWith(`${toolPath}?`);
-                        return (
-                          <li key={tool.slug}>
-                            <Link
-                              href={`/strumenti/${tool.slug}`}
-                              className={cn(
-                                "flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors",
-                                isActive
-                                  ? `${tool.bgColor} ${tool.color} font-medium`
-                                  : "hover:bg-gray-100 text-gray-700",
-                              )}
-                            >
-                              <Icon
+                {toolGroups.map((group) => {
+                  const visibleTools = group.tools.filter((t) => !t.hidden);
+                  if (visibleTools.length === 0) return null;
+
+                  return (
+                    <div key={group.id}>
+                      <h3 className="px-3 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                        {group.name}
+                      </h3>
+                      <ul className="space-y-1">
+                        {visibleTools.map((tool) => {
+                          const Icon = tool.icon;
+                          const toolPath = `/strumenti/${tool.slug}`;
+                          const isActive =
+                            pathname === toolPath ||
+                            pathname === `${toolPath}/` ||
+                            pathname?.startsWith(`${toolPath}?`);
+                          return (
+                            <li key={tool.slug}>
+                              <Link
+                                href={`/strumenti/${tool.slug}`}
                                 className={cn(
-                                  "h-5 w-5 flex-shrink-0",
-                                  isActive ? tool.color : "text-gray-400",
+                                  "flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors",
+                                  isActive
+                                    ? `${tool.bgColor} ${tool.color} font-medium`
+                                    : "hover:bg-gray-100 text-gray-700",
                                 )}
-                              />
-                              <span className="truncate">{tool.name}</span>
-                              {tool.isAI && (
-                                <span className="ml-auto text-xs bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded">
-                                  AI
-                                </span>
-                              )}
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ))}
+                              >
+                                <Icon
+                                  className={cn(
+                                    "h-5 w-5 flex-shrink-0",
+                                    isActive ? tool.color : "text-gray-400",
+                                  )}
+                                />
+                                <span className="truncate">{tool.name}</span>
+                                {tool.isAI && (
+                                  <span className="ml-auto text-xs bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded">
+                                    AI
+                                  </span>
+                                )}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  );
+                })}
 
                 {/* Link Elia Zavatta - in fondo */}
                 <div className="pt-4 border-t">
@@ -141,7 +149,9 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
                     href="/"
                     className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100"
                   >
-                    <span className="text-gradient font-semibold">Elia Zavatta</span>
+                    <span className="text-gradient font-semibold">
+                      Elia Zavatta
+                    </span>
                   </Link>
                 </div>
               </div>
