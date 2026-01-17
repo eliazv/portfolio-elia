@@ -5,6 +5,7 @@ import {
   BarChart2,
   FileImage,
   AlignLeft,
+  Receipt,
   LucideIcon,
 } from "lucide-react";
 
@@ -72,6 +73,15 @@ export const toolGroups: ToolGroup[] = [
         color: "text-green-600",
         bgColor: "bg-green-50",
         keywords: ["calcola bmi", "indice massa corporea", "calcolo peso ideale", "bmi calculator"],
+      },
+      {
+        name: "Calcolatore RAL / P.IVA",
+        slug: "calcola-stipendio",
+        description: "Calcola stipendio netto da RAL, tariffa oraria freelancer e confronta dipendente vs P.IVA",
+        icon: Receipt,
+        color: "text-emerald-600",
+        bgColor: "bg-emerald-50",
+        keywords: ["calcolo stipendio netto", "ral netto", "partita iva quanto resta", "tariffa oraria freelancer", "stipendio netto mensile", "confronto dipendente partita iva"],
       },
     ],
   },
