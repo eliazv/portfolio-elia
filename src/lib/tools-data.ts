@@ -4,9 +4,7 @@ import {
   Percent,
   BarChart2,
   FileImage,
-  FileText,
   AlignLeft,
-  Sparkles,
   LucideIcon,
 } from "lucide-react";
 
@@ -104,31 +102,6 @@ export const toolGroups: ToolGroup[] = [
         color: "text-violet-600",
         bgColor: "bg-violet-50",
         keywords: ["conta caratteri", "conta parole", "word counter", "character counter"],
-      },
-      {
-        name: "Convertitore PDF",
-        slug: "convertitore-pdf",
-        description: "Converti file PDF in Word, immagini e altri formati",
-        icon: FileText,
-        color: "text-red-600",
-        bgColor: "bg-red-50",
-        keywords: ["pdf to word", "convertitore pdf", "pdf converter", "converti pdf"],
-      },
-    ],
-  },
-  {
-    id: "ai",
-    name: "Strumenti AI",
-    tools: [
-      {
-        name: "Generatore Meta Description",
-        slug: "genera-meta-description",
-        description: "Genera meta description SEO-ottimizzate con intelligenza artificiale",
-        icon: Sparkles,
-        color: "text-violet-600",
-        bgColor: "bg-violet-50",
-        keywords: ["meta description generator", "seo ai", "generatore meta tag", "ai seo tool"],
-        isAI: true,
       },
     ],
   },

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { toolGroups } from "@/lib/tools-data";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Menu, X, Home, ChevronLeft } from "lucide-react";
+import { Menu, X, Home } from "lucide-react";
 
 interface ToolsLayoutProps {
   children: ReactNode;
@@ -80,20 +80,11 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
 
           <ScrollArea className="h-[calc(100vh-3.5rem)]">
             <div className="p-4">
-              {/* Link Home */}
-              <Link
-                href="/"
-                className="flex items-center gap-2 px-3 py-2 mb-4 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
-              >
-                <ChevronLeft className="h-4 w-4" />
-                Torna al Portfolio
-              </Link>
-
               <Link
                 href="/strumenti"
                 className={cn(
                   "flex items-center gap-3 px-3 py-2 mb-4 rounded-md text-sm font-medium transition-colors",
-                  pathname === "/strumenti"
+                  pathname === "/strumenti" || pathname === "/strumenti/"
                     ? "bg-blue-50 text-blue-700"
                     : "hover:bg-gray-100",
                 )}
@@ -111,7 +102,8 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
                     <ul className="space-y-1">
                       {group.tools.map((tool) => {
                         const Icon = tool.icon;
-                        const isActive = pathname === `/strumenti/${tool.slug}`;
+                        const toolPath = `/strumenti/${tool.slug}`;
+                        const isActive = pathname === toolPath || pathname === `${toolPath}/` || pathname?.startsWith(`${toolPath}?`);
                         return (
                           <li key={tool.slug}>
                             <Link
@@ -142,6 +134,16 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
                     </ul>
                   </div>
                 ))}
+
+                {/* Link Elia Zavatta - in fondo */}
+                <div className="pt-4 border-t">
+                  <Link
+                    href="/"
+                    className="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-gray-100"
+                  >
+                    <span className="text-gradient font-semibold">Elia Zavatta</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </ScrollArea>
