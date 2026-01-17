@@ -29,10 +29,10 @@ import {
 import { Slider } from "@/components/ui/slider";
 
 // ============================================
-// COSTANTI E CONFIGURAZIONE FISCALE 2025
+// COSTANTI E CONFIGURAZIONE FISCALE 2026
 // ============================================
 
-// Scaglioni IRPEF 2025
+// Scaglioni IRPEF 2026 (confermati rispetto al 2024)
 const SCAGLIONI_IRPEF = [
   { min: 0, max: 28000, aliquota: 0.23 },
   { min: 28000, max: 50000, aliquota: 0.35 },
@@ -46,13 +46,13 @@ const ADDIZIONALE_COMUNALE_MEDIA = 0.008; // 0.8%
 // Contributi INPS dipendente
 const ALIQUOTA_INPS_DIPENDENTE = 0.0919; // 9.19%
 
-// Cuneo fiscale 2025 (esonero contributivo)
+// Cuneo fiscale 2026 (esonero contributivo)
 const CUNEO_FISCALE = [
   { maxReddito: 25000, esonero: 0.07 }, // 7% per redditi fino a 25k
   { maxReddito: 35000, esonero: 0.06 }, // 6% per redditi 25k-35k
 ];
 
-// Detrazioni lavoro dipendente 2025
+// Detrazioni lavoro dipendente 2026
 const calcolaDetrazioneLavoroDipendente = (reddito: number): number => {
   if (reddito <= 15000) {
     return 1955;
@@ -449,7 +449,7 @@ export default function CalcolaStipendioClient() {
         </h1>
         <p className="text-gray-600">
           Calcola il tuo stipendio netto, simula la Partita IVA forfettaria e
-          confronta le due opzioni. Dati aggiornati al 2025.
+          confronta le due opzioni. Dati aggiornati al 2026.
         </p>
       </div>
 
@@ -685,7 +685,7 @@ export default function CalcolaStipendioClient() {
               <Card className="p-4">
                 <h4 className="font-semibold mb-3 flex items-center gap-2">
                   <Info className="h-4 w-4 text-blue-600" />
-                  Scaglioni IRPEF 2025
+                  Scaglioni IRPEF 2026
                 </h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
@@ -1298,10 +1298,11 @@ export default function CalcolaStipendioClient() {
           le addizionali regionali e comunali.
         </p>
 
-        <h3>Scaglioni IRPEF 2025</h3>
+        <h3>Scaglioni IRPEF 2026</h3>
         <p>
-          Dal 2024, gli scaglioni IRPEF sono stati semplificati a tre fasce: 23%
-          fino a 28.000€, 35% da 28.001€ a 50.000€, e 43% oltre i 50.000€.
+          Gli scaglioni IRPEF restano su tre fasce: 23% fino a 28.000€, 35% da
+          28.001€ a 50.000€, e 43% oltre i 50.000€ (valori confermati per il
+          2026).
         </p>
 
         <h3>Partita IVA Forfettaria: quanto resta davvero?</h3>

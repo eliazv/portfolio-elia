@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.eliazavatta.it"),
   title: {
     default:
-      " Elia Zavatta - Sviluppatore Web e Mobile Freelance Cesena | React, Flutter ",
+      "Elia Zavatta - Sviluppatore Web e Mobile Freelance Cesena | React, Flutter",
     template: "%s | Elia Zavatta - Sviluppatore Freelance",
   },
   description:
