@@ -23,7 +23,8 @@
       "Bash(rm:*)",
       "Bash(git checkout:*)",
       "Bash(wc:*)",
-      "Bash(npx tsc --noEmit)"
+      "Bash(npx tsc --noEmit)",
+      "Bash(dir \"C:\\\\Users\\\\zavat\\\\Desktop\\\\Progetti\\\\easy-utility-suite\\\\src\" /s /b)"
     ]
   }
 }

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.eliazavatta.it"),
   title: {
     default:
-      "Sviluppatore Web e Mobile Freelance Cesena | Esperto React | Elia Zavatta",
+      " Elia Zavatta - Sviluppatore Web e Mobile Freelance Cesena | React, Flutter ",
     template: "%s | Elia Zavatta - Sviluppatore Freelance",
   },
   description:
-    "Sviluppatore web e mobile freelance senior a Cesena. Esperto React, sviluppo siti web, e-commerce, app iOS e Android per aziende e startup in Romagna. Consulente IT professionista disponibile anche da remoto.",
+    "Sviluppatore web e mobile freelance a Cesena. Esperto React, sviluppo siti web, e-commerce, app iOS e Android per aziende e startup in Romagna. Consulente IT professionista disponibile anche da remoto.",
   keywords: [
     // Keywords principali
     "sviluppatore web freelance cesena",
