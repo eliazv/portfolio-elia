@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap");
+/* removed Press Start 2P - using VT323 instead (imported below) */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono:wght@400;700&family=VT323&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -68,6 +70,23 @@
   }
 }
 
+/* Font test helpers */
+.font-share {
+  font-family: "Share Tech Mono", monospace;
+}
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 0.01em;
+}
+.font-roboto-cond {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.font-roboto-mono {
+  font-family: "Roboto Mono", monospace;
+}
+.font-vt323 {
+  font-family: "VT323", monospace;
+}
 @layer base {
   * {
     @apply border-border;
@@ -703,6 +722,16 @@
   animation:
     typewriter 3s steps(40) 1s both,
     blink-caret 0.75s step-end infinite;
+}
+
+/* Pixel / robot font */
+.pixel-robot {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.1;
 }
 
 /* Allow the typewriter text to wrap on wider screens if there's no space */
