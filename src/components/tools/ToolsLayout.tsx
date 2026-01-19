@@ -300,14 +300,14 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
           </div>
 
           {/* Footer */}
-          <footer className="border-t border-white/60 bg-white/80 backdrop-blur-xl py-6 mt-4">
+          <footer className="border-t border-white/60 bg-white/80 backdrop-blur-xl rounded-2xl py-6 mt-4">
             <div className="container max-w-5xl mx-auto px-4 text-center text-sm text-gray-500">
               <p>
                 Strumenti gratuiti creati da{" "}
                 <Link href="/" className="text-blue-600 hover:underline">
                   Elia Zavatta
                 </Link>{" "}
-                - Sviluppatore Web Freelance
+                - Sviluppatore Freelance
               </p>
               <p className="mt-1">
                 Tutti gli strumenti funzionano direttamente nel browser. I tuoi
