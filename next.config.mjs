@@ -9,15 +9,10 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   trailingSlash: true, // Per compatibilità routing statico
-  async redirects() {
-    return [
-      {
-        source: "/contaspicci",
-        destination: "/",
-        permanent: true,
-      },
-    ];
-  },
+  // Note: with `output: "export"` Next.js does not support automatic
+  // redirects during static export. Configure redirects at the hosting
+  // provider (e.g., Vercel) or implement a client-side redirect page.
+  // Removed `redirects()` to avoid build-time warnings for static export.
 };
 
 export default nextConfig;

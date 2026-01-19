@@ -69,10 +69,11 @@ const HeroSection = () => {
             >
               <h1
                 className="font-black text-6xl sm:text-6xl md:text-7xl lg:text-8xl text-white drop-shadow-2xl tracking-wider relative"
-                style={{ 
-                  textShadow: "0 4px 20px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
+                style={{
+                  textShadow:
+                    "0 4px 20px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.3)",
                   fontWeight: 900,
-                  letterSpacing: "0.1em"
+                  letterSpacing: "0.1em",
                 }}
                 itemProp="name"
               >

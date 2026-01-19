@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Iridescence from "./Iridescence";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin, Mail } from "lucide-react";
@@ -11,9 +10,6 @@ const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);
-  const [keywordIndex, setKeywordIndex] = useState(0);
-
-  const keywords = ["digitali", "web", "mobile"];
 
   // Gestione scroll smooth per i pulsanti
   const handleScrollClick = (

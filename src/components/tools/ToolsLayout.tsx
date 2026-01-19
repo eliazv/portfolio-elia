@@ -242,9 +242,7 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
                                     {tool.name}
                                   </p>
                                   <p className="text-xs text-gray-500 whitespace-normal break-words leading-snug">
-                                    {tool.subtitle ??
-                                      tool.description ??
-                                      "Strumento dedicato"}
+                                    {tool.description ?? "Strumento dedicato"}
                                   </p>
                                 </div>
                                 {tool.isAI && !isCollapsed && (
