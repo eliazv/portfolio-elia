@@ -3,7 +3,8 @@ import FeaturesSection from "./components/FeaturesSection";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Sette e Mezzo Online Gratis - App Gioco 7 e Mezzo con Carte Napoletane",
+  title:
+    "Sette e Mezzo Online Gratis - App Gioco 7 e Mezzo con Carte Napoletane",
   description:
     "Gioca a Sette e Mezzo online gratis! App ufficiale del gioco 7 e mezzo con carte napoletane. Scarica l'app per iOS e Android o gioca online. Blackjack italiano offline, mazzi regionali e bonus giornalieri. Il miglior gioco di carte tradizionale italiano!",
   keywords:
@@ -72,7 +73,7 @@ export default function SetteEMezzoPage() {
           }),
         }}
       />
-      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
         <HeroSection />
         <FeaturesSection />
         <Footer />

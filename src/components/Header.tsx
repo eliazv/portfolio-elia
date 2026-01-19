@@ -10,38 +10,6 @@ const Header = () => {
   const pathname = usePathname();
 
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [nameVariant, setNameVariant] = useState<"full" | "short" | "initials">(
-    "full",
-  );
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-
-    const update = () => {
-      const parentRect = el.getBoundingClientRect();
-      const children = Array.from(el.children) as HTMLElement[];
-      const siblings = children.slice(1);
-      const occupied = siblings.reduce(
-        (s, c) => s + c.getBoundingClientRect().width,
-        0,
-      );
-      const available = parentRect.width - occupied - 24; // padding safety
-
-      if (available > 160) setNameVariant("full");
-      else if (available > 90) setNameVariant("short");
-      else setNameVariant("initials");
-    };
-
-    update();
-    const ro = new ResizeObserver(update);
-    ro.observe(el);
-    window.addEventListener("resize", update);
-    return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", update);
-    };
-  }, []);
 
   const navItems = [
     { name: "Home", href: "/#home", icon: Home },

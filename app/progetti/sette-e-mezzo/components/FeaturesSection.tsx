@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 const FeaturesSection = () => {
   const featuresSet1 = [
     {
-      icon: <Smartphone className="h-12 w-12 text-purple-600" />,
+      icon: <Smartphone className="h-12 w-12 text-green-600" />,
       title: "Gioca Ovunque (Offline)",
       description:
         "Non serve internet! Goditi partite rapide al gioco di carte 7 e mezzo in treno, in aereo o nei momenti di relax senza consumare dati.",
       highlight: "Offline",
     },
     {
-      icon: <Brain className="h-12 w-12 text-purple-600" />,
+      icon: <Brain className="h-12 w-12 text-green-600" />,
       title: "Mazzi Italiani Autentici",
       description:
         "Gioca con le tue carte preferite! Scegli tra mazzi di carte Napoletane, Piacentine, Siciliane, Trevisane, Sarde, Toscane e Romagnole.",
@@ -23,14 +23,14 @@ const FeaturesSection = () => {
 
   const featuresSet2 = [
     {
-      icon: <Zap className="h-12 w-12 text-purple-600" />,
+      icon: <Zap className="h-12 w-12 text-green-600" />,
       title: "Bonus e Monete Gratis",
       description:
         "Inizia con un generoso pacchetto di monete e ricevi premi ogni giorno per non restare mai fuori dai giochi di casinò.",
       highlight: "Bonus Giornalieri",
     },
     {
-      icon: <Heart className="h-12 w-12 text-purple-600" />,
+      icon: <Heart className="h-12 w-12 text-green-600" />,
       title: "Regole Classiche",
       description:
         "L'obiettivo è avvicinarsi il più possibile al punteggio di 7 e mezzo senza sballare. Attento al Re di Denari (la Matta)!",
@@ -40,14 +40,14 @@ const FeaturesSection = () => {
 
   const featuresSet3 = [
     {
-      icon: <Trophy className="h-12 w-12 text-purple-600" />,
+      icon: <Trophy className="h-12 w-12 text-green-600" />,
       title: "Statistiche e Strategia",
       description:
         "Monitora le tue vittorie e affina la tua tecnica per battere il banco. Riuscirai a diventare il campione del tavolo?",
       highlight: "Stats",
     },
     {
-      icon: <Sparkles className="h-12 w-12 text-purple-600" />,
+      icon: <Sparkles className="h-12 w-12 text-green-600" />,
       title: "Grafica HD",
       description:
         "Un'interfaccia pulita, animazioni fluide e tavoli realistici per un'esperienza di gioco autentica.",
@@ -84,7 +84,7 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h2 className="font-retro text-3xl md:text-4xl text-center text-purple-700 mb-8">
+          <h2 className="font-retro text-3xl md:text-4xl text-center text-green-700 mb-8">
             Perché scegliere la nostra App Sette e Mezzo?
           </h2>
         </motion.div>
@@ -99,14 +99,14 @@ const FeaturesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-300 group"
+                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-green-100 hover:border-green-300 group"
                 whileHover={{
                   y: -5,
                   transition: { duration: 0.2 },
                 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex-shrink-0 p-3 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
                   <div className="flex-1 text-left">
@@ -130,7 +130,7 @@ const FeaturesSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.div
-              className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-4 shadow-2xl border border-purple-200"
+              className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl p-4 shadow-2xl border border-green-200"
               whileHover={{
                 scale: 1.02,
                 transition: { duration: 0.3 },
@@ -156,14 +156,14 @@ const FeaturesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-300 group"
+                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-green-100 hover:border-green-300 group"
                 whileHover={{
                   y: -5,
                   transition: { duration: 0.2 },
                 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex-shrink-0 p-3 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
                   <div className="flex-1 text-left">
@@ -187,7 +187,7 @@ const FeaturesSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.div
-              className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-4 shadow-2xl border border-purple-200"
+              className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl p-4 shadow-2xl border border-green-200"
               whileHover={{
                 scale: 1.02,
                 transition: { duration: 0.3 },
@@ -213,14 +213,14 @@ const FeaturesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-300 group"
+                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-green-100 hover:border-green-300 group"
                 whileHover={{
                   y: -5,
                   transition: { duration: 0.2 },
                 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex-shrink-0 p-3 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
                   <div className="flex-1 text-left">
@@ -244,7 +244,7 @@ const FeaturesSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.div
-              className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-4 shadow-2xl border border-purple-200"
+              className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl p-4 shadow-2xl border border-green-200"
               whileHover={{
                 scale: 1.02,
                 transition: { duration: 0.3 },
@@ -261,7 +261,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Sezione CTA finale */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 md:p-12 border border-purple-100">
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 md:p-12 border border-green-100">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -278,7 +278,7 @@ const FeaturesSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                <div className="font-retro text-4xl md:text-5xl text-purple-600 mb-2">
+                <div className="font-retro text-4xl md:text-5xl text-green-600 mb-2">
                   100%
                 </div>
                 <div className="font-game text-gray-700">
@@ -291,7 +291,7 @@ const FeaturesSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <div className="font-retro text-4xl md:text-5xl text-purple-600 mb-2">
+                <div className="font-retro text-4xl md:text-5xl text-green-600 mb-2">
                   📱
                 </div>
                 <div className="font-game text-gray-700">

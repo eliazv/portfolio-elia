@@ -99,7 +99,7 @@ const HeroSection = () => {
 
             {/* Nome con effetto reveal avanzato */}
             <div className="text-reveal-container mb-6">
-              <div className="flex items-center justify-center mb-4">
+              {/* <div className="flex items-center justify-center mb-4">
                 <Image
                   src="/images/icons/logo.png"
                   alt="Logo Elia Zavatta"
@@ -107,7 +107,7 @@ const HeroSection = () => {
                   height={96}
                   priority
                 />
-              </div>
+              </div> */}
               <h1
                 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading animate-fade-in  text-white/95"
                 style={{
