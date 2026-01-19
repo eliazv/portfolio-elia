@@ -1,29 +1,36 @@
 "use client";
 
+import Marquee from "react-fast-marquee";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const technologies = [
   {
+    id: "react",
     name: "React",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png",
   },
   {
+    id: "nextjs",
     name: "Next.js",
     logo: "https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254",
   },
   {
+    id: "flutter",
     name: "Flutter",
     logo: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg",
   },
   {
+    id: "nestjs",
     name: "NestJS",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png",
   },
   {
+    id: "node",
     name: "Node.js",
     logo: "https://nodejs.org/static/logos/jsIconGreen.svg",
   },
   {
+    id: "typescript",
     name: "TypeScript",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png",
   },
@@ -149,15 +156,39 @@ const AboutSection = () => {
                   ))}
                 </div> */}
 
-                {/* Technologies */}
+                {/* Technologies - reused from hero (badge + marquee) */}
                 <div className="space-y-3">
                   <p className="text-sm font-medium text-muted-foreground">
                     Tecnologie principali:
                   </p>
-                  <div className="flex flex-wrap gap-3">
+
+                  {/* Mobile: marquee */}
+                  <div className="w-full sm:hidden mt-2">
+                    <Marquee speed={45} pauseOnHover className="py-2">
+                      {technologies.concat(technologies).map((tech, idx) => (
+                        <div
+                          key={`${tech.id}-${idx}`}
+                          className="mx-3 group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                        >
+                          <img
+                            src={tech.logo}
+                            alt={tech.name}
+                            className="w-4 h-4 object-contain"
+                            loading="lazy"
+                          />
+                          <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
+                            {tech.name}
+                          </span>
+                        </div>
+                      ))}
+                    </Marquee>
+                  </div>
+
+                  {/* Desktop: pills */}
+                  <div className="hidden sm:flex flex-wrap items-center gap-3">
                     {technologies.map((tech, index) => (
                       <div
-                        key={tech.name}
+                        key={tech.id}
                         className={`group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur-md border border-foreground/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transform ${
                           isVisible
                             ? "opacity-100 translate-y-0"
