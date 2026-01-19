@@ -77,22 +77,18 @@ const AboutSection = () => {
                 style={{ transitionDelay: "0.3s" }}
               >
                 {/* Avatar con glow effect */}
-                <div className="relative group">
+                {/* <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
                   <img
                     src="/images/profile/elia-persona.png"
                     alt="Elia Zavatta - Sviluppatore Full Stack"
                     className="relative w-36 h-48 object-cover rounded-2xl border-2 border-white/20 shadow-xl"
                   />
-                  {/* Status badge */}
-                  {/* <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-green-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
-                    <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                    Disponibile
-                  </div> */}
-                </div>
+                  
+                </div> */}
 
                 {/* Name and title */}
-                <div className="mt-6 text-center md:text-left">
+                <div className=" text-center md:text-left">
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                     Elia Zavatta
                   </h3>
@@ -104,10 +100,13 @@ const AboutSection = () => {
                 {/* Quick info pills */}
                 <div className="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
                   <span className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-muted/50 border border-border hover:border-primary/50 transition-colors">
-                    📍 Cesena, Romagna
+                    🎓 Ing. Informatica
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-muted/50 border border-border hover:border-primary/50 transition-colors">
-                    🎓 Ing. Informatica
+                    🛠️ 3+ anni di esperienza{" "}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-muted/50 border border-border hover:border-primary/50 transition-colors">
+                    📍 Cesena, Romagna
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-muted/50 border border-border hover:border-primary/50 transition-colors">
                     🌍 Remoto Italia
