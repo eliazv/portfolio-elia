@@ -11,7 +11,8 @@ export const projects: Project[] = [
       "App mobile ispirata a un tradizionale gioco di carte romagnolo, con modalità multiplayer online e single player contro l'IA",
     image:
       "https://shop.dalnegro.com/wp-content/plugins/woocommerce-onpage/storage/cache/b8069a05a64bcbb4d8926c2488ac627e913e8e39.900x.png/dalnegro-mazzo-carte-regionale-napoletane-pro-astuccio-rosso-02.png?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
-    logoImage: "/images/projects/marafone.jpg",
+    logoImage:
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/6d/19/b76d19a2-1135-2f39-fb21-bdf6c08eec57/Placeholder.mill/400x400bb-75.webp",
     technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
     category: "Dev",
     demoUrl: "https://marafone-romagnolo.it/",

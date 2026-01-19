@@ -57,7 +57,7 @@ const Header = () => {
             aria-label="Torna alla home"
           >
             <Image
-              src="/images/icons/logo.png"
+              src="/images/icons/logo.webp"
               alt="Logo Elia Zavatta"
               width={40}
               height={40}

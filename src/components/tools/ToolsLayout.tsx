@@ -62,7 +62,7 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
             <Link href="/strumenti" className="flex items-center gap-3">
               <div className="relative h-10 w-10 rounded-2xl">
                 <Image
-                  src="/images/icons/logo.png"
+                  src="/images/icons/logo.webp"
                   alt="Logo Elia Zavatta"
                   fill
                   className="rounded-2xl object-contain"
@@ -114,7 +114,7 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
             >
               <div className="relative h-12 w-12 rounded-2xl flex-shrink-0">
                 <Image
-                  src="/images/icons/logo.png"
+                  src="/images/icons/logo.webp"
                   alt="Logo Elia Zavatta"
                   fill
                   className="rounded-2xl object-contain"
@@ -272,7 +272,7 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
                   >
                     <div className="relative h-10 w-10 rounded-xl flex-shrink-0">
                       <Image
-                        src="/images/icons/logo.png"
+                        src="/images/icons/logo.webp"
                         alt="Logo Elia Zavatta"
                         fill
                         className="rounded-xl object-contain"

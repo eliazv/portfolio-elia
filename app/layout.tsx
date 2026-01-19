@@ -365,7 +365,7 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/png" href="/images/icons/logo.png" />
+        <link rel="icon" type="image/png" href="/images/icons/logo.webp" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

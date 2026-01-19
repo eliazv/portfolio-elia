@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SimpleProjectCard from "@/components/SimpleProjectCard";
 import type { Category, Project } from "@/types/project";
 import { projects } from "@/data/projects";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 
 const ProjectsSection = () => {
   const [showAll, setShowAll] = useState(false);
@@ -19,7 +19,7 @@ const ProjectsSection = () => {
       acc[project.category].push(project);
       return acc;
     },
-    {} as Record<Category, Project[]>
+    {} as Record<Category, Project[]>,
   );
 
   // Mostra solo la categoria "Dev" e nasconde la scritta "Dev" e la sezione "Altro"
@@ -27,8 +27,15 @@ const ProjectsSection = () => {
   const displayedProjects = showAll ? devProjects : devProjects.slice(0, 3);
   const { containerRef, visibleItems } = useStaggeredAnimation(
     displayedProjects.length,
-    150
+    150,
   );
+
+  useEffect(() => {
+    const handler = () => setShowAll(true);
+    window.addEventListener("expandProjects", handler as EventListener);
+    return () =>
+      window.removeEventListener("expandProjects", handler as EventListener);
+  }, []);
 
   return (
     <section id="projects" className="py-10 bg-secondary/30 section-background">
@@ -94,9 +101,28 @@ const ProjectsSection = () => {
                 </div>
               ))}
             </div>
-            {!showAll && devProjects.length > 3 && (
+            {devProjects.length > 3 && (
               <div className="mt-12 text-center">
-                <div className="mt-12 text-center">
+                {showAll ? (
+                  <Button
+                    size="lg"
+                    onClick={() => {
+                      setShowAll(false);
+                      const el = document.getElementById("projects");
+                      if (el)
+                        el.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                    }}
+                    className="group magnetic-element enhanced-card-hover animate-pulse-glow-reverse bg-background/10 border border-foreground/10 text-foreground"
+                  >
+                    <span className="inline-flex items-center">
+                      Mostra meno
+                      <ArrowUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
+                    </span>
+                  </Button>
+                ) : (
                   <Button
                     size="lg"
                     onClick={() => setShowAll(true)}
@@ -107,7 +133,7 @@ const ProjectsSection = () => {
                       <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </Button>
-                </div>
+                )}
               </div>
             )}
           </div>

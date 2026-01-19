@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -71,7 +71,7 @@ const MarafoneRomagnolo: React.FC = () => {
           />
           <div className="absolute inset-0 flex items-center justify-start pl-8 rounded-lg">
             <img
-              src="/marafone.jpg"
+              src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/6d/19/b76d19a2-1135-2f39-fb21-bdf6c08eec57/Placeholder.mill/400x400bb-75.webp"
               alt="Marafone Romagnolo logo"
               className="w-32 h-32 object-contain rounded-lg shadow-lg bg-white/90 p-4"
             />

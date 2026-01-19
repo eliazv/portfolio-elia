@@ -125,7 +125,7 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
               <img
-                src="https://developer.apple.com/app-store/app-store-awards-2023/images/transparent_awards_logo.png"
+                src="https://developer.apple.com/app-store/app-store-awards-2023/images/transparent_awards_logo.webp"
                 alt="App Store Awards"
                 className="w-8 h-8 object-contain"
               />

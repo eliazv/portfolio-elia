@@ -19,7 +19,13 @@ const HeroSection = () => {
   ) => {
     e.preventDefault();
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (id === "projects") {
+        // trigger ProjectsSection to expand the list
+        window.dispatchEvent(new CustomEvent("expandProjects"));
+      }
+    }
   };
 
   useEffect(() => {
@@ -94,7 +100,7 @@ const HeroSection = () => {
                 <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-white/15 via-primary/15 to-accent/20 blur-xl -z-10" />
                 <div className="pop-float relative w-full h-full rounded-[28px] overflow-hidden p-2">
                   <Image
-                    src="/images/icons/EZlogoperosna.png"
+                    src="/images/icons/EZlogoperosna.webp"
                     alt="Elia Zavatta ritratto"
                     fill
                     priority
@@ -106,7 +112,7 @@ const HeroSection = () => {
 
               {/* Social links for desktop: shown under the image, in row */}
               <div
-                className={`hidden md:flex items-center self-center gap-6 mt-6 ${
+                className={`hidden md:flex items-center self-center gap-6  ${
                   isLoaded ? "animate-slide-up-stagger" : "opacity-0"
                 }`}
                 style={{ animationDelay: "3s" }}
@@ -156,7 +162,7 @@ const HeroSection = () => {
               <div className="text-reveal-container ">
                 {/* <div className="flex items-center justify-center mb-4">
                 <Image
-                  src="/images/icons/logo.png"
+                  src="/images/icons/logo.webp"
                   alt="Logo Elia Zavatta"
                   width={96}
                   height={96}
@@ -164,18 +170,20 @@ const HeroSection = () => {
                 />
               </div> */}
                 <h1
-                  className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading animate-fade-in  text-white/95"
+                  className="text-5xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in"
                   style={{
                     animationDelay: "0.1s",
                     letterSpacing: "-0.03em",
                     lineHeight: 1.05,
                   }}
                 >
-                  <span className="text-gradient">Elia Zavatta</span>
+                  <span className="text-gradient rounded-heading">
+                    Elia Zavatta
+                  </span>
                 </h1>
               </div>
 
-              <h2 className="text-center md:text-left text-xl md:text-2xl font-semibold text-gradient leading-relaxed tracking-tight drop-shadow-sm mb-4">
+              <h2 className="text-center md:text-left text-xl md:text-2xl font-semibold text-gradient rounded-heading leading-relaxed tracking-tight drop-shadow-sm mb-4">
                 Sviluppatore web e mobile freelance
               </h2>
 
@@ -192,8 +200,8 @@ const HeroSection = () => {
                     <br className="block sm:hidden" /> che fanno la differenza
                   </p>
                 )}
-                {/* Località */}
-                <div className="mt-6 flex items-center justify-center md:justify-start">
+                {/* Località (mobile) */}
+                <div className="mt-6 flex items-center justify-center md:justify-start md:hidden">
                   <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 text-foreground/90 text-sm md:text-base shadow-sm backdrop-blur border border-white/10">
                     <span className="text-primary text-lg">📍</span>
                     Cesena, Emilia-Romagna
@@ -203,38 +211,46 @@ const HeroSection = () => {
 
               {/* Call to Action Buttons con animazioni */}
               <div
-                className={`flex flex-col sm:flex-row gap-4 mb-12 ${
+                className={`flex flex-col sm:flex-row items-center gap-4 mb-12 md:flex-wrap ${
                   isLoaded ? "animate-slide-up-stagger" : "opacity-0"
                 }`}
                 style={{ animationDelay: "2.5s" }}
               >
-                <Button
-                  size="lg"
-                  className="group magnetic-element enhanced-card-hover bg-gradient-to-r from-primary to-accent text-white shadow-primary/40 shadow-lg border-0"
-                >
-                  <a
-                    href="#projects"
-                    onClick={(e) => handleScrollClick(e, "projects")}
-                    className="inline-flex items-center font-semibold"
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    size="lg"
+                    className="group magnetic-element enhanced-card-hover bg-gradient-to-r from-primary to-accent text-white shadow-primary/40 shadow-lg border-0"
                   >
-                    Scopri i miei progetti
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="magnetic-element enhanced-card-hover border-primary/40 text-primary hover:bg-primary/10"
-                  asChild
-                >
-                  <a
-                    href="#contact"
-                    onClick={(e) => handleScrollClick(e, "contact")}
-                    className="inline-flex items-center font-semibold"
+                    <a
+                      href="#projects"
+                      onClick={(e) => handleScrollClick(e, "projects")}
+                      className="inline-flex items-center font-semibold"
+                    >
+                      Scopri i miei progetti
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="magnetic-element enhanced-card-hover border-primary/40 text-primary hover:bg-primary/10"
+                    asChild
                   >
-                    Contattami
-                  </a>
-                </Button>
+                    <a
+                      href="#contact"
+                      onClick={(e) => handleScrollClick(e, "contact")}
+                      className="inline-flex items-center font-semibold"
+                    >
+                      Contattami
+                    </a>
+                  </Button>
+                </div>
+
+                {/* Località (desktop) - mostrata dopo i pulsanti; andrà sotto se manca spazio */}
+                <span className="hidden md:inline-flex w-full md:w-auto justify-center md:justify-start items-center gap-2 px-5 py-2 rounded-full bg-white/10 text-foreground/90 text-sm md:text-base shadow-sm backdrop-blur border border-white/10 md:ml-2">
+                  <span className="text-primary text-lg">📍</span>
+                  Cesena, Emilia-Romagna
+                </span>
               </div>
               {/* Social links con animazioni fluttuanti */}
               <div
