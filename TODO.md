@@ -1,4 +1,5 @@
 - la pagina di confronto è corretta? non mi smebra siano confronti corretti
+- hero meno elementi , aggiungi logo e tutto piu ordinato
 
 - comprimi immagini non semrba andare correttmaente
 - Funzionalità da Aggiungere

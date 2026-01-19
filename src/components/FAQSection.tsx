@@ -27,8 +27,9 @@ const faqItems = [
         Sviluppo <strong className="text-foreground">siti web</strong>,{" "}
         <strong className="text-foreground">e-commerce</strong>,{" "}
         <strong className="text-foreground">app mobile</strong> per iOS e
-        Android, e offro <strong className="text-foreground">consulenza IT</strong>{" "}
-        per startup e PMI.
+        Android, e offro{" "}
+        <strong className="text-foreground">consulenza IT</strong> per startup e
+        PMI.
       </>
     ),
   },
@@ -103,7 +104,7 @@ const faqItems = [
 const FAQSection = () => {
   const { containerRef, visibleItems } = useStaggeredAnimation(
     faqItems.length,
-    100
+    100,
   );
 
   return (
@@ -137,7 +138,7 @@ const FAQSection = () => {
               key={faq.id}
               className={`${
                 faq.highlight ? "md:col-span-2" : ""
-              } group p-5 rounded-3xl bg-gradient-to-br ${
+              } group p-5 rounded-3xl bg-gradient-to-br enhanced-card-hover ${
                 faq.highlight
                   ? "from-primary/10 via-accent/10 to-primary/10 border-primary/20 hover:border-primary/40 hover:shadow-primary/10"
                   : "from-card/80 to-card/40 border-border hover:border-primary/30 hover:shadow-primary/5"

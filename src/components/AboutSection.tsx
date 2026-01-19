@@ -3,29 +3,29 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const technologies = [
-  { 
-    name: "React", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png" 
+  {
+    name: "React",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/330px-React-icon.svg.png",
   },
-  { 
-    name: "Next.js", 
-    logo: "https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254" 
+  {
+    name: "Next.js",
+    logo: "https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1762498501254",
   },
-  { 
-    name: "Flutter", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg" 
+  {
+    name: "Flutter",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/79/Flutter_logo.svg",
   },
-  { 
-    name: "NestJS", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png" 
+  {
+    name: "NestJS",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NestJS.svg/250px-NestJS.svg.png",
   },
-  { 
-    name: "Node.js", 
-    logo: "https://nodejs.org/static/logos/jsIconGreen.svg" 
+  {
+    name: "Node.js",
+    logo: "https://nodejs.org/static/logos/jsIconGreen.svg",
   },
-  { 
-    name: "TypeScript", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png" 
+  {
+    name: "TypeScript",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png",
   },
 ];
 
@@ -49,7 +49,7 @@ const AboutSection = () => {
 
         {/* Main card con glassmorphism */}
         <div
-          className={`relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-white/10 shadow-2xl transform transition-all duration-700 ${
+          className={`relative overflow-hidden rounded-3xl bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border border-white/10 shadow-2xl transform transition-all duration-700 enhanced-card-hover ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
           style={{ transitionDelay: "0.2s" }}
@@ -122,10 +122,9 @@ const AboutSection = () => {
                   Aiuto{" "}
                   <strong className="text-foreground">imprese locali</strong>,{" "}
                   <strong className="text-foreground">professionisti</strong> e{" "}
-                  <strong className="text-foreground">startup</strong> della
-                  Romagna a trasformare le loro idee in prodotti digitali
-                  concreti, lavorando fianco a fianco dalla strategia allo
-                  sviluppo.
+                  <strong className="text-foreground">startup</strong> a
+                  trasformare le loro idee in prodotti digitali concreti,
+                  lavorando fianco a fianco dalla strategia allo sviluppo.
                 </p>
 
                 {/* Stats row */}
@@ -166,9 +165,9 @@ const AboutSection = () => {
                         }`}
                         style={{ transitionDelay: `${0.6 + index * 0.05}s` }}
                       >
-                        <img 
-                          src={tech.logo} 
-                          alt={tech.name} 
+                        <img
+                          src={tech.logo}
+                          alt={tech.name}
                           className="w-4 h-4 object-contain"
                         />
                         <span className="text-sm font-medium text-foreground/90 group-hover:text-primary transition-colors">
