@@ -153,7 +153,7 @@ const HeroSection = () => {
           </div> */}
 
               {/* Nome con effetto reveal avanzato */}
-              <div className="text-reveal-container mb-6">
+              <div className="text-reveal-container ">
                 {/* <div className="flex items-center justify-center mb-4">
                 <Image
                   src="/images/icons/logo.png"
@@ -175,6 +175,10 @@ const HeroSection = () => {
                 </h1>
               </div>
 
+              <h2 className="text-center md:text-left text-xl md:text-2xl font-semibold text-gradient leading-relaxed tracking-tight drop-shadow-sm mb-4">
+                Sviluppatore web e mobile freelance
+              </h2>
+
               {/* Sottotitolo con typewriter effect */}
               <div className="mb-6 max-w-3xl">
                 {showTypewriter ? (
@@ -188,18 +192,12 @@ const HeroSection = () => {
                     <br className="block sm:hidden" /> che fanno la differenza
                   </p>
                 )}
-                {/* Sottotitolo SEO-visible con tecnologie e località (design modernizzato) */}
-                <div className="mt-6 font-normal w-full md:max-w-3xl mx-auto md:mx-0">
-                  <h2 className="text-center md:text-left text-xl md:text-2xl font-semibold text-gradient leading-relaxed tracking-tight drop-shadow-sm">
-                    Sviluppatore web e mobile freelance
-                  </h2>
-
-                  <div className="mt-3 flex items-center justify-center md:justify-start">
-                    <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 text-foreground/90 text-sm md:text-base shadow-sm backdrop-blur border border-white/10">
-                      <span className="text-primary text-lg">📍</span>
-                      Cesena, Emilia-Romagna
-                    </span>
-                  </div>
+                {/* Località */}
+                <div className="mt-6 flex items-center justify-center md:justify-start">
+                  <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 text-foreground/90 text-sm md:text-base shadow-sm backdrop-blur border border-white/10">
+                    <span className="text-primary text-lg">📍</span>
+                    Cesena, Emilia-Romagna
+                  </span>
                 </div>
               </div>
 
