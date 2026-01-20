@@ -190,12 +190,12 @@ const HeroSection = () => {
               {/* Sottotitolo con typewriter effect */}
               <div className="mb-6 max-w-3xl">
                 {showTypewriter ? (
-                  <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg animate-typewriter break-words text-balance pixel-robot">
+                  <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg animate-typewriter break-words text-balance pixel-robot two-line-clamp">
                     Creo soluzioni digitali
                     <br className="block sm:hidden" /> che fanno la differenza
                   </p>
                 ) : (
-                  <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg opacity-0 break-words text-balance pixel-robot">
+                  <p className="text-2xl md:text-3xl text-primary font-medium drop-shadow-lg opacity-0 break-words text-balance pixel-robot two-line-clamp">
                     Creo soluzioni digitali
                     <br className="block sm:hidden" /> che fanno la differenza
                   </p>
@@ -329,6 +329,23 @@ const HeroSection = () => {
             }
             50% {
               transform: translateY(-8px);
+            }
+          }
+
+          /* Limit subtitle to 2 lines on desktop */
+          .two-line-clamp {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            /* default: no clamp on mobile */
+          }
+
+          @media (min-width: 768px) {
+            .two-line-clamp {
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              white-space: normal;
             }
           }
         `}</style>
