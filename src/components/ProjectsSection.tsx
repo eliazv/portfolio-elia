@@ -7,6 +7,7 @@ import { projects } from "@/data/projects";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowUp } from "lucide-react";
+import AppLogosCarousel from "@/components/AppLogosCarousel";
 
 const ProjectsSection = () => {
   const [showAll, setShowAll] = useState(false);
@@ -40,6 +41,8 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-10 bg-secondary/30 section-background">
       <div className="container mx-auto px-6">
+        {/* Carosello loghi app: posizionato in cima alla sezione per maggiore visibilità */}
+        <AppLogosCarousel />
         <div className="flex flex-col md:flex-row md:justify-between items-center mb-8 gap-4">
           <h2 className="text-3xl md:text-4xl font-bold font-heading relative inline-block animate-slide-in-top">
             <span className="relative z-10">I miei progetti</span>

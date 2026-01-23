@@ -98,7 +98,8 @@ export const projects: Project[] = [
     technologies: [],
     category: "Dev",
     demoUrl: "/scadenzario",
-    logoImage: "/images/projects/scadenzario.png",
+    logoImage:
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6a/80/27/6a80279d-abf3-f0f3-ae58-b9297bc7dec7/Placeholder.mill/400x400bb-75.webp",
   },
   {
     id: 6,
@@ -110,7 +111,8 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Node.js"],
     category: "Dev",
     demoUrl: "/hostpilot",
-    logoImage: "/images/projects/hostpilot.svg",
+    logoImage:
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/51/a6/7051a624-6294-caf2-a4ec-5fa9726b74ba/Placeholder.mill/400x400bb-75.webp",
   },
 
   // {
